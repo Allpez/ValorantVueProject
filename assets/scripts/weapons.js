@@ -1,1 +1,1 @@
-Hello 
+let url = "https://valorant-api.com/"
