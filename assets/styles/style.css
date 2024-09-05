@@ -1,4 +1,8 @@
 /*--------------------------------------- General Styles index.html ---------------------------------------*/
+@font-face {
+    font-family: Tungsten-Bold;
+    src: url("./fonts/FontsFree-Net-Tungsten-Bold.ttf");
+}
 * {
     margin: 0;
     padding: 0;
@@ -24,6 +28,47 @@ video {
 }
 .parrafo-intro{
     color: rgb(192, 192, 192);
+}
+h2{
+    font-family: Tungsten-Bold;
+    font-size: 72px !important;
+}
+.agents, .playerCards, .weapons{
+    background-color: rgb(236, 232, 225);
+}
+.maps,.sprays{
+    background-color: rgb(255, 70, 85); 
+}
+.maps>div>h2,.sprays>div>h2{
+    color: rgb(236, 232, 225); 
+}
+.tarjetas{
+    padding: 50px;
+    color: white;
+}
+.ancor2{
+    text-decoration: none;
+    background-color: rgb(15, 25, 35); 
+    color: rgb(236, 232, 225);
+    font-family: Tungsten-Bold;
+    font-size: 32px !important;
+    padding: 15px;
+}
+.ancor2:hover{
+    background-color: rgb(236, 232, 225); 
+    color: rgb(15, 25, 35);
+}
+.ancor1{
+    text-decoration: none;
+    background-color: rgb(255, 70, 85); 
+    color: rgb(236, 232, 225);
+    font-family: Tungsten-Bold;
+    font-size: 32px !important;
+    padding: 15px;
+}
+.ancor1:hover{
+    background-color: rgb(15, 25, 35); 
+    color: rgb(236, 232, 225);
 }
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 footer {
