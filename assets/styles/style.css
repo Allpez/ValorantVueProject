@@ -1,5 +1,106 @@
+/*--------------------------------------- General Styles index.html ---------------------------------------*/
+@font-face {
+    font-family: Tungsten-Bold;
+    src: url("./fonts/FontsFree-Net-Tungsten-Bold.ttf");
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+.layout {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/*--------------------------------------- Header Styles ---------------------------------------*/
+
+/*--------------------------------------- Main Styles -----------------------------------------*/
+main {
+    flex-grow: 1;
+
+}
+video {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.parrafo-intro{
+    color: rgb(192, 192, 192);
+}
+h2{
+    font-family: Tungsten-Bold;
+    font-size: 72px !important;
+}
+.agents, .playerCards, .weapons{
+    background-color: rgb(236, 232, 225);
+}
+.maps,.sprays{
+    background-color: rgb(255, 70, 85); 
+}
+.maps>div>h2,.sprays>div>h2{
+    color: rgb(236, 232, 225); 
+}
+.tarjetas{
+    padding: 50px;
+    color: white;
+}
+.ancor2{
+    text-decoration: none;
+    background-color: rgb(15, 25, 35); 
+    color: rgb(236, 232, 225);
+    font-family: Tungsten-Bold;
+    font-size: 32px !important;
+    padding: 15px;
+}
+.ancor2:hover{
+    background-color: rgb(236, 232, 225); 
+    color: rgb(15, 25, 35);
+}
+.ancor1{
+    text-decoration: none;
+    background-color: rgb(255, 70, 85); 
+    color: rgb(236, 232, 225);
+    font-family: Tungsten-Bold;
+    font-size: 32px !important;
+    padding: 15px;
+}
+.ancor1:hover{
+    background-color: rgb(15, 25, 35); 
+    color: rgb(236, 232, 225);
+}
+/*--------------------------------------- Footer Styles ---------------------------------------*/
+footer {
+    background-color: rgb(1, 1, 1);    
+}
+
+footer > .container > .row > .col > p {
+    color: white;
+    margin-bottom: 0 !important;
+    
+}
+
+
+/*------------------------------------------- 768px -------------------------------------------*/
+@media screen and (min-width: 768px) {
+    /*-------------------------- Header Styles --------------------------*/
+    /*-------------------------- Main Styles ----------------------------*/
+    /*-------------------------- Footer Styles --------------------------*/
+}
+/*------------------------------------------- 1024px -------------------------------------------*/
+@media screen and (min-width: 1024px) {
+    /*-------------------------- Header Styles --------------------------*/
+    /*-------------------------- Main Styles ----------------------------*/
+    /*-------------------------- Footer Styles --------------------------*/
+}
+/*------------------------------------------- 1440px -------------------------------------------*/
+@media screen and (min-width: 1440px) {
+    /*-------------------------- Header Styles --------------------------*/
+    /*-------------------------- Main Styles ----------------------------*/
+    .parrafo-intro{
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+    /*-------------------------- Footer Styles --------------------------*/
 }
