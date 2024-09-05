@@ -13,3 +13,21 @@
 .active{
     border-bottom: 5px solid rgb(255, 70, 85) !important;
 }
+.main{
+    font-family: Tungsten-Bold; 
+}
+.cardImage{
+    max-height: 15vh;
+}
+.card{
+    max-height: 10%;
+}
+footer {
+    background-color: rgb(1, 1, 1);    
+}
+
+footer > .container > .row > .col > p {
+    color: white;
+    margin-bottom: 0 !important;
+    
+}
