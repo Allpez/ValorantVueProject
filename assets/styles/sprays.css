@@ -39,13 +39,32 @@ h1{
     font-family: Tungsten-Bold;
     font-size: 72px !important;
 }
+.barra-buscar{
+    background-color: #cecece;
+}
+
+.favorite{
+    text-decoration: none;
+    background-color: rgb(255, 70, 85); 
+    color: rgb(236, 232, 225);
+    font-family: Tungsten-Bold;
+    font-size: 32px !important;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 0 !important;
+}
+.favorite:hover{
+    background-color: rgb(236, 232, 225); 
+    color: rgb(15, 25, 35);
+}
+
 #app {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
 }
 .tarjeta {
-    width: 150px;
+    width: 120px;
     height: auto;
     margin: 20px;
 }

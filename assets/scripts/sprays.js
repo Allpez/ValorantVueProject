@@ -5,14 +5,6 @@
 //  Llamamos a la Api a trabajar
 const urlApi = 'https://valorant-api.com/v1/sprays'
 
-
-fetch(urlApi)
-    .then((response) => response.json())
-    .then((info) => {
-        console.log(info.data)
-        
-    })
-
 //  Llamamos a la Libreria Vue
 const { createApp } = Vue
 
