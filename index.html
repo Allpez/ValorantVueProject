@@ -15,6 +15,7 @@
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
             crossorigin="anonymous"
         />
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </head>
     <body>
         <div class="layout">
@@ -24,7 +25,7 @@
                     <div class="container-fluid">
                         <a class="navbar-brand" href="./index.html"
                             ><img
-                                src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Valorant_logo_-_pink_color_version.svg"
+                                src="./assets/image/valorant-logo.png"
                                 width="200"
                                 alt="amazing_brand"
                         /></a>
@@ -64,7 +65,7 @@
                                 </li>
                                 <li class="nav-item p-2">
                                     <a class="nav-link fs-4" href="./assets/pages/playerCards.html"
-                                        >Player Cards</a
+                                        >Player</a
                                     >
                                 </li>
                                 <li class="nav-item p-2">
@@ -87,8 +88,12 @@
                 <div class="container-fluid text-center">
                     <div class="row d-flex flex-column bg-black">
                         <div class="col align-self-center p-0 video">
-
-                            <video autoplay muted loop src="./assets/image/ALL-PATHS-END-HERE-Vyse-Agent-Trailer- VALORANT-1440p.mp4"></video>
+                            <video
+                                autoplay
+                                muted
+                                loop
+                                src="./assets/image/ALL-PATHS-END-HERE-Vyse-Agent-Trailer- VALORANT-1440p.mp4"
+                            ></video>
                         </div>
                         <div class="col align-self-center p-2">
                             <img
@@ -135,7 +140,7 @@
                 <div class="container text-center p-4">
                     <div class="row playerCards">
                         <div class="col-12 col-md-4 p-4 align-self-center">
-                            <h2>Player Cards</h2>
+                            <h2>Player</h2>
                         </div>
                         <div class="col-12 col-md-8 p-4 align-self-center">
                             <div class="tarjetas bg-black" id="tarjetas">tarjetas</div>
@@ -171,7 +176,10 @@
                 <div class="container text-center">
                     <div class="row align-items-center">
                         <div class="col align-self-center p-2">
-                            <p>© Copyright 2024 - Challenger Valorant - Mind Hub - All Rights Reserved.</p>
+                            <p>
+                                © Copyright 2024 - Challenger Valorant - Mind Hub - All Rights
+                                Reserved.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -179,7 +187,7 @@
         </div>
         <!------ Librerias JavaScrit ------>
         <!-- JavaScrit Propios -->
-        <script src="./assets/js/main.js"></script>
+        <script src="./assets/scripts/index.js"></script>
         <!-- JavaScrit Bootstrap -->
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
