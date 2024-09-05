@@ -76,8 +76,68 @@
             <main>
                 <div class="container text-center">
                     <div class="row align-items-center">
-                        <div class="col">
+                        <div class="col py-2">
                             <h1>Sprays</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-filtro-buscar container-fluid text-center">
+                    <div class="row align-items-center barra-buscar">
+                        <div class="col-sm-12 col-md-3 col-xl-4 p-2" id="category">
+                            <div>
+                                <button type="button" class="favorite">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-heart-fill"
+                                        viewBox="0 0 16 16"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
+                                        />
+                                    </svg>
+                                    Favorite
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-3 col-xl-4 p-2" id="category">
+                            <div id="check">
+                                <div class="form-check-inline py-2">
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="ascendente"
+                                        value="ascendente"
+                                    />
+                                    <label class="form-check-label" for="flexCheckDefault1">
+                                        Ordenar (A-Z)
+                                    </label>
+                                </div>
+                                <div class="form-check-inline py-2">
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="descendente"
+                                        value="descendente"
+                                    />
+                                    <label class="form-check-label" for="flexCheckDefault1">
+                                        Ordenar (Z-A)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-xl-4 align-items-center p-2">
+                            <form class="d-flex" role="search" id="search">
+                                <input
+                                    class="form-control me-2"
+                                    type="search"
+                                    aria-label="Search"
+                                    placeholder="Buscador"
+                                />
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -86,11 +146,7 @@
                         <div class="" id="app">
                             <div v-for="info in datosSprays" class="tarjeta">
                                 <div class="card row">
-                                    <img
-                                        :src="info.displayIcon"
-                                        class="card-img-top p-2"
-                                        alt=""
-                                    />
+                                    <img :src="info.displayIcon" class="card-img-top p-2" alt="" />
                                     <div
                                         class="card-body justify-content-center align-items-center"
                                     >
