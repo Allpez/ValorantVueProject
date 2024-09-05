@@ -4,6 +4,10 @@
 
 
 /*--------------------------------------- General Styles index.html ---------------------------------------*/
+@font-face {
+    font-family: Tungsten-Bold;
+    src: url("./fonts/FontsFree-Net-Tungsten-Bold.ttf");
+}
 * {
     margin: 0;
     padding: 0;
@@ -16,15 +20,32 @@
     flex-direction: column;
 }
 /*--------------------------------------- Header Styles ---------------------------------------*/
-
+.nav-link{
+    font-family: Tungsten-Bold;
+}
+.nav-link:hover{
+    background-color: rgb(15, 25, 35);
+    color: rgb(236, 232, 225) !important;
+}
+.active{
+    border-bottom: 5px solid rgb(255, 70, 85) !important;
+}
 /*--------------------------------------- Main Styles -----------------------------------------*/
 main {
     flex-grow: 1;
 
 }
+h1{
+    font-family: Tungsten-Bold;
+    font-size: 72px !important;
+}
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 footer {
-    min-height: 5vh;
-    background-color: rgb(1, 1, 1);
+    background-color: rgb(1, 1, 1);    
+}
+
+footer > .container > .row > .col > p {
     color: white;
+    margin-bottom: 0 !important;
+    
 }
