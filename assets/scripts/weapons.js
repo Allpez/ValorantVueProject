@@ -6,7 +6,7 @@ const app = createApp({
     data() {
         return {
             weapons: [],
-            weaponsBK:[],
+            weaponsBK: [],
             categories: [],
             cartegorySelected: [],
             serchCategory: ""
@@ -33,10 +33,12 @@ const app = createApp({
     computed: {
         allfilter() {
             let filterSerch = this.weaponsBK.filter(weapon => weapon.displayName.toLowerCase().includes(this.serchCategory.toLowerCase()))
-           console.log(this.weapons);
-           
-            this.weapons = filterSerch
-            // let filterCheckbox = 
+            console.log(this.cartegorySelected);
+            if (this.cartegorySelected.length > 0) {
+                this.weapons = filterSerch.filter(weapon => this.cartegorySelected.includes(weapon.category))
+            } else{
+                this.weapons = filterSerch
+            }
         }
     }
 
