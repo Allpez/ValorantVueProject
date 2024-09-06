@@ -15,17 +15,17 @@ const app = createApp({
     created() {
         this.traerData(urlMaps);
         let datosLocal = JSON.parse(localStorage.getItem('favoritosMaps'));
-        if (datosLocal) {
+        if (datosLocal && Array.isArray(datosLocal)) {
             this.favoritos = datosLocal;
         }
     },
     methods: {
         traerData(url) {
             fetch(url)
-                .then(response => response.json())
-                .then(info => {
-                    this.maps = info.data;
-                    this.mapsBK = [...info.data];
+                .then(response => response.json()).then(info => {
+                    this.maps = info.data; // Asignar la lista de mapas a this.maps
+                    this.mapsBK = [...info.data]; // Crear una copia de los datos para los filtros y otras operaciones
+                    console.log(this.mapsBK); // Mostrar los datos en la consola para verificar
                 })
                 .catch(error => {
                     console.error("Error al traer los datos:", error);
@@ -54,6 +54,8 @@ const app = createApp({
             let primerFiltro = this.mapsBK.filter(map => 
                 map.displayName.toLowerCase().includes(this.textoBuscar.toLowerCase())
             );
+            console.log(primerFiltro);
+            
             
             // Ordenar mapas
             return primerFiltro.slice().sort((a, b) => {
