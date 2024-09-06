@@ -48,26 +48,22 @@
         </nav>
     </header>
     <main class="main" id="app">
-      <div class="d-flex justify-content-around">
-        <div id="check" class="form-check form-switch d-flex">
-            <div v-for="category in categories" class=" ">
-                <input class="form-check-input ms-4" type="checkbox" role="switch" :id=category :value=category >
-                <label class="form-check-label ms-1" :for="category"> {{cleanCategoryName(category)}} </label>
+        <div class="d-flex justify-content-around align-items-center">
+            {{allfilter}}
+            <div id="check" class="form-check form-switch d-flex">
+                <div v-for="category in categories" class=" ">
+                    <input class="form-check-input ms-4" type="checkbox" role="switch" :id=category :value=category>
+                    <label class="form-check-label ms-1" :for="category"> {{cleanCategoryName(category)}} </label>
+                </div>
+            </div>
+            <div class="col-sm-8 col-md-4 col-xl-4 align-items-center p-2">
+                <form class="d-flex" role="search" id="search">
+                    <input v-model="serchCategory" class="form-control me-2" type="search" aria-label="Search" placeholder="Buscador" />
+                </form>
             </div>
         </div>
-        <div class="col-sm-8 col-md-4 col-xl-4 align-items-center p-2">
-            <form class="d-flex" role="search" id="search">
-                <input
-                    class="form-control me-2"
-                    type="search"
-                    aria-label="Search"
-                    placeholder="Buscador"
-                />
-            </form>
-        </div>
-      </div>
         <div id="cards" class="d-flex flex-wrap justify-content-center mt-3">
-            <div v-for ="category in weapons" class="card mt-3 ms-3" style="width: 18rem;">
+            <div v-for="category in weapons" class="card mt-3 ms-3" style="width: 18rem;">
                 <img :src="category.displayIcon" class="cardImage card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"> {{category.displayName}} </h5>
@@ -80,7 +76,7 @@
 
     </main>
     <footer>
-        <div class="container text-center">
+        <div class="container text-center mt-3">
             <div class="row align-items-center">
                 <div class="col align-self-center p-2">
                     <p>
