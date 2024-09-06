@@ -29,7 +29,6 @@
 /*--------------------------------------- Main Styles -----------------------------------------*/
 main {
     flex-grow: 1;
-
 }
 video {
     width: 100%;
@@ -52,6 +51,23 @@ h2{
 .maps>div>h2,.sprays>div>h2{
     color: rgb(236, 232, 225); 
 }
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: rgba(95, 233, 202, 0.6);
+    border: 2px solid rgba(20, 48, 42, 0.6);
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.accordion {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+
 .tarjetas{
     padding: 50px;
     color: white;

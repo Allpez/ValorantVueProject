@@ -2,11 +2,10 @@
 /*----------------------------------------- Logica de sprays.css ---------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------*/
 
-
 /*--------------------------------------- General Styles index.html ---------------------------------------*/
 @font-face {
     font-family: Tungsten-Bold;
-    src: url("./fonts/FontsFree-Net-Tungsten-Bold.ttf");
+    src: url('./fonts/FontsFree-Net-Tungsten-Bold.ttf');
 }
 * {
     margin: 0;
@@ -20,45 +19,49 @@
     flex-direction: column;
 }
 /*--------------------------------------- Header Styles ---------------------------------------*/
-.nav-link{
+.nav-link {
     font-family: Tungsten-Bold;
 }
-.nav-link:hover{
+.nav-link:hover {
     background-color: rgb(15, 25, 35);
     color: rgb(236, 232, 225) !important;
 }
-.active{
+.active {
     border-bottom: 5px solid rgb(255, 70, 85) !important;
 }
 /*--------------------------------------- Main Styles -----------------------------------------*/
 main {
     flex-grow: 1;
-
 }
-h1{
+h1 {
     font-family: Tungsten-Bold;
     font-size: 72px !important;
 }
-.barra-buscar{
+.barra-buscar {
     background-color: #cecece;
 }
 
-.favorite{
+.favorite {
     text-decoration: none;
-    background-color: rgb(255, 70, 85); 
+    background-color: rgb(255, 70, 85);
     color: rgb(236, 232, 225);
     font-family: Tungsten-Bold;
-    font-size: 32px !important;
+    font-size: 24px !important;
     padding-left: 5px;
     padding-right: 5px;
     border: 0 !important;
 }
-.favorite:hover{
-    background-color: rgb(236, 232, 225); 
+.favorite:hover {
+    background-color: rgb(236, 232, 225);
     color: rgb(15, 25, 35);
 }
 
 #app {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
+.contenedor {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
@@ -74,17 +77,32 @@ h1{
     box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
     border-radius: 0 !important;
 }
-.card-title {
-    height: 60px;
-    width: 100%;
+.btn{
+    border-radius: 0 !important;
+    border: 0 !important;
+    font-family: Tungsten-Bold !important;
+    font-size: 24px !important;
+    margin: 0 !important;
 }
+.btn:hover{
+    background-color: rgb(255, 70, 85) !important;
+    color: rgb(236, 232, 225) !important;
+}
+.card-title {
+    height: 50px;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-card-title: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 footer {
-    background-color: rgb(1, 1, 1);    
+    background-color: rgb(1, 1, 1);
 }
 
 footer > .container > .row > .col > p {
     color: white;
     margin-bottom: 0 !important;
-    
 }
