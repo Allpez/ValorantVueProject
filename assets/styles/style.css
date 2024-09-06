@@ -96,6 +96,12 @@ h2{
     background-color: rgb(15, 25, 35); 
     color: rgb(236, 232, 225);
 }
+.cardImage{
+    max-height: 15vh;
+}
+.cardWeapons{
+    max-height: 10%;
+}
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 footer {
     background-color: rgb(1, 1, 1);    
