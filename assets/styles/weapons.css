@@ -3,6 +3,12 @@
     src: url("./fonts/FontsFree-Net-Tungsten-Bold.ttf");
 }
 
+.layout{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 .nav-link{
     font-family: Tungsten-Bold;
 }
@@ -19,15 +25,41 @@
 .cardImage{
     max-height: 15vh;
 }
-.card{
+.cardWeapons{
     max-height: 10%;
 }
 footer {
-    background-color: rgb(1, 1, 1);    
+    background-color: rgb(1, 1, 1);  
+
 }
 
 footer > .container > .row > .col > p {
     color: white;
-    margin-bottom: 0 !important;
+    margin-bottom: auto !important;
     
+}
+
+
+
+/*------------------------------------------- 768px -------------------------------------------*/
+@media screen and (min-width: 768px) {
+    /*-------------------------- Header Styles --------------------------*/
+    /*-------------------------- Main Styles ----------------------------*/
+    /*-------------------------- Footer Styles --------------------------*/
+}
+/*------------------------------------------- 1024px -------------------------------------------*/
+@media screen and (min-width: 1024px) {
+    /*-------------------------- Header Styles --------------------------*/
+    /*-------------------------- Main Styles ----------------------------*/
+    /*-------------------------- Footer Styles --------------------------*/
+}
+/*------------------------------------------- 1440px -------------------------------------------*/
+@media screen and (min-width: 1440px) {
+    /*-------------------------- Header Styles --------------------------*/
+    /*-------------------------- Main Styles ----------------------------*/
+    .parrafo-intro{
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+    /*-------------------------- Footer Styles --------------------------*/
 }

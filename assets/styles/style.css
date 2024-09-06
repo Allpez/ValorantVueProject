@@ -96,6 +96,26 @@ h2{
     background-color: rgb(15, 25, 35); 
     color: rgb(236, 232, 225);
 }
+.cardImage{
+    height: 15vh;
+}
+.cardWeapons{
+    max-height: 9%;
+}
+.favorite {
+    text-decoration: none;
+    background-color: rgb(255, 70, 85);
+    color: rgb(236, 232, 225);
+    font-family: Tungsten-Bold;
+    font-size: 24px !important;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 0 !important;
+}
+.favorite:hover {
+    background-color: rgb(236, 232, 225);
+    color: rgb(15, 25, 35);
+}
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 footer {
     background-color: rgb(1, 1, 1);    
