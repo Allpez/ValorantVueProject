@@ -40,3 +40,54 @@ Entregable
 - Maximo plazo el dia miercoles 9 de Septiembre
 - Presentacion a mentores el 9 de Septiembre
 - Presentacion Final 10 de Septiembre
+
+
+
+
+
+Lista de pendientes: 
+
+- todo en un solo idioma (falta clanes)
+- unificar CSS
+- verificar imagenes genericas para las cards que no tienen
+
+
+
+
+
+
+
+
+
+
+
+
+*personajes:
+-imagen generica para cards que no tienen
+-boton de favoritos 
+-filtro por sexo y por 
+"natureType"
+-paginado acomodar a color rojo
+-modal de favoritos
+-background en las cards dejarla igual a las de clanes 
+*clanes:
+-revisar el titulo y centrarlo que el hover sea de color rojo y no azul subrayado colocarle un margin para separarlo del navbar y de las cards 
+-imagenes en las cards 
+-borrar boton de cerrar que no hace nada 
+-traducir a ingles 
+-modicar codigo de javascript de clanes para que retorne los 58 clanes 
+*stats:
+REVISAR Y ESCRIBIR  OPINIONES
+*detalles:
+toda la operatividad 
+-aclarar el background de la tarjeta para que no se vea la marca de agua 
+-colocar el mismo background que esta en las otras paginas 
+-arreglar navbar, logo y enlaces
+
+archivo readmi con descripcion de la pagina
+
+FAVICON EN TODAS LAS PAGINAS 
+
+
+-Las nubes de la navbar se cortan arriba 
+- carrousel revisar las imagenes que algunas se ven de baja calidad
