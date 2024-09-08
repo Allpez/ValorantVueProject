@@ -29,7 +29,6 @@
 /*--------------------------------------- Main Styles -----------------------------------------*/
 main {
     flex-grow: 1;
-
 }
 video {
     width: 100%;
@@ -57,6 +56,23 @@ h2{
 .maps>div>h2,.sprays>div>h2{
     color: rgb(236, 232, 225); 
 }
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: rgba(95, 233, 202, 0.6);
+    border: 2px solid rgba(20, 48, 42, 0.6);
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.accordion {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+
 .tarjetas{
     padding: 50px;
     color: white;
@@ -84,6 +100,26 @@ h2{
 .ancor1:hover{
     background-color: rgb(15, 25, 35); 
     color: rgb(236, 232, 225);
+}
+.cardImage{
+    height: 15vh;
+}
+.cardWeapons{
+    max-height: 9%;
+}
+.favorite {
+    text-decoration: none;
+    background-color: rgb(255, 70, 85);
+    color: rgb(236, 232, 225);
+    font-family: Tungsten-Bold;
+    font-size: 24px !important;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 0 !important;
+}
+.favorite:hover {
+    background-color: rgb(236, 232, 225);
+    color: rgb(15, 25, 35);
 }
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 footer {

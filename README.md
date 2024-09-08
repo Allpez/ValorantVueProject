@@ -1,6 +1,6 @@
 ﻿# ValorantVueProject
 
-En este repositorio se encuentra la pagina en desarrollo "Valorant"- 1st Challenge del curso MindHUb etapa: FRONT-ENT, creada con HTML, CSS, BOOTSTRAP, JAVASCRIPT y VUE.
+En este repositorio se encuentra la pagina "Valorant"- 1st Challenge del curso MindHUb etapa: FRONT-ENT, creada con HTML, CSS, BOOTSTRAP, JAVASCRIPT y VUE.
 
 Requerimientos Desafio.
 
