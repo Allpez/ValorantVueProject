@@ -67,9 +67,12 @@ h2{
     left: 10%;
 }
 
+.card-img-top {
+    height: 20vh;
+}
 
 .tarjetas{
-    padding: 50px;
+    padding: 20px;
     color: white;
 }
 .ancor2{
