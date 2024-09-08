@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+.container-modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-details {
+    padding: 10px;
+    width: 80%;
+    margin: 40px auto;
+}
+
+.derecha {
+    float: right;
+}
+
+.close {
+    position: fixed;
+    top: 3%;
+    right: 4%;
+    background-color: red;
+    color: white;
+}
+

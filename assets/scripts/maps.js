@@ -1,6 +1,6 @@
 let urlMaps = "https://valorant-api.com/v1/maps";
 
-const { createApp } = Vue; //Estamos trayendo una función "createApp" que esta en el objeto VUE, variable global
+const { createApp } = Vue; //Desestructuracion. Estamos trayendo una función "createApp" que esta en el objeto VUE, variable global
 
 const app = createApp({
     data() { //data va a retornar una info globalmente a la aplicacion, guardado de la info
@@ -10,6 +10,9 @@ const app = createApp({
             favoritos: [], // Lista de mapas favoritos
             textoBuscar: "", // Texto de búsqueda
             orden: 'asc',  // Orden de los mapas, por defecto ascendente
+            modalDetails: false, //el modalDetails no se mostrara por defecto
+            selectedMap: null, // Mapa seleccionado para detalles
+            selectedMapImages: [] // Imágenes del mapa seleccionado
         };
     },
     created() { //las cosas que se van a ejecutar la primera vez que se levante la pagina al inicio
@@ -23,9 +26,8 @@ const app = createApp({
         traerData(url) {
             fetch(url)
                 .then(response => response.json()).then(info => {
-                    this.maps = info.data; // Asignar la lista de mapas a this.maps
-                    this.mapsBK = [...info.data]; // Crear una copia de los datos para los filtros y otras operaciones
-                    console.log(this.maps); // Mostrar los datos en la consola para verificar
+                    this.maps = info.data; // Asignamos la lista de mapas a this.maps
+                    this.mapsBK = [...info.data]; // Creamos una copia de los datos para los filtros
                 })
                 .catch(error => {
                     console.error("Error al traer los datos:", error);
@@ -46,6 +48,18 @@ const app = createApp({
         },
         cambiarOrden(nuevoOrden) {
             this.orden = nuevoOrden;
+        },
+        openModal(map) {
+            this.selectedMap = map;
+            this.selectedMapImages = [
+                map.displayIcon,
+                map.listViewIcon,
+                map.listViewIconTall,
+                map.splash,
+                map.stylizedBackgroundImage,
+                map.premierBackgroundImage
+            ];
+            this.modalDetails = true;
         }
     },
     computed: { //interacciones de la pagina o dependencias de eventos que se ejecutan directamente
@@ -67,4 +81,4 @@ const app = createApp({
             });
         }
     }
-}).mount('#app'); //se creo la aplicacion vue que se va a montar en el contenedor app
+}).mount('#app'); //se crea la aplicacion vue que se va a montar en el contenedor app
