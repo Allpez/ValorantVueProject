@@ -8,7 +8,7 @@
     <meta name="keywords" content="HTML, CSS, JAVASCRIPT, BOOTSTRAP, VUE">
     <link rel="shortcut icon" href="../image/favicon.png" type="image/x-icon" />
     <!-- Estilos Propios -->
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/maps.css">
     <!-- Estilos Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -78,10 +78,11 @@
                     </div>
                     <form class="d-flex p-2 mb-3 col-6" role="search">
                         <input v-model="textoBuscar" class="form-control me-2" type="search" aria-label="search"
-                            id="buscador" placeholder="Buscar mapas...">
+                            id="buscador" placeholder="Search Map...">
                     </form>
                     <div class="col-1 d-flex align-items-center">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#favoritosModal">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#favoritosModal">
                             Favoritos
                         </button>
                     </div>
@@ -99,9 +100,9 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="d-flex flex-wrap border-2 bg-light p-2">
-                                        <div v-for="map in favoritos" :key="map.uuid" class="card d-flex m-2" style="width: 18rem;">
-                                            <img :src="map.splash"
-                                                class="card-img-top p-1 align-self-center"
+                                        <div v-for="map in favoritos" :key="map.uuid" class="card d-flex m-2"
+                                            style="width: 18rem;">
+                                            <img :src="map.splash" class="card-img-top p-1 align-self-center"
                                                 alt="imagen_mapa">
                                             <div class="card-body d-flex flex-column justify-content-around">
                                                 <h6 class="card-title">{{ map.displayName }}</h6>
@@ -109,10 +110,7 @@
                                                     class="btn align-self-center text-danger">
                                                     Quitar de favoritos
                                                 </button>
-                                                <div class="">
-                                                    <a :href="'details.html?id=' + map.id" class="btn">More
-                                                        info</a>
-                                                </div>
+                                                <button @click="openModal(map)" class="btn">More info</button>
                                             </div>
                                         </div>
                                     </div>
@@ -121,15 +119,15 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-        
                     <div v-if="superFiltro.length === 0">
                         <h1 class="text-success text-center">No results found.</h1>
-                        <p class="text-success-emphasis">Please try a new search.</p>
+                        <p class="text-success-emphasis text-center">Please try a new search.</p>
                     </div>
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                         <div v-for="map in superFiltro" :key="map.uuid" class="col">
@@ -141,8 +139,69 @@
                                         <button @click="agregarFavorito(map)" class="btn btn-danger">
                                             Agregar a favoritos
                                         </button>
-                                        <a :href="'details.html?id=' + map.id" class="btn btn-primary">More info</a>
+                                        <button @click="openModal(map)" class="btn">More info</button>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="container-modal" v-if="modalDetails">
+                            <div class="modal-details">
+                                <button class="close px-2" @click="modalDetails=false">x</button>
+                                <div class="modal-carousel">
+                                    <div id="carouselExampleIndicators" class="carousel slide">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                                data-bs-slide-to="0" class="active" aria-current="true"
+                                                aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                                data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                                data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                                data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                                data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                                data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img :src="maps.displayIcon" class="d-block w-100" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img :src="maps.listViewIcon" class="d-block w-100" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img :src="maps.listViewIconTall" class="d-block w-100" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img :src="maps.splash" class="d-block w-100" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img :src="maps.stylizedBackgroundImage" class="d-block w-100"
+                                                    alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img :src="maps.premierBackgroundImage" class="d-block w-100" alt="...">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="modal-content">
+                                    <p class="text-light">coordinates</p>
+                                    <p class="text-light">callOuts</p>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +209,7 @@
                 </div>
             </div>
         </main>
-        
+
         <!------------------------------- Footer ------------------------------->
         <footer>
             <div class="container text-center">
