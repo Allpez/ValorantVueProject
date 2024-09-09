@@ -33,11 +33,13 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  min-height: 350px; /* Altura mínima para todas las tarjetas */
+  height: 100%; /* Asegura que todas las tarjetas ocupen la misma altura */
 }
 
 .player-card img {
   width: 100%;
-  height: auto;
+  height: 150px; /* Altura fija para las imágenes */
   object-fit: cover;
   filter: brightness(1.1);
   transition: all 0.3s ease-in-out;
@@ -49,11 +51,25 @@ body {
 }
 
 .player-card .card-body {
+  flex-grow: 1;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.player-card .btn {
+.player-card .card-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.player-card .btn-group {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+}
+
+.player-card .btn-group .btn {
   margin-bottom: 5px;
 }
 
