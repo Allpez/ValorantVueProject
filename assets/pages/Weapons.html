@@ -93,7 +93,7 @@
                             <h1 class="modal-title fs-5" id="staticBackdropLabel">Favorites</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body d-flex flex-column align-items-center">
                             <div v-if="favoritos.length === 0" class="text-center">
                                 <h1 class="text-success">No favorites added yet.</h1>
                             </div>
@@ -104,7 +104,7 @@
                                 <div class="card-body d-flex flex-column justify-content-around">
                                     <h6 class="card-title">{{ weapon.displayName }}</h6>
                                     <button @click="quitarFavorito(weapon)" class="btn align-self-center text-danger">
-                                        Quitar de favoritos
+                                       Delete favorites
                                     </button>
                                 </div>
                             </div>
