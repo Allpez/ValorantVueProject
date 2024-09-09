@@ -75,18 +75,24 @@
                     <div class="col-sm-12 align-items-center p-2">
                         {{superFiltro}}
                         <form class="d-flex" role="search" id="search">
-                            <input
-                                v-model="textoBuscar"
-                                class="form-control me-2"
-                                type="search"
-                                aria-label="Search"
-                                placeholder="Buscador"
-                            />
+                            <input v-model="textoBuscar" class="form-control me-2" type="search" aria-label="Search"
+                                placeholder="Search" />
                         </form>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Filter by Role</h3>
+                            <div v-for="category in categories" :key="category">
+                                <input type="checkbox" :id="category" :value="category" v-model="selectedRoles">
+                                <label :for="category">{{ category }}</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="container-fluid text-center">
                 <div class="row align-items-center">
                     <div class="contenedor">
@@ -94,14 +100,16 @@
                             <h1 class="text-success text-center">No results found.</h1>
                             <p class="text-success-emphasis text-center">Please try a new search.</p>
                         </div>
-                        <div v-for="agent in agents" class="tarjeta">
+                        <div v-for="agent in agents" :key="agent.uuid" class="tarjeta">
                             <div class="card row">
-                                <img :src="agent.displayIcon" class="card-img-top" :alt="agent.displayName">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ agent.displayName }}</h5>
-                                <p class="card-text">{{ agent.description }}</p>
-                                
-                            </div>
+                                <img :src="agent.fullPortrait" class="card-img-top" :alt="agent.displayName">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary">{{ agent.displayName }}</h5>
+                                    <p class="card-text" v-if="agent.role">ROLE: {{ agent.role.displayName }}</p>
+                                    <p class="card-text" v-if="agent.role">DESCRIPTION: {{ agent.role.description }}</p>
+
+                                </div>
+
                             </div>
                         </div>
                     </div>
