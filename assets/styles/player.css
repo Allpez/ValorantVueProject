@@ -4,7 +4,7 @@ body {
   background-color: #f8f9fa;
 }
 
-/*--------------------------------------- Header Styles ---------------------------------------*/
+/* Header Styles */
 @font-face {
   font-family: Tungsten-Bold;
   src: url('./fonts/FontsFree-Net-Tungsten-Bold.ttf');
@@ -19,35 +19,63 @@ body {
 .active {
   border-bottom: 5px solid rgb(255, 70, 85) !important;
 }
+
 /*--------------------------------------- Main Styles -----------------------------------------*/
 
 .player-card {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  border: none; /* Elimina bordes */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Añade una sombra ligera */
 }
 
 .player-card img {
   width: 100%;
   height: auto;
-  object-fit: cover; /* Asegura que la imagen se ajuste correctamente al contenedor */
-  filter: brightness(1.1); /* Aumenta ligeramente el brillo para una mejor visualización */
-  transition: all 0.3s ease-in-out; /* Añade una transición suave al pasar el cursor */
+  object-fit: cover;
+  filter: brightness(1.1);
+  transition: all 0.3s ease-in-out;
 }
 
 .player-card img:hover {
-  filter: brightness(1.2); /* Aumenta el brillo al pasar el cursor */
-  transform: scale(1.05); /* Escala ligeramente la imagen al hacer hover */
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+
+/* Ajustes de tamaño para diferentes resoluciones */
+
+@media (min-width: 1200px) {
+  .player-card {
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .player-card {
+    max-width: 180px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .player-card {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 767px) {
+  .player-card {
+    max-width: 120px;
+  }
 }
 
 /* Ajustes para la disposición de los filtros */
 
 .accordion-flush {
-  width: 150px; /* Ajusta el ancho del filtro de orden */
+  width: 150px;
 }
 
 .form-control {
-  max-width: 300px; /* Limita el ancho máximo del campo de búsqueda */
+  max-width: 300px;
 }
-
 
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 footer {
@@ -57,5 +85,4 @@ footer {
 footer > .container > .row > .col > p {
   color: white;
   margin-bottom: 0 !important;
-  
 }
