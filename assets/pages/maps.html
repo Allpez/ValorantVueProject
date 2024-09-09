@@ -54,7 +54,7 @@
             </nav>
         </header>
         <!------------------------------- Main --------------------------------->
-        <main id="app" class="p-3 flex-grow-1">
+        <main id="app" class="main p-3 flex-grow-1">
             <div class="container">
                 <div class="d-flex flex-row justify-content-center align-items-center mb-3">
                     <div class="accordion accordion-flush col-2" id="accordionFlushExample">
@@ -109,7 +109,6 @@
                                                     class="btn align-self-center text-danger">
                                                     Remove favorites
                                                 </button>
-                                                <button @click="openModal(map)" class="btn">More info</button>
                                             </div>
                                         </div>
                                     </div>
@@ -138,51 +137,10 @@
                                         <button @click="agregarFavorito(map)" class="btn btn-danger">
                                             Add favoritos
                                         </button>
-                                        <button @click="openModal(map)" class="btn">More info</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <!-- Modal con carrusel -->
-                        <div class="container-modal" v-if="modalDetails">
-                            <div class="modal-details">
-                                <button class="close px-2" @click="modalDetails=false">x</button>
-                                <div class="modal-carousel">
-                                    <div id="carouselExampleIndicators" class="carousel slide">
-                                        <div class="carousel-indicators d-flex">
-                                            <button v-for="(image, index) in selectedMapImages" :key="index"
-                                                type="button" :data-bs-target="'#carouselExampleIndicators'"
-                                                :data-bs-slide-to="index" :class="{ active: index === 0 }"
-                                                aria-current="true" :aria-label="'Slide ' + (index + 1)">
-                                            </button>
-                                        </div>
-                                        <div class="carousel-inner  d-flex justify-content-around ">
-                                            <div v-for="(image, index) in selectedMapImages" :key="index"
-                                                :class="['carousel-item', { active: index === 0 }]">
-                                                <img :src="image" class="d-block w-50" :alt="'Image ' + (index + 1)">
-                                            </div>
-                                        </div>
-                                        <button class="carousel-control-prev" type="button"
-                                            data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Previous</span>
-                                        </button>
-                                        <button class="carousel-control-next" type="button"
-                                            data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Next</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="modal-content">
-                                    <p class="text-light">Coordinates: {{ selectedMap.coordinates }}</p>
-                                    <!-- <p class="text-light">Callouts: {{ selectedMap.callouts }}</p> -->
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
