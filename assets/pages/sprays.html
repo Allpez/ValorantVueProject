@@ -145,7 +145,11 @@
                 <div class="container-fluid text-center">
                     <div class="row align-items-center">
                         <div class="contenedor">
-                            <div v-for="info in datosSpraysBK" class="tarjeta">
+                            <div v-if="datosSprays.length == 0">
+                                <h1 class="text-success text-center">No results found.</h1>
+                                <p class="text-success-emphasis text-center">Please try a new search.</p>
+                            </div>
+                            <div v-for="info in datosSprays" class="tarjeta">
                                 <div class="card row">
                                     <img :src="info.displayIcon" class="card-img-top p-2" alt="" />
                                     <div
