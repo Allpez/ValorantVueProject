@@ -44,6 +44,16 @@ const app = createApp({
                 localStorage.setItem('favoritosMaps', JSON.stringify(this.favoritos));
             }
         },
+        toggleFavorito(map) {
+            if (this.isFavorito(map)) {
+                this.quitarFavorito(map);
+            } else {
+                this.agregarFavorito(map);
+            }
+        },
+        isFavorito(map) {
+            return this.favoritos.some(fav => fav.uuid === map.uuid);
+        },
         cambiarOrden(nuevoOrden) {
             this.orden = nuevoOrden;
         }
