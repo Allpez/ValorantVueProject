@@ -22,12 +22,13 @@ const app = createApp({
             this.favoritos = datosLocal;
         }
     },
-    methods: { //objeto con varias funciones o elementos, funciones moduladas
+    methods: {
         traerData(url) {
             fetch(url)
-                .then(response => response.json()).then(info => {
-                    this.maps = info.data; // Asignamos la lista de mapas a this.maps
-                    this.mapsBK = [...info.data]; // Creamos una copia de los datos para los filtros
+                .then(response => response.json())
+                .then(info => {
+                    this.maps = info.data;
+                    this.mapsBK = [...info.data];
                 })
                 .catch(error => {
                     console.error("Error al traer los datos:", error);
