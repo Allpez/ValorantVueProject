@@ -99,10 +99,11 @@ h1 {
 
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 footer {
-    background-color: rgb(1, 1, 1);
+    background-color: rgb(1, 1, 1);    
 }
 
 footer > .container > .row > .col > p {
     color: white;
     margin-bottom: 0 !important;
+    
 }
