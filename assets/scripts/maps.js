@@ -10,9 +10,6 @@ const app = createApp({
             favoritos: [], // Lista de mapas favoritos
             textoBuscar: "", // Texto de búsqueda
             orden: 'asc',  // Orden de los mapas, por defecto ascendente
-            modalDetails: false, //el modalDetails no se mostrara por defecto
-            selectedMap: null, // Mapa seleccionado para detalles
-            selectedMapImages: [] // Imágenes del mapa seleccionado
         };
     },
     created() { //las cosas que se van a ejecutar la primera vez que se levante la pagina al inicio
@@ -49,29 +46,17 @@ const app = createApp({
         },
         cambiarOrden(nuevoOrden) {
             this.orden = nuevoOrden;
-        },
-        openModal(map) {
-            this.selectedMap = map;
-            this.selectedMapImages = [
-                map.displayIcon,
-                map.listViewIcon,
-                map.listViewIconTall,
-                map.splash,
-                map.stylizedBackgroundImage,
-                map.premierBackgroundImage
-            ];
-            this.modalDetails = true;
         }
     },
     computed: { //interacciones de la pagina o dependencias de eventos que se ejecutan directamente
         superFiltro() {
             // Filtrar mapas basados en textoBuscar
-            let primerFiltro = this.mapsBK.filter(map => 
+            let primerFiltro = this.mapsBK.filter(map =>
                 map.displayName.toLowerCase().includes(this.textoBuscar.toLowerCase())
             );
             console.log(primerFiltro);
-            
-            
+
+
             // Ordenar mapas
             return primerFiltro.slice().sort((a, b) => {
                 if (this.orden === 'asc') {
