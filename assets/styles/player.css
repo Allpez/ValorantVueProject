@@ -1,0 +1,121 @@
+/* Estilos personalizados */
+
+body {
+  background-color: #f8f9fa;
+}
+
+/* Header Styles */
+@font-face {
+  font-family: Tungsten-Bold;
+  src: url('./fonts/FontsFree-Net-Tungsten-Bold.ttf');
+}
+
+.nav-link {
+  font-family: Tungsten-Bold;
+}
+
+.nav-link:hover {
+  background-color: rgb(15, 25, 35);
+  color: rgb(236, 232, 225) !important;
+}
+
+.active {
+  border-bottom: 5px solid rgb(255, 70, 85) !important;
+}
+
+/*--------------------------------------- Main Styles -----------------------------------------*/
+
+.player-card {
+  margin-bottom: 15px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 350px; /* Altura mínima para todas las tarjetas */
+  height: 100%; /* Asegura que todas las tarjetas ocupen la misma altura */
+}
+
+.player-card img {
+  width: 100%;
+  height: 150px; /* Altura fija para las imágenes */
+  object-fit: cover;
+  filter: brightness(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.player-card img:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+
+.player-card .card-body {
+  flex-grow: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.player-card .card-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.player-card .btn-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.player-card .btn-group .btn {
+  margin-bottom: 5px;
+}
+
+/* Ajustes de tamaño para diferentes resoluciones */
+
+@media (min-width: 1200px) {
+  .player-card {
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .player-card {
+    max-width: 180px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .player-card {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 767px) {
+  .player-card {
+    max-width: 120px;
+  }
+}
+
+/* Ajustes para la disposición de los filtros */
+
+.accordion-flush {
+  width: 150px;
+}
+
+.form-control {
+  max-width: 300px;
+}
+
+/*--------------------------------------- Footer Styles ---------------------------------------*/
+
+footer {
+  background-color: rgb(1, 1, 1);    
+}
+
+footer > .container > .row > .col > p {
+  color: white;
+  margin-bottom: 0 !important;
+}
