@@ -82,6 +82,7 @@ h2 {
 .tarjetas {
     padding: 20px;
     color: white;
+    background-color: rgb(15, 25, 35);
 }
 .ancor2 {
     text-decoration: none;
