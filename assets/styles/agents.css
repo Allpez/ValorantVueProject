@@ -35,7 +35,65 @@ h1 {
 .barra-buscar {
     background-color: #cecece;
 }
+#app {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
+.contenedor {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
+.tarjeta {
+    width: 300px;
+    height: auto;
+    margin: 20px;
+}
+.tarjeta:hover {
+    transform: scale(1.2);
+    transition-duration: 0.8s;
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.3); 
+    z-index: 10;
+}
+.card {
+    -webkit-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 0 !important;
+}
+.card-text {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+}
+.card-text::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
 
+.card-text::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+.card-text::-webkit-scrollbar-button:increment,
+.card-text::-webkit-scrollbar-button {
+    display: none;
+}
+
+.card-text::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.card-text::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.card-text::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
 .favorite {
     text-decoration: none;
     background-color: rgb(255, 70, 85);

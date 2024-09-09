@@ -53,7 +53,6 @@
                             <li class="nav-item p-2">
                                 <a class="nav-link fs-4" href="./stats.html">Stats</a>
                             </li>
-
                         </ul>
                     </div>
                 </div>
@@ -61,67 +60,53 @@
         </header>
         <!------------------------------- Main --------------------------------->
         <main id="app">
-            <div class="container"></div>
-            <div class="row align-items-center">
-                <div class="col py-2">
-                    <h1 class="text-center">Agents</h1>
+
+
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div class="col py-2">
+                        <h1>Agents</h1>
+                    </div>
                 </div>
             </div>
 
             <div class="div-filtro-buscar container-fluid text-center">
                 <div class="row align-items-center barra-buscar">
-                    <div class="col-sm-12 col-md-3 col-xl-4 p-2" id="role">
-                        <div>
-                            <button type="button" class="favorite">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-heart-fill" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
-                                </svg>
-                                Favorite
-                            </button>
-                        </div>
-                    </div>
-                    <div id="check" class="form-check form-switch d-flex">
-                        <div v-for="role in categories" :key="role.uuid" class="form-check">
-                            <input class="form-check-input" type="checkbox" :id="role.displayName"
-                                :value="role.displayName" v-model="categorySelected">
-                            <label class="form-check-label" :for="role.displayName">{{role.displayName}}</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-xl-4 align-items-center p-2">
+                    <div class="col-sm-12 align-items-center p-2">
+                        {{superFiltro}}
                         <form class="d-flex" role="search" id="search">
-                            <input v-model="textoBuscar" class="form-control me-2" type="search" aria-label="Search"
-                                placeholder="search" />
+                            <input
+                                v-model="textoBuscar"
+                                class="form-control me-2"
+                                type="search"
+                                aria-label="Search"
+                                placeholder="Buscador"
+                            />
                         </form>
                     </div>
-
                 </div>
             </div>
             
-
-            <div id="cards" class="d-flex flex-wrap justify-content-center mt-3">
-
-
-                <div class="row">
-                    <div class="col-md-4" v-for="agent in agents" :key="agent.uuid">
-                        <div class="card mb-4">
-                            <img :src="agent.displayIcon" class="card-img-top" :alt="agent.displayName">
+            <div class="container-fluid text-center">
+                <div class="row align-items-center">
+                    <div class="contenedor">
+                        <div v-if="agents.length == 0">
+                            <h1 class="text-success text-center">No results found.</h1>
+                            <p class="text-success-emphasis text-center">Please try a new search.</p>
+                        </div>
+                        <div v-for="agent in agents" class="tarjeta">
+                            <div class="card row">
+                                <img :src="agent.displayIcon" class="card-img-top" :alt="agent.displayName">
                             <div class="card-body">
                                 <h5 class="card-title">{{ agent.displayName }}</h5>
                                 <p class="card-text">{{ agent.description }}</p>
-                                <p class="card-text"><small class="text-muted">{{ agent.role.displayName }}</small></p>
+                                
+                            </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
-
-
-
         </main>
         <!------------------------------- Footer ------------------------------->
         <footer>
