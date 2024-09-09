@@ -50,4 +50,12 @@ h1 {
     background-color: rgb(236, 232, 225);
     color: rgb(15, 25, 35);
 }
+footer {
+    background-color: rgb(1, 1, 1);
+}
+
+footer > .container > .row > .col > p {
+    color: white;
+    margin-bottom: 0 !important;
+}
 
