@@ -22,52 +22,32 @@
             <header>
                 <nav class="navbar navbar-expand-lg bg-body-tertiary p-2">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="../../index.html"
-                            ><img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Valorant_logo_-_pink_color_version.svg"
-                                width="150"
-                                alt="amazing_brand"/></a>
-                        <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav"
-                            aria-controls="navbarNav"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
+                        <a class="navbar-brand" href="/index.html">
+                            <img src="../image/valorant-logo.png" width="200" alt="amazing_brand" />
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div
-                            class="collapse navbar-collapse justify-content-end text-center"
-                            id="navbarNav"
-                        >
+                        <div class="collapse navbar-collapse justify-content-end text-center" id="navbarNav">
                             <ul class="navbar-nav p-2">
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../../index.html" >Home</a> 
+                                    <a class="nav-link fs-4" aria-current="page" href="/index.html">Home</a>
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link active fs-4" aria-current="page" href="#"
-                                        >Agents</a
-                                    >
+                                    <a class="nav-link active fs-4" href="#">Agents</a>
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../pages/maps.html"
-                                        >Maps</a
-                                    >
+                                    <a class="nav-link fs-4" href="./maps.html">Maps</a>
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../pages/playerCards.html"
-                                        >Player Cards</a
-                                    >
+                                    <a class="nav-link fs-4" href="./playerCards.html">Player</a>
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="..pages/sprays.html"
-                                        >Sprays</a
-                                    >
+                                    <a class="nav-link fs-4" href="./sprays.html">Sprays</a>
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../pages/weapons.html"
-                                        >Weapons</a>
+                                    <a class="nav-link fs-4" href="./Weapons.html">Weapons</a>
                                 </li>
                             </ul>
                         </div>
@@ -75,7 +55,7 @@
                 </nav>
             </header>
             <!------------------------------- Main --------------------------------->
-            <main>
+            <main id="app">
                 <div class="container-fluid text-center">
                     <div class="row d-flex flex-column bg-black">
                         <div class="col align-self-center p-0 video">
@@ -106,12 +86,14 @@
         </div>
         <!------ Librerias JavaScrit ------>
         <!-- JavaScrit Propios -->
-        <script src="../scripts/agents.js"></script>
+        <script src="../scripts/agents.js" type="module"></script>
         <!-- JavaScrit Bootstrap -->
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"
         ></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </body>
     </body>
 </html>
