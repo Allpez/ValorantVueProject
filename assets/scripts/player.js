@@ -5,61 +5,61 @@ const { createApp } = Vue;
 const app = createApp({
     data() {
         return {
-            playerCards: [], // Lista de tarjetas de jugador
-            playerCardsBK: [], // Backup Lista de tarjetas de jugador
-            favoritos: [], // Lista de tarjetas favoritas
-            textoBuscar: "", // Texto de búsqueda
-            orden: 'asc',  // Orden de las tarjetas, por defecto ascendente
+            playerCards: [], 
+            playerCardsBK: [],
+            favorites: [], 
+            searchText: "",
+            order: 'asc',  
         };
     },
     created() {
-        this.traerData(urlPlayerCards);
-        let datosLocal = JSON.parse(localStorage.getItem('favoritosPlayerCards'));
-        if (datosLocal && Array.isArray(datosLocal)) {
-            this.favoritos = datosLocal;
+        this.fetchData(urlPlayerCards);
+        let localData = JSON.parse(localStorage.getItem('favoritePlayerCards'));
+        if (localData && Array.isArray(localData)) {
+            this.favorites = localData;
         }
     },
     methods: {
-        traerData(url) {
+        fetchData(url) {
             fetch(url)
                 .then(response => response.json())
                 .then(info => {
-                    this.playerCards = info.data; // Asignar la lista de tarjetas a this.playerCards
-                    this.playerCardsBK = [...info.data]; // Crear una copia de los datos para los filtros y otras operaciones
-                    console.log(this.playerCardsBK); // Mostrar los datos en la consola para verificar
+                    this.playerCards = info.data; // Assign the list of cards to this.playerCards
+                    this.playerCardsBK = [...info.data]; // Create a copy of the data for filters and other operations
+                    console.log(this.playerCardsBK); // Display the data in the console to verify
                 })
                 .catch(error => {
-                    console.error("Error al traer los datos:", error);
+                    console.error("Error fetching data:", error);
                 });
         },
-        agregarFavorito(card) {
-            if (!this.favoritos.some(fav => fav.uuid === card.uuid)) {
-                this.favoritos.push(card);
-                localStorage.setItem('favoritosPlayerCards', JSON.stringify(this.favoritos));
+        addFavorite(card) {
+            if (!this.favorites.some(fav => fav.uuid === card.uuid)) {
+                this.favorites.push(card);
+                localStorage.setItem('favoritePlayerCards', JSON.stringify(this.favorites));
             }
         },
-        quitarFavorito(card) {
-            const index = this.favoritos.findIndex(fav => fav.uuid === card.uuid);
+        removeFavorite(card) {
+            const index = this.favorites.findIndex(fav => fav.uuid === card.uuid);
             if (index !== -1) {
-                this.favoritos.splice(index, 1);
-                localStorage.setItem('favoritosPlayerCards', JSON.stringify(this.favoritos));
+                this.favorites.splice(index, 1);
+                localStorage.setItem('favoritePlayerCards', JSON.stringify(this.favorites));
             }
         },
-        cambiarOrden(nuevoOrden) {
-            this.orden = nuevoOrden;
+        changeOrder(newOrder) {
+            this.order = newOrder;
         }
     },
     computed: {
-        superFiltro() {
-            // Filtrar tarjetas basadas en textoBuscar
-            let primerFiltro = this.playerCardsBK.filter(card => 
-                card.displayName.toLowerCase().includes(this.textoBuscar.toLowerCase())
+        superFilter() {
+            // Filter cards based on searchText
+            let firstFilter = this.playerCardsBK.filter(card => 
+                card.displayName.toLowerCase().includes(this.searchText.toLowerCase())
             );
-            console.log(primerFiltro);
+            console.log(firstFilter);
             
-            // Ordenar tarjetas
-            return primerFiltro.slice().sort((a, b) => {
-                if (this.orden === 'asc') {
+            // Sort cards
+            return firstFilter.slice().sort((a, b) => {
+                if (this.order === 'asc') {
                     return a.displayName.localeCompare(b.displayName);
                 } else {
                     return b.displayName.localeCompare(a.displayName);
