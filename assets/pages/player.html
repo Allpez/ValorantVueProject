@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <div id="cards" class="container">
-                   
+                    <!-- Modal for Favorites -->
                     <div class="modal fade" id="favoritesModal" tabindex="-1" aria-labelledby="favoritesModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -102,9 +102,7 @@
                                                 <button @click="removeFavorite(card)" class="btn align-self-center text-danger">
                                                     Remove from favorites
                                                 </button>
-                                                <div class="">
-                                                    <a :href="'details.html?id=' + card.id" class="btn">More info</a>
-                                                </div>
+                                                <button @click="showDetails(card)" class="btn btn-primary">More info</button>
                                             </div>
                                         </div>
                                     </div>
@@ -118,7 +116,41 @@
                             </div>
                         </div>
                     </div>
-        
+
+                    <!-- Modal for Card Details -->
+                    <div class="modal fade" id="cardDetailsModal" tabindex="-1" aria-labelledby="cardDetailsModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="cardDetailsModalLabel">{{ selectedCard?.displayName }}</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="d-flex justify-content-center">
+                                        <img :src="selectedCard?.largeArt" class="img-fluid" alt="card_image">
+                                    </div>
+                                    <hr>
+                                    <h6>Card Information</h6>
+                                    <p><strong>Name:</strong> {{ selectedCard?.displayName }}</p>
+                                    <p><strong>Localized Names:</strong> 
+                                        <ul>
+                                            <li v-for="(name, lang) in selectedCard?.localizedNames" :key="lang">
+                                                {{ lang }}: {{ name }}
+                                            </li>
+                                        </ul>
+                                    </p>
+                                    <p><strong>Category:</strong> {{ selectedCard?.category }}</p>
+                                    <p><strong>Asset Path:</strong> {{ selectedCard?.assetPath }}</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div v-if="superFilter.length === 0">
                         <h1 class="text-success text-center">No results found.</h1>
                         <p class="text-success-emphasis">Please try a new search.</p>
@@ -133,7 +165,7 @@
                                         <button @click="addFavorite(card)" class="btn btn-danger">
                                             Add to Favorites
                                         </button>
-                                        <a :href="'details.html?id=' + card.id" class="btn btn-primary">More info</a>
+                                        <button @click="showDetails(card)" class="btn btn-primary">More info</button>
                                     </div>
                                 </div>
                             </div>
@@ -143,25 +175,23 @@
             </div>
         </main>
         
-        
         <footer>
             <div class="container text-center">
                 <div class="row align-items-center">
-                    <div class="col align-self-center p-2">
-                        <p>
-                            © Copyright 2024 - Challenger Valorant - Mind Hub - All Rights
-                            Reserved.
-                        </p>
+                    <div class="col-md-12">
+                        <div class="d-flex justify-content-center">
+                            <img src="../image/valorant-logo.png" width="200" alt="valorant_logo">
+                        </div>
+                        <p class="text-center">© 2024 Valorant API Demo - All rights reserved.</p>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
-   
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="../scripts/player.js"></script>
 </body>
 
