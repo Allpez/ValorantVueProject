@@ -28,7 +28,7 @@ const app = createApp({
                 .then((response) => response.json())
                 .then((info) => {
                     this.datosSprays = info.data
-                    this.datosSpraysBK = this.datosSprays
+                    this.datosSpraysBK = info.data
                 })
         },
     },
@@ -38,7 +38,7 @@ const app = createApp({
                 e.displayName.toLowerCase().includes(this.textoBuscar.toLowerCase())
             )
 
-            this.datosSpraysBK = primerFiltro
+            this.datosSprays = primerFiltro
         },
     },
 }).mount('#app')
