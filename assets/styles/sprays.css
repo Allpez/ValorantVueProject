@@ -32,10 +32,12 @@
 /*--------------------------------------- Main Styles -----------------------------------------*/
 main {
     flex-grow: 1;
+    background-color: rgb(15, 25, 35);
 }
 h1 {
     font-family: Tungsten-Bold;
     font-size: 72px !important;
+    color: white !important;
 }
 .barra-buscar {
     background-color: #cecece;
@@ -67,14 +69,20 @@ h1 {
     justify-content: center !important;
 }
 .tarjeta {
-    width: 120px;
+    width: 180px;
     height: auto;
     margin: 20px;
 }
+.tarjeta:hover {
+    transform: scale(1.3);
+    transition-duration: 0.8s;
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.3); 
+    z-index: 10;
+}
 .card {
-    -webkit-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(110, 110, 110, 0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(110, 110, 110, 0.75);
+    box-shadow: 5px 5px 5px 0px rgba(110, 110, 110, 0.75);
     border-radius: 0 !important;
 }
 .btn{
