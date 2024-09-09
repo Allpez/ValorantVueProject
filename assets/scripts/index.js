@@ -69,7 +69,7 @@ const app = createApp({
                 .then((info) => {
                     this.dataAgent = info.data
 
-                    for (let i = 0; i < 5; i++) {
+                    for (let i = 0; i < 4; i++) {
                         let aleatorio =
                             this.dataAgent[Math.floor(Math.random() * this.dataAgent.length)]
 
@@ -97,7 +97,7 @@ const app = createApp({
                 .then((info) => {
                     this.dataPlayer = info.data
 
-                    for (let i = 0; i < 5; i++) {
+                    for (let i = 0; i < 4; i++) {
                         let aleatorio =
                             this.dataPlayer[Math.floor(Math.random() * this.dataPlayer.length)]
 
@@ -125,7 +125,7 @@ const app = createApp({
                 .then((info) => {
                     this.dataMaps = info.data
 
-                    for (let i = 0; i < 5; i++) {
+                    for (let i = 0; i < 4; i++) {
                         let aleatorio =
                             this.dataMaps[Math.floor(Math.random() * this.dataMaps.length)]
                         if (aleatorio.listViewIconTall === null) {
@@ -152,7 +152,7 @@ const app = createApp({
                 .then((info) => {
                     this.dataSpray = info.data
 
-                    for (let i = 0; i < 5; i++) {
+                    for (let i = 0; i < 4; i++) {
                         let aleatorio =
                             this.dataSpray[Math.floor(Math.random() * this.dataSpray.length)]
                         if (aleatorio.fullTransparentIcon === null) {
