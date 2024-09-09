@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div class="layout">
+    <div class="d-flex min-vh-100 flex-column layout">
         <!------------------------------- Header ------------------------------->
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary p-2">
@@ -83,7 +83,7 @@
             </nav>
         </header>
         <!------------------------------- Main --------------------------------->
-        <main id="app" class="p-3">
+        <main id="app" class="p-3 flex-grow-1">
             <div class="container">
                 <div class="d-flex flex-row justify-content-center align-items-center mb-3">
                     <div class="accordion accordion-flush col-2" id="accordionFlushExample">
@@ -92,7 +92,7 @@
                                 <button class="accordion-button collapsed mx-2" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
-                                    Orden
+                                    Order
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
@@ -111,7 +111,7 @@
                     <div class="col-1 d-flex align-items-center">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#favoritosModal">
-                            Favoritos
+                            Favorites
                         </button>
                     </div>
                 </div>
@@ -121,10 +121,10 @@
                         aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="favoritosModalLabel">Favoritos</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                <div class="modal-header justify-content-center">
+                                    <h5 class="modal-title" id="favoritosModalLabel">Favorites</h5>
+                                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button> -->
                                 </div>
                                 <div class="modal-body">
                                     <div class="d-flex flex-wrap border-2 bg-light p-2">
@@ -136,7 +136,7 @@
                                                 <h6 class="card-title">{{ map.displayName }}</h6>
                                                 <button @click="quitarFavorito(map)"
                                                     class="btn align-self-center text-danger">
-                                                    Quitar de favoritos
+                                                    Remove favorites
                                                 </button>
                                                 <button @click="openModal(map)" class="btn">More info</button>
                                             </div>
@@ -159,13 +159,13 @@
                     </div>
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                         <div v-for="map in superFiltro" :key="map.uuid" class="col">
-                            <div class="card">
+                            <div class="card card_a">
                                 <img :src="map.splash" class="card-img-top" alt="imagen_mapa">
                                 <div class="card-body">
                                     <h6 class="card-title">{{ map.displayName }}</h6>
                                     <div class="d-flex justify-content-between">
                                         <button @click="agregarFavorito(map)" class="btn btn-danger">
-                                            Agregar a favoritos
+                                            Add favoritos
                                         </button>
                                         <button @click="openModal(map)" class="btn">More info</button>
                                     </div>

@@ -31,6 +31,13 @@
     height: 100%;
 }
 
+.card_a:hover {
+    box-shadow: 0 0 3px 3px rgba(18, 145, 219, 0.7);
+    transform: scale(1.1);
+    transition-duration: 1.1s;
+    z-index: 1;
+}
+
 .modal-details {
     padding: 10px;
     width: 80%;
