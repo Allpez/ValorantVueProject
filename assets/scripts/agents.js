@@ -26,9 +26,15 @@ const app= createApp({
             fetch(url).then(response => response.json()).then(data =>{
                 console.log(data);
                 
-                this.agents = data.data;    
+                this.agents = data.data; 
+                console.log(this.agents);
+                
                 this.agentsBk =[...data.data];
+                
                 this.roles = Array.from(new Set(this.agents.map((agent) => agent.role)))
+                console.log(this.roles);
+                
+                
             })
         }
 
