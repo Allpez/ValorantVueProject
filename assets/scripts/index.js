@@ -49,6 +49,8 @@ const app = createApp({
 
             dataWeapon: [],
             arrayWeapon: [],
+
+            resultfiltroCategory: [],
         }
     },
     created() {
@@ -66,31 +68,22 @@ const app = createApp({
                 .then((response) => response.json())
                 .then((info) => {
                     this.dataAgent = info.data
-                    //console.log(this.dataAgent)
 
-                    let aleatorio1 =
-                        this.dataAgent[Math.floor(Math.random() * this.dataAgent.length)]
-                    //console.log(aleatorio1)
-                    let aleatorio2 =
-                        this.dataAgent[Math.floor(Math.random() * this.dataAgent.length)]
-                    //console.log(aleatorio2)
-                    let aleatorio3 =
-                        this.dataAgent[Math.floor(Math.random() * this.dataAgent.length)]
-                    //console.log(aleatorio3)
-                    let aleatorio4 =
-                        this.dataAgent[Math.floor(Math.random() * this.dataAgent.length)]
-                    //console.log(aleatorio4)
-                    let aleatorio5 =
-                        this.dataAgent[Math.floor(Math.random() * this.dataAgent.length)]
-                    //console.log(aleatorio5)
+                    for (let i = 0; i < 5; i++) {
+                        let aleatorio =
+                            this.dataAgent[Math.floor(Math.random() * this.dataAgent.length)]
 
-                    this.arrayAgent = this.arrayAgent.concat(
-                        aleatorio1,
-                        aleatorio2,
-                        aleatorio3,
-                        aleatorio4,
-                        aleatorio5
-                    )
+                        this.arrayAgent = this.arrayAgent.concat(aleatorio)
+
+                        this.arrayAgent = this.arrayAgent.reduce((acc, item) => {
+                            if (!acc.includes(item)) {
+                                acc.push(item)
+                            } else {
+                                i = i - 1
+                            }
+                            return acc
+                        }, [])
+                    }
                     console.log(this.arrayAgent)
                 })
         },
@@ -99,31 +92,22 @@ const app = createApp({
                 .then((response) => response.json())
                 .then((info) => {
                     this.dataPlayer = info.data
-                    //console.log(this.dataPlayer)
 
-                    let aleatorio1 =
-                        this.dataPlayer[Math.floor(Math.random() * this.dataPlayer.length)]
-                    console.log(aleatorio1)
-                    let aleatorio2 =
-                        this.dataPlayer[Math.floor(Math.random() * this.dataPlayer.length)]
-                    console.log(aleatorio2)
-                    let aleatorio3 =
-                        this.dataPlayer[Math.floor(Math.random() * this.dataPlayer.length)]
-                    console.log(aleatorio3)
-                    let aleatorio4 =
-                        this.dataPlayer[Math.floor(Math.random() * this.dataPlayer.length)]
-                    console.log(aleatorio4)
-                    let aleatorio5 =
-                        this.dataPlayer[Math.floor(Math.random() * this.dataPlayer.length)]
-                    console.log(aleatorio5)
+                    for (let i = 0; i < 5; i++) {
+                        let aleatorio =
+                            this.dataPlayer[Math.floor(Math.random() * this.dataPlayer.length)]
 
-                    this.arrayPlayer = this.arrayPlayer.concat(
-                        aleatorio1,
-                        aleatorio2,
-                        aleatorio3,
-                        aleatorio4,
-                        aleatorio5
-                    )
+                        this.arrayPlayer = this.arrayPlayer.concat(aleatorio)
+
+                        this.arrayPlayer = this.arrayPlayer.reduce((acc, item) => {
+                            if (!acc.includes(item)) {
+                                acc.push(item)
+                            } else {
+                                i = i - 1
+                            }
+                            return acc
+                        }, [])
+                    }
                     console.log(this.arrayPlayer)
                 })
         },
@@ -132,26 +116,22 @@ const app = createApp({
                 .then((response) => response.json())
                 .then((info) => {
                     this.dataMaps = info.data
-                    //console.log(this.dataMaps)
 
-                    let aleatorio1 = this.dataMaps[Math.floor(Math.random() * this.dataMaps.length)]
-                    console.log(aleatorio1)
-                    let aleatorio2 = this.dataMaps[Math.floor(Math.random() * this.dataMaps.length)]
-                    console.log(aleatorio2)
-                    let aleatorio3 = this.dataMaps[Math.floor(Math.random() * this.dataMaps.length)]
-                    console.log(aleatorio3)
-                    let aleatorio4 = this.dataMaps[Math.floor(Math.random() * this.dataMaps.length)]
-                    console.log(aleatorio4)
-                    let aleatorio5 = this.dataMaps[Math.floor(Math.random() * this.dataMaps.length)]
-                    console.log(aleatorio5)
+                    for (let i = 0; i < 5; i++) {
+                        let aleatorio =
+                            this.dataMaps[Math.floor(Math.random() * this.dataMaps.length)]
 
-                    this.arrayMaps = this.arrayMaps.concat(
-                        aleatorio1,
-                        aleatorio2,
-                        aleatorio3,
-                        aleatorio4,
-                        aleatorio5
-                    )
+                        this.arrayMaps = this.arrayMaps.concat(aleatorio)
+
+                        this.arrayMaps = this.arrayMaps.reduce((acc, item) => {
+                            if (!acc.includes(item)) {
+                                acc.push(item)
+                            } else {
+                                i = i - 1
+                            }
+                            return acc
+                        }, [])
+                    }
                     console.log(this.arrayMaps)
                 })
         },
@@ -160,26 +140,22 @@ const app = createApp({
                 .then((response) => response.json())
                 .then((info) => {
                     this.dataSpray = info.data
-                    //console.log(this.dataSpray)
 
-                    let aleatorio1 = this.dataSpray[Math.floor(Math.random() * this.dataSpray.length)]
-                    console.log(aleatorio1)
-                    let aleatorio2 = this.dataSpray[Math.floor(Math.random() * this.dataSpray.length)]
-                    console.log(aleatorio2)
-                    let aleatorio3 = this.dataSpray[Math.floor(Math.random() * this.dataSpray.length)]
-                    console.log(aleatorio3)
-                    let aleatorio4 = this.dataSpray[Math.floor(Math.random() * this.dataSpray.length)]
-                    console.log(aleatorio4)
-                    let aleatorio5 = this.dataSpray[Math.floor(Math.random() * this.dataSpray.length)]
-                    console.log(aleatorio5)
+                    for (let i = 0; i < 5; i++) {
+                        let aleatorio =
+                            this.dataSpray[Math.floor(Math.random() * this.dataSpray.length)]
 
-                    this.arraySpray = this.arraySpray.concat(
-                        aleatorio1,
-                        aleatorio2,
-                        aleatorio3,
-                        aleatorio4,
-                        aleatorio5
-                    )
+                        this.arraySpray = this.arraySpray.concat(aleatorio)
+
+                        this.arraySpray = this.arraySpray.reduce((acc, item) => {
+                            if (!acc.includes(item)) {
+                                acc.push(item)
+                            } else {
+                                i = i - 1
+                            }
+                            return acc
+                        }, [])
+                    }
                     console.log(this.arraySpray)
                 })
         },
@@ -188,26 +164,22 @@ const app = createApp({
                 .then((response) => response.json())
                 .then((info) => {
                     this.dataWeapon = info.data
-                    //console.log(this.dataWeapon)
 
-                    let aleatorio1 = this.dataWeapon[Math.floor(Math.random() * this.dataWeapon.length)]
-                    console.log(aleatorio1)
-                    let aleatorio2 = this.dataWeapon[Math.floor(Math.random() * this.dataWeapon.length)]
-                    console.log(aleatorio2)
-                    let aleatorio3 = this.dataWeapon[Math.floor(Math.random() * this.dataWeapon.length)]
-                    console.log(aleatorio3)
-                    let aleatorio4 = this.dataWeapon[Math.floor(Math.random() * this.dataWeapon.length)]
-                    console.log(aleatorio4)
-                    let aleatorio5 = this.dataWeapon[Math.floor(Math.random() * this.dataWeapon.length)]
-                    console.log(aleatorio5)
+                    for (let i = 0; i < 5; i++) {
+                        let aleatorio =
+                            this.dataWeapon[Math.floor(Math.random() * this.dataWeapon.length)]
 
-                    this.arrayWeapon = this.arrayWeapon.concat(
-                        aleatorio1,
-                        aleatorio2,
-                        aleatorio3,
-                        aleatorio4,
-                        aleatorio5
-                    )
+                        this.arrayWeapon = this.arrayWeapon.concat(aleatorio)
+
+                        this.arrayWeapon = this.arrayWeapon.reduce((acc, item) => {
+                            if (!acc.includes(item)) {
+                                acc.push(item)
+                            } else {
+                                i = i - 1
+                            }
+                            return acc
+                        }, [])
+                    }
                     console.log(this.arrayWeapon)
                 })
         },

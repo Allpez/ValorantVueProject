@@ -235,8 +235,8 @@ h2 {
 }
 
 .box-image:hover > img {
-    width: 100%;
-    height: 100%;
+    width: 350px;
+   
 }
 
 .favorite {
@@ -267,18 +267,38 @@ footer > .container > .row > .col > p {
 @media screen and (min-width: 768px) {
     /*-------------------------- Header Styles --------------------------*/
     /*-------------------------- Main Styles ----------------------------*/
+    .container-car {
+        width: 98px;
+        height: 200px;
+    }
+    .box > span {
+        font-size: 20px;
+    }
+    .box-image > span {
+        font-size: 20px;
+    }
     /*-------------------------- Footer Styles --------------------------*/
 }
 /*------------------------------------------- 1024px -------------------------------------------*/
 @media screen and (min-width: 1024px) {
     /*-------------------------- Header Styles --------------------------*/
     /*-------------------------- Main Styles ----------------------------*/
+    .container-car {
+        width: 110px;
+        height: 300px;
+
+    }
     /*-------------------------- Footer Styles --------------------------*/
 }
 /*------------------------------------------- 1440px -------------------------------------------*/
 @media screen and (min-width: 1440px) {
     /*-------------------------- Header Styles --------------------------*/
     /*-------------------------- Main Styles ----------------------------*/
+    .container-car {
+        width: 250px;
+        height: 380px;
+
+    }
     .parrafo-intro {
         margin-left: 200px;
         margin-right: 200px;
