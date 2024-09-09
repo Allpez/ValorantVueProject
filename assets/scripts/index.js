@@ -73,16 +73,20 @@ const app = createApp({
                         let aleatorio =
                             this.dataAgent[Math.floor(Math.random() * this.dataAgent.length)]
 
-                        this.arrayAgent = this.arrayAgent.concat(aleatorio)
+                        if (aleatorio.fullPortrait === null) {
+                            i = i - 1
+                        } else {
+                            this.arrayAgent = this.arrayAgent.concat(aleatorio)
 
-                        this.arrayAgent = this.arrayAgent.reduce((acc, item) => {
-                            if (!acc.includes(item)) {
-                                acc.push(item)
-                            } else {
-                                i = i - 1
-                            }
-                            return acc
-                        }, [])
+                            this.arrayAgent = this.arrayAgent.reduce((acc, item) => {
+                                if (!acc.includes(item)) {
+                                    acc.push(item)
+                                } else {
+                                    i = i - 1
+                                }
+                                return acc
+                            }, [])
+                        }
                     }
                     console.log(this.arrayAgent)
                 })
@@ -97,16 +101,20 @@ const app = createApp({
                         let aleatorio =
                             this.dataPlayer[Math.floor(Math.random() * this.dataPlayer.length)]
 
-                        this.arrayPlayer = this.arrayPlayer.concat(aleatorio)
+                        if (aleatorio.largeArt === null) {
+                            i = i - 1
+                        } else {
+                            this.arrayPlayer = this.arrayPlayer.concat(aleatorio)
 
-                        this.arrayPlayer = this.arrayPlayer.reduce((acc, item) => {
-                            if (!acc.includes(item)) {
-                                acc.push(item)
-                            } else {
-                                i = i - 1
-                            }
-                            return acc
-                        }, [])
+                            this.arrayPlayer = this.arrayPlayer.reduce((acc, item) => {
+                                if (!acc.includes(item)) {
+                                    acc.push(item)
+                                } else {
+                                    i = i - 1
+                                }
+                                return acc
+                            }, [])
+                        }
                     }
                     console.log(this.arrayPlayer)
                 })
@@ -120,17 +128,20 @@ const app = createApp({
                     for (let i = 0; i < 5; i++) {
                         let aleatorio =
                             this.dataMaps[Math.floor(Math.random() * this.dataMaps.length)]
+                        if (aleatorio.listViewIconTall === null) {
+                            i = i - 1
+                        } else {
+                            this.arrayMaps = this.arrayMaps.concat(aleatorio)
 
-                        this.arrayMaps = this.arrayMaps.concat(aleatorio)
-
-                        this.arrayMaps = this.arrayMaps.reduce((acc, item) => {
-                            if (!acc.includes(item)) {
-                                acc.push(item)
-                            } else {
-                                i = i - 1
-                            }
-                            return acc
-                        }, [])
+                            this.arrayMaps = this.arrayMaps.reduce((acc, item) => {
+                                if (!acc.includes(item)) {
+                                    acc.push(item)
+                                } else {
+                                    i = i - 1
+                                }
+                                return acc
+                            }, [])
+                        }
                     }
                     console.log(this.arrayMaps)
                 })
@@ -144,17 +155,20 @@ const app = createApp({
                     for (let i = 0; i < 5; i++) {
                         let aleatorio =
                             this.dataSpray[Math.floor(Math.random() * this.dataSpray.length)]
+                        if (aleatorio.fullTransparentIcon === null) {
+                            i = i - 1
+                        } else {
+                            this.arraySpray = this.arraySpray.concat(aleatorio)
 
-                        this.arraySpray = this.arraySpray.concat(aleatorio)
-
-                        this.arraySpray = this.arraySpray.reduce((acc, item) => {
-                            if (!acc.includes(item)) {
-                                acc.push(item)
-                            } else {
-                                i = i - 1
-                            }
-                            return acc
-                        }, [])
+                            this.arraySpray = this.arraySpray.reduce((acc, item) => {
+                                if (!acc.includes(item)) {
+                                    acc.push(item)
+                                } else {
+                                    i = i - 1
+                                }
+                                return acc
+                            }, [])
+                        }
                     }
                     console.log(this.arraySpray)
                 })
@@ -165,20 +179,23 @@ const app = createApp({
                 .then((info) => {
                     this.dataWeapon = info.data
 
-                    for (let i = 0; i < 5; i++) {
+                    for (let i = 0; i < 3; i++) {
                         let aleatorio =
                             this.dataWeapon[Math.floor(Math.random() * this.dataWeapon.length)]
+                        if (aleatorio.displayIcon === null) {
+                            i = i - 1
+                        } else {
+                            this.arrayWeapon = this.arrayWeapon.concat(aleatorio)
 
-                        this.arrayWeapon = this.arrayWeapon.concat(aleatorio)
-
-                        this.arrayWeapon = this.arrayWeapon.reduce((acc, item) => {
-                            if (!acc.includes(item)) {
-                                acc.push(item)
-                            } else {
-                                i = i - 1
-                            }
-                            return acc
-                        }, [])
+                            this.arrayWeapon = this.arrayWeapon.reduce((acc, item) => {
+                                if (!acc.includes(item)) {
+                                    acc.push(item)
+                                } else {
+                                    i = i - 1
+                                }
+                                return acc
+                            }, [])
+                        }
                     }
                     console.log(this.arrayWeapon)
                 })
