@@ -1,40 +1,70 @@
-const apiUrl = 'https://valorant-api.com/v1/agents';
+let urlPlayerCards = "https://valorant-api.com/v1/playercards";
 
-// Función para obtener datos de la API
-function fetchPlayers() {
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-      
-      const players = data.data;
+const { createApp } = Vue;
 
-      // Selecciona el contenedor de las tarjetas
-      const playerContainer = document.getElementById('player-container');
-
-      // Limpia el contenedor 
-      playerContainer.innerHTML = '';
-
-      players.forEach(player => {
-        const card = document.createElement('div');
-        card.classList.add('col-md-4');
-        card.innerHTML = `
-          <div class="card">
-            <img src="${player.fullPortrait}" class="card-img-top" alt="${player.displayName}">
-            <div class="card-body">
-              <h5 class="card-title">${player.displayName}</h5>
-              <p class="card-text">Role: ${player.role.displayName}</p>
-              <p class="card-text">Description: ${player.description}</p>
-              <button class="btn btn-primary">View Details</button>
-            </div>
-          </div>
-        `;
-        playerContainer.appendChild(card);
-      });
-    })
-    .catch(error => {
-      console.error('Error fetching players:', error);
-    });
-}
-
-
-fetchPlayers();
+const app = createApp({
+    data() {
+        return {
+            playerCards: [], // Lista de tarjetas de jugador
+            playerCardsBK: [], // Backup Lista de tarjetas de jugador
+            favoritos: [], // Lista de tarjetas favoritas
+            textoBuscar: "", // Texto de búsqueda
+            orden: 'asc',  // Orden de las tarjetas, por defecto ascendente
+        };
+    },
+    created() {
+        this.traerData(urlPlayerCards);
+        let datosLocal = JSON.parse(localStorage.getItem('favoritosPlayerCards'));
+        if (datosLocal && Array.isArray(datosLocal)) {
+            this.favoritos = datosLocal;
+        }
+    },
+    methods: {
+        traerData(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(info => {
+                    this.playerCards = info.data; // Asignar la lista de tarjetas a this.playerCards
+                    this.playerCardsBK = [...info.data]; // Crear una copia de los datos para los filtros y otras operaciones
+                    console.log(this.playerCardsBK); // Mostrar los datos en la consola para verificar
+                })
+                .catch(error => {
+                    console.error("Error al traer los datos:", error);
+                });
+        },
+        agregarFavorito(card) {
+            if (!this.favoritos.some(fav => fav.uuid === card.uuid)) {
+                this.favoritos.push(card);
+                localStorage.setItem('favoritosPlayerCards', JSON.stringify(this.favoritos));
+            }
+        },
+        quitarFavorito(card) {
+            const index = this.favoritos.findIndex(fav => fav.uuid === card.uuid);
+            if (index !== -1) {
+                this.favoritos.splice(index, 1);
+                localStorage.setItem('favoritosPlayerCards', JSON.stringify(this.favoritos));
+            }
+        },
+        cambiarOrden(nuevoOrden) {
+            this.orden = nuevoOrden;
+        }
+    },
+    computed: {
+        superFiltro() {
+            // Filtrar tarjetas basadas en textoBuscar
+            let primerFiltro = this.playerCardsBK.filter(card => 
+                card.displayName.toLowerCase().includes(this.textoBuscar.toLowerCase())
+            );
+            console.log(primerFiltro);
+            
+            // Ordenar tarjetas
+            return primerFiltro.slice().sort((a, b) => {
+                if (this.orden === 'asc') {
+                    return a.displayName.localeCompare(b.displayName);
+                } else {
+                    return b.displayName.localeCompare(a.displayName);
+                }
+            });
+        }
+    }
+}).mount('#app');

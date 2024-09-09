@@ -1,14 +1,32 @@
-/* Estilos personalizados si es necesario */
+/* Estilos personalizados */
+
 body {
-    background-color: #f8f9fa;
-  }
-  
-  .player-card {
-    margin-bottom: 20px;
-  }
-  
-  .player-card img {
-    width: 100%;
-    height: auto;
-  }
-  
+  background-color: #f8f9fa;
+}
+
+.player-card {
+  margin-bottom: 20px;
+}
+
+.player-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Asegura que la imagen se ajuste correctamente al contenedor */
+  filter: brightness(1.1); /* Aumenta ligeramente el brillo para una mejor visualización */
+  transition: all 0.3s ease-in-out; /* Añade una transición suave al pasar el cursor */
+}
+
+.player-card img:hover {
+  filter: brightness(1.2); /* Aumenta el brillo al pasar el cursor */
+  transform: scale(1.05); /* Escala ligeramente la imagen al hacer hover */
+}
+
+/* Ajustes para la disposición de los filtros */
+
+.accordion-flush {
+  width: 150px; /* Ajusta el ancho del filtro de orden */
+}
+
+.form-control {
+  max-width: 300px; /* Limita el ancho máximo del campo de búsqueda */
+}
