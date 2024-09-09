@@ -17,28 +17,32 @@ const app= createApp({
         
 
     },
-    created() {
-        this.bringData(urlAgents);
-        console.log(this.agents);
+    created(){
+        this.bringData(urlAgents)
+        
+        
+
+
     },
-    methods: {
-        async bringData(url) {
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
+    methods:{
+        bringData(url){
+            fetch(url)
+            .then(response => response.json())
+            .then(data =>{
                 console.log(data);
-
-                this.agents = data.data;
+                
+                this.agents = data.data; 
                 console.log(this.agents);
-
-                this.agentsBk = [...data.data];
-
-                this.categories = Array.from(new Set(this.agents.map((agent) => agent.role)));
+                
+                this.agentsBk =[...data.data];
+                
+                this.categories = Array.from(new Set(this.agents.map((agent) => agent.role)))
                 console.log(this.categories);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
+                
+                
+            })
         }
+        
     },
     computed:{
 
