@@ -113,7 +113,7 @@ h2 {
 .image-div {
     float: left;
 }
-.container {
+.container-car {
     display: flex;
     width: 200px;
     height: 400px;
@@ -128,17 +128,18 @@ h2 {
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
     line-height: 0;
     transition: all 600ms;
+    filter: grayscale(70%);
 }
 
 .box > img {
-    width: 200px;
+    width: 150%;
     height: calc(100% - 10vh);
     object-fit: cover;
     transition: all 300ms;
 }
 
 .box > span {
-    font-size: 35px;
+    font-size: 28px;
     font-family: sans-serif;
     display: block;
     text-align: center;
@@ -153,6 +154,7 @@ h2 {
 
 .box:hover {
     flex: 50%;
+    filter: grayscale(0%);
 }
 
 .box:hover > img {
@@ -201,6 +203,7 @@ h2 {
 
 .box-image:hover {
     flex: 50%;
+    filter: grayscale(0%);
 }
 
 .box-image:hover > img {
@@ -236,18 +239,38 @@ footer > .container > .row > .col > p {
 @media screen and (min-width: 768px) {
     /*-------------------------- Header Styles --------------------------*/
     /*-------------------------- Main Styles ----------------------------*/
+    .container-car {
+        width: 98px;
+        height: 200px;
+    }
+    .box > span {
+        font-size: 20px;
+    }
+    .box-image > span {
+        font-size: 20px;
+    }
     /*-------------------------- Footer Styles --------------------------*/
 }
 /*------------------------------------------- 1024px -------------------------------------------*/
 @media screen and (min-width: 1024px) {
     /*-------------------------- Header Styles --------------------------*/
     /*-------------------------- Main Styles ----------------------------*/
+    .container-car {
+        width: 110px;
+        height: 300px;
+
+    }
     /*-------------------------- Footer Styles --------------------------*/
 }
 /*------------------------------------------- 1440px -------------------------------------------*/
 @media screen and (min-width: 1440px) {
     /*-------------------------- Header Styles --------------------------*/
     /*-------------------------- Main Styles ----------------------------*/
+    .container-car {
+        width: 250px;
+        height: 380px;
+
+    }
     .parrafo-intro {
         margin-left: 200px;
         margin-right: 200px;
