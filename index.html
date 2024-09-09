@@ -130,7 +130,7 @@
                                 id="tarjetas"
                                 v-for="info in arrayAgent"
                             >
-                                <div class="container">
+                                <div class="container-car">
                                     <div class="box">
                                         <img :src="info.fullPortrait" />
                                         <span>{{info.displayName}}</span>
@@ -152,7 +152,7 @@
                                 id="tarjetas"
                                 v-for="info in arrayMaps"
                             >
-                                <div class="container">
+                                <div class="container-car">
                                     <div class="box">
                                         <img :src="info.listViewIconTall" class="" alt="" />
                                         <span>{{info.displayName}}</span>
@@ -174,7 +174,7 @@
                                 id="tarjetas"
                                 v-for="info in arrayPlayer"
                             >
-                                <div class="container">
+                                <div class="container-car">
                                     <div class="box">
                                         <img :src="info.largeArt" class="" alt="" />
                                         <span>{{info.displayName}}</span>
@@ -196,7 +196,7 @@
                                 id="tarjetas"
                                 v-for="info in arraySpray"
                             >
-                                <div class="container">
+                                <div class="container-car">
                                     <div class="box">
                                         <img :src="info.fullTransparentIcon" class="" alt="" />
                                         <span>{{info.displayName}}</span>
@@ -229,6 +229,7 @@
                     </div>
                 </div>
             </main>
+            <div style="clear: both"></div>
             <!------------------------------- Footer ------------------------------->
             <footer>
                 <div class="container text-center">
