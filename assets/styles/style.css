@@ -35,16 +35,7 @@ video {
     height: 500px;
     object-fit: cover;
 }
-<<<<<<< HEAD
-.videoAgents {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-}
-.parrafo-intro{
-=======
 .parrafo-intro {
->>>>>>> main
     color: rgb(192, 192, 192);
 }
 h2 {
@@ -119,50 +110,12 @@ h2 {
     max-height: 9%;
 }
 
-/*.image-div{
-    flex:1;
-    aspect-ratio: 1/1.5;
-    cursor: pointer;
-    pointer-events: auto;
-    -webkit-box-reflect: below 4px
-    linear-gradient(transparent, rgba(0,0,0,0.15)) !important;
-    transition:  0.4s;
-    float: left;
-
-
-}
-.image-div>img{
-    display: block;
-    width: 200px;
-    height: 400px;
-    aspect-ratio: 1/1.5;
-    object-fit: cover;
-}
-
-.image-div-Weapon{
-    flex:1;
-    cursor: pointer;
-    pointer-events: auto;
-    -webkit-box-reflect: below 4px
-    linear-gradient(transparent, rgba(0,0,0,0.15)) !important;
-    transition:  0.4s;
-    float: left;
-    height: 280px;
-
-}
-.image-div-Weapon>img{
-    padding-top: 150px;
-    width: 200px;
-    height: auto;
-    object-fit: cover;
-    transform: rotate(90deg);
-}*/
 .image-div {
     float: left;
 }
-.container-car {
+.container {
     display: flex;
-    width: 250px;
+    width: 200px;
     height: 400px;
     padding: 4% 2%;
     box-sizing: border-box;
@@ -175,11 +128,10 @@ h2 {
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
     line-height: 0;
     transition: all 600ms;
-    filter: grayscale(70%);
 }
 
 .box > img {
-    width: 150%;
+    width: 200px;
     height: calc(100% - 10vh);
     object-fit: cover;
     transition: all 300ms;
@@ -192,22 +144,25 @@ h2 {
     text-align: center;
     height: 10vh;
     line-height: 2.6;
+
+    width: 200px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .box:hover {
     flex: 50%;
-    filter: grayscale(0%);
 }
 
 .box:hover > img {
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 350px;
 }
 
-
-.container-car-image {
+.container-image {
     display: flex;
-    width: 250px;
+    width: 200px;
     height: 400px;
     padding: 4% 2%;
     box-sizing: border-box;
@@ -223,12 +178,11 @@ h2 {
 }
 
 .box-image > img {
-    width: 300px;
-    height: auto;
+    width: 200px;
+    height: calc(100% - 10vh);
     object-fit: cover;
     transition: all 300ms;
     transform: rotate(90deg);
-    padding-top: 50px;
 }
 
 .box-image > span {
@@ -238,7 +192,11 @@ h2 {
     text-align: center;
     height: 10vh;
     line-height: 2.6;
-    padding-top: 100px;
+
+    width: 200px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .box-image:hover {
@@ -246,8 +204,8 @@ h2 {
 }
 
 .box-image:hover > img {
-    width: 350px;
-   
+    width: 300px;
+    height: 350px;
 }
 
 .favorite {
@@ -278,38 +236,18 @@ footer > .container > .row > .col > p {
 @media screen and (min-width: 768px) {
     /*-------------------------- Header Styles --------------------------*/
     /*-------------------------- Main Styles ----------------------------*/
-    .container-car {
-        width: 98px;
-        height: 200px;
-    }
-    .box > span {
-        font-size: 20px;
-    }
-    .box-image > span {
-        font-size: 20px;
-    }
     /*-------------------------- Footer Styles --------------------------*/
 }
 /*------------------------------------------- 1024px -------------------------------------------*/
 @media screen and (min-width: 1024px) {
     /*-------------------------- Header Styles --------------------------*/
     /*-------------------------- Main Styles ----------------------------*/
-    .container-car {
-        width: 110px;
-        height: 300px;
-
-    }
     /*-------------------------- Footer Styles --------------------------*/
 }
 /*------------------------------------------- 1440px -------------------------------------------*/
 @media screen and (min-width: 1440px) {
     /*-------------------------- Header Styles --------------------------*/
     /*-------------------------- Main Styles ----------------------------*/
-    .container-car {
-        width: 250px;
-        height: 380px;
-
-    }
     .parrafo-intro {
         margin-left: 200px;
         margin-right: 200px;

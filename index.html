@@ -73,7 +73,7 @@
                                     >
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="./assets/pages/Weapons.html"
+                                    <a class="nav-link fs-4" href="./assets/pages/weapons.html"
                                         >Weapons</a
                                     >
                                 </li>
@@ -120,19 +120,19 @@
                 </div>
                 <div class="container-fluid text-center p-4">
                     <div class="row agents">
-                        <div class="col-12 col-md-12 col-lg-2 p-4 align-self-center">
+                        <div class="col-12 col-md-2 p-4 align-self-center">
                             <h2>Agents</h2>
                             <a class="ancor1" href="./assets/pages/agents.html">VER MÁS</a>
                         </div>
-                        <div class="col-12 col-md-12 col-lg-10 p-4 align-self-center">
+                        <div class="col-12 col-md-10 p-4 align-self-center">
                             <div
                                 class="tarjetas bg-black image-div"
                                 id="tarjetas"
                                 v-for="info in arrayAgent"
                             >
-                                <div class="container-car">
+                                <div class="container">
                                     <div class="box">
-                                        <img :src="info.fullPortrait" :alt="info.displayName" />
+                                        <img :src="info.fullPortrait" />
                                         <span>{{info.displayName}}</span>
                                     </div>
                                 </div>
@@ -142,23 +142,19 @@
                 </div>
                 <div class="container-fluid text-center p-4">
                     <div class="row maps">
-                        <div class="col-12 col-md-12 col-lg-2 p-4 align-self-center">
+                        <div class="col-12 col-md-2 p-4 align-self-center">
                             <h2>Maps</h2>
                             <a class="ancor2" href="./assets/pages/maps.html">VER MÁS</a>
                         </div>
-                        <div class="col-12 col-md-12 col-lg-10 p-4 align-self-center">
+                        <div class="col-12 col-md-10 p-4 align-self-center">
                             <div
                                 class="tarjetas bg-black image-div"
                                 id="tarjetas"
                                 v-for="info in arrayMaps"
                             >
-                                <div class="container-car">
+                                <div class="container">
                                     <div class="box">
-                                        <img
-                                            :src="info.listViewIconTall"
-                                            class=""
-                                            :alt="info.displayName"
-                                        />
+                                        <img :src="info.listViewIconTall" class="" alt="" />
                                         <span>{{info.displayName}}</span>
                                     </div>
                                 </div>
@@ -168,23 +164,19 @@
                 </div>
                 <div class="container-fluid text-center p-4">
                     <div class="row playerCards">
-                        <div class="col-12 col-md-12 col-lg-2 p-4 align-self-center">
+                        <div class="col-12 col-md-2 p-4 align-self-center">
                             <h2>Player</h2>
                             <a class="ancor1" href="./assets/pages/player.html">VER MÁS</a>
                         </div>
-                        <div class="col-12 col-md-12 col-lg-10 p-4 align-self-center">
+                        <div class="col-12 col-md-10 p-4 align-self-center">
                             <div
                                 class="tarjetas bg-black image-div"
                                 id="tarjetas"
                                 v-for="info in arrayPlayer"
                             >
-                                <div class="container-car">
+                                <div class="container">
                                     <div class="box">
-                                        <img
-                                            :src="info.largeArt"
-                                            class=""
-                                            :alt="info.displayName"
-                                        />
+                                        <img :src="info.largeArt" class="" alt="" />
                                         <span>{{info.displayName}}</span>
                                     </div>
                                 </div>
@@ -194,23 +186,19 @@
                 </div>
                 <div class="container-fluid text-center p-4">
                     <div class="row sprays">
-                        <div class="col-12 col-md-12 col-lg-2 p-4 align-self-center">
+                        <div class="col-12 col-md-2 p-4 align-self-center">
                             <h2>Sprays</h2>
                             <a class="ancor2" href="./assets/pages/sprays.html">VER MÁS</a>
                         </div>
-                        <div class="col-12 col-md-12 col-lg-10 col-lg-2 p-4 align-self-center">
+                        <div class="col-12 col-md-10 p-4 align-self-center">
                             <div
                                 class="tarjetas bg-black image-div"
                                 id="tarjetas"
                                 v-for="info in arraySpray"
                             >
-                                <div class="container-car">
+                                <div class="container">
                                     <div class="box">
-                                        <img
-                                            :src="info.fullTransparentIcon"
-                                            class=""
-                                            :alt="info.displayName"
-                                        />
+                                        <img :src="info.fullTransparentIcon" class="" alt="" />
                                         <span>{{info.displayName}}</span>
                                     </div>
                                 </div>
@@ -220,23 +208,19 @@
                 </div>
                 <div class="container-fluid text-center p-4">
                     <div class="row weapons">
-                        <div class="col-12 col-md-12 col-lg-2 p-4 align-self-center">
+                        <div class="col-12 col-md-2 p-4 align-self-center">
                             <h2>Weapons</h2>
-                            <a class="ancor1" href="./assets/pages/Weapons.html">VER MÁS</a>
+                            <a class="ancor1" href="./assets/pages/weapons.html">VER MÁS</a>
                         </div>
-                        <div class="col-12 col-md-12 col-lg-10 p-4 align-self-center">
+                        <div class="col-12 col-md-10 p-4 align-self-center">
                             <div
                                 class="tarjetas bg-black image-div"
                                 id="tarjetas"
                                 v-for="info in arrayWeapon"
                             >
-                                <div class="container-car-image">
+                                <div class="container-image">
                                     <div class="box-image">
-                                        <img
-                                            :src="info.displayIcon"
-                                            class=""
-                                            :alt="info.displayName"
-                                        />
+                                        <img :src="info.displayIcon" class="" alt="" />
                                         <span>{{info.displayName}}</span>
                                     </div>
                                 </div>
@@ -245,7 +229,6 @@
                     </div>
                 </div>
             </main>
-
             <!------------------------------- Footer ------------------------------->
             <footer>
                 <div class="container text-center">
@@ -273,3 +256,4 @@
         <script src="./assets/scripts/index.js"></script>
     </body>
 </html>
+
