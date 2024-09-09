@@ -53,27 +53,35 @@
                                     >
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../ValorantVueProject/assets/pages/agents.html"
+                                    <a
+                                        class="nav-link fs-4"
+                                        href="./assets/pages/agents.html"
                                         >Agents</a
                                     >
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../ValorantVueProject/assets/pages/maps.html"
+                                    <a
+                                        class="nav-link fs-4"
+                                        href="./assets/pages/maps.html"
                                         >Maps</a
                                     >
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../ValorantVueProject/assets/pages/playerCards.html"
+                                    <a
+                                        class="nav-link fs-4"
+                                        href="./assets/pages/player.html"
                                         >Player</a
                                     >
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../assets/pages/sprays.html"
+                                    <a class="nav-link fs-4" href="./assets/pages/sprays.html"
                                         >Sprays</a
                                     >
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../ValorantVueProject/assets/pages/Weapons.html"
+                                    <a
+                                        class="nav-link fs-4"
+                                        href="./assets/pages/weapons.html"
                                         >Weapons</a
                                     >
                                 </li>
@@ -100,16 +108,15 @@
                                 alt=""
                             />
                             <p class="parrafo-intro">
-                                Valorant (estilizado como VALORANT) es un shooter táctico en primera
-                                persona de estilo hero shooter, desarrollado y publicado por Riot
-                                Games. El desarrollo del juego comenzó en 2014, y fue anunciado bajo
-                                el nombre en clave Project A en octubre de 2019. La beta cerrada,
-                                con acceso limitado, se lanzó el 7 de abril de 2020, y el juego fue
-                                lanzado oficialmente el 2 de junio de 2020. Inicialmente, Valorant
-                                estaba diseñado exclusivamente para Windows, pero en junio de 2024
-                                se añadió soporte para las consolas Xbox Series X/S y PlayStation 5,
-                                aunque sin la posibilidad de juego cruzado entre jugadores de PC y
-                                consola.
+                                Valorant (stylized as VALORANT) is a tactical first-person
+                                shooter-style hero shooter developed and published by Riot Games.
+                                Development on the game began in 2014, and it was announced under
+                                the codename Project A in October 2019. A closed beta with limited
+                                access launched on April 7, 2020, and the game was officially
+                                released on June 2, 2020. Valorant was initially designed
+                                exclusively for Windows, but support for the Xbox Series X/S and
+                                PlayStation 5 consoles was added in June 2024, albeit without the
+                                possibility of cross-play between PC and console players.
                             </p>
                         </div>
                     </div>
@@ -120,7 +127,14 @@
                             <h2>Agents</h2>
                         </div>
                         <div class="col-12 col-md-8 p-4 align-self-center">
-                            <div class="tarjetas bg-black" id="tarjetas"><img v-if="agent.length > 0" :src="agent[0].displayIcon" class="card-img-top object-fit-contain" alt="imagen_mapa"></div>
+                            <div class="tarjetas bg-black" id="tarjetas">
+                                <img
+                                    v-if="agent.length > 0"
+                                    :src="agent[0].displayIcon"
+                                    class="card-img-top object-fit-contain"
+                                    alt="imagen_mapa"
+                                />
+                            </div>
                             <a class="ancor1" href="./assets/pages/agents.html">VER MÁS</a>
                         </div>
                     </div>
@@ -131,7 +145,14 @@
                             <h2>Maps</h2>
                         </div>
                         <div class="col-12 col-md-8 p-4 align-self-center">
-                            <div class="tarjetas bg-black" id="tarjetas"><img v-if="map.length > 0" :src="map[0].listViewIcon" class="card-img-top" alt="imagen_mapa"></div>
+                            <div class="tarjetas bg-black" id="tarjetas">
+                                <img
+                                    v-if="map.length > 0"
+                                    :src="map[0].listViewIcon"
+                                    class="card-img-top"
+                                    alt="imagen_mapa"
+                                />
+                            </div>
                             <a class="ancor2" href="./assets/pages/maps.html">VER MÁS</a>
                         </div>
                     </div>
@@ -142,8 +163,15 @@
                             <h2>Player</h2>
                         </div>
                         <div class="col-12 col-md-8 p-4 align-self-center">
-                            <div class="tarjetas bg-black" id="tarjetas"><img v-if="player.length > 0" :src="player[0].displayIcon" class="card-img-top object-fit-contain" alt="imagen_mapa"></div>
-                            <a class="ancor1" href="./assets/pages/playerCards.html">VER MÁS</a>
+                            <div class="tarjetas bg-black" id="tarjetas">
+                                <img
+                                    v-if="player.length > 0"
+                                    :src="player[0].displayIcon"
+                                    class="card-img-top object-fit-contain"
+                                    alt="imagen_mapa"
+                                />
+                            </div>
+                            <a class="ancor1" href="./assets/pages/player.html">VER MÁS</a>
                         </div>
                     </div>
                 </div>
@@ -153,8 +181,15 @@
                             <h2>Sprays</h2>
                         </div>
                         <div class="col-12 col-md-8 p-4 align-self-center">
-                            <div class="tarjetas bg-black" id="tarjetas"><img v-if="spray.length > 0" :src="spray[0].displayIcon" class="card-img-top object-fit-contain" alt="imagen_mapa"></div>
-                            <a class="ancor2" href="./assets/pages/maps.html">VER MÁS</a>
+                            <div class="tarjetas bg-black" id="tarjetas">
+                                <img
+                                    v-if="spray.length > 0"
+                                    :src="spray[0].displayIcon"
+                                    class="card-img-top object-fit-contain"
+                                    alt="imagen_mapa"
+                                />
+                            </div>
+                            <a class="ancor2" href="./assets/pages/sprays.html">VER MÁS</a>
                         </div>
                     </div>
                 </div>
@@ -164,8 +199,15 @@
                             <h2>Weapons</h2>
                         </div>
                         <div class="col-12 col-md-8 p-4 align-self-center">
-                            <div class="tarjetas bg-black" id="tarjetas"><img v-if="weapon.length > 0" :src="weapon[0].displayIcon" class="card-img-top" alt="imagen_mapa"></div>
-                            <a class="ancor1" href="./assets/pages/Weapons.html">VER MÁS</a>
+                            <div class="tarjetas bg-black" id="tarjetas">
+                                <img
+                                    v-if="weapon.length > 0"
+                                    :src="weapon[0].displayIcon"
+                                    class="card-img-top"
+                                    alt="imagen_mapa"
+                                />
+                            </div>
+                            <a class="ancor1" href="./assets/pages//weapons.html">VER MÁS</a>
                         </div>
                     </div>
                 </div>
@@ -191,9 +233,9 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"
         ></script>
-    <!-- VUE -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <!-- JavaScript -->
-    <script src="./assets/scripts/index.js"></script>
+        <!-- VUE -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <!-- JavaScript -->
+        <script src="./assets/scripts/index.js"></script>
     </body>
 </html>
