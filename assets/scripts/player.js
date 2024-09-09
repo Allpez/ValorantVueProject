@@ -24,9 +24,9 @@ const app = createApp({
             fetch(url)
                 .then(response => response.json())
                 .then(info => {
-                    this.playerCards = info.data; // Assign the list of cards to this.playerCards
-                    this.playerCardsBK = [...info.data]; // Create a copy of the data for filters and other operations
-                    console.log(this.playerCardsBK); // Display the data in the console to verify
+                    this.playerCards = info.data; 
+                    this.playerCardsBK = [...info.data]; 
+                    console.log(this.playerCardsBK); 
                 })
                 .catch(error => {
                     console.error("Error fetching data:", error);
@@ -51,13 +51,11 @@ const app = createApp({
     },
     computed: {
         superFilter() {
-            // Filter cards based on searchText
             let firstFilter = this.playerCardsBK.filter(card => 
                 card.displayName.toLowerCase().includes(this.searchText.toLowerCase())
             );
             console.log(firstFilter);
             
-            // Sort cards
             return firstFilter.slice().sort((a, b) => {
                 if (this.order === 'asc') {
                     return a.displayName.localeCompare(b.displayName);
