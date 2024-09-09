@@ -8,36 +8,37 @@ const app= createApp({
         {return{
             agents:[],
             agentsBk:[],
-            roles:[],
-            rolesSelected:[],
-            textSearch:""
+            categories: [],
+            favoritos: [],
+            cartegorySelected: [],
+            serchCategory: ""
         }
+            
+        
 
     },
-    created(){
-        this.bringData(urlAgents)
+    created() {
+        this.bringData(urlAgents);
         console.log(this.agents);
-        
-
-
     },
-    methods:{
-        bringData(url){
-            fetch(url).then(response => response.json()).then(data =>{
+    methods: {
+        async bringData(url) {
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
                 console.log(data);
-                
-                this.agents = data.data; 
+
+                this.agents = data.data;
                 console.log(this.agents);
-                
-                this.agentsBk =[...data.data];
-                
-                this.roles = Array.from(new Set(this.agents.map((agent) => agent.role)))
-                console.log(this.roles);
-                
-                
-            })
+
+                this.agentsBk = [...data.data];
+
+                this.categories = Array.from(new Set(this.agents.map((agent) => agent.role)));
+                console.log(this.categories);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
         }
-        
     },
     computed:{
 

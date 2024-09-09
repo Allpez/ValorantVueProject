@@ -66,7 +66,7 @@
                 </div>
                 <div class="div-filtro-buscar container-fluid text-center">
                     <div class="row align-items-center barra-buscar">
-                        <div class="col-sm-12 col-md-3 col-xl-4 p-2" id="category">
+                        <div class="col-sm-12 col-md-3 col-xl-4 p-2" id="role">
                             <div>
                                 <button type="button" class="favorite">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
@@ -80,10 +80,10 @@
                             </div>
                         </div>
                         <div id="check" class="form-check form-switch d-flex">
-                            <div v-for="category in categories" class=" ">
-                                <input v-model="cartegorySelected" class="form-check-input ms-4" type="checkbox" role="switch"
-                                    :id=category :value=category>
-                                <label class="form-check-label ms-1" :for="category">{{cleanCategoryName(category)}} </label>
+                            <div v-for="role in categories" class=" ">
+                                <input  class="form-check-input ms-4" type="checkbox" role="switch"
+                                    :id="role" :value="role">
+                                <label class="form-check-label ms-1" :for="role">{{role}} </label>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-xl-4 align-items-center p-2">
@@ -108,20 +108,18 @@
                         <h1 class="text-success text-center">No results found.</h1>
                         <p class="text-success-emphasis">Please try a new search.</p>
                     </div>
-                    <div v-for="role in agents" class="card mt-3 ms-3" style="width: 17rem;">
-                        <img :src="agents.displayIcon" class="cardImage card-img-top mt-1" alt="...">
-                        <div class="card-body d-flex justify-content-between">
-                            <div>
-                                <h5 class="card-title"> {{role.displayName}} </h5>
-                                <p class="card-text">{{cleanCategoryName(role.role)}}</p>
+                    <div id="app" class="container mt-5">
+                        <div class="row">
+                            <div class="col-md-4" v-for="agent in agents" :key="agent.uuid">
+                                <div class="card mb-4">
+                                    <img :src="agent.displayIcon" class="card-img-top" :alt="agent.displayName">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ agent.displayName }}</h5>
+                                        <p class="card-text">{{ agent.description }}</p>
+                                        <p class="card-text"><small class="text-muted">{{ agent.role.displayName }}</small></p>
+                                    </div>
+                                </div>
                             </div>
-                            <button @click="agregarFavorito(agents)" type="button" class="btn btn-outline-danger d-flex align-items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                    class="bi bi-heart" viewBox="0 0 16 16">
-                                    <path
-                                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                                </svg>
-                            </button>
                         </div>
                     </div>
     
