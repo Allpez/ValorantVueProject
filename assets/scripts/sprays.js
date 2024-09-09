@@ -5,21 +5,6 @@
 //  Llamamos a la Api a trabajar
 const urlApi = 'https://valorant-api.com/v1/sprays'
 
-fetch(urlApi)
-    .then((response) => response.json())
-    .then((dataFinal) => {
-        console.log(dataFinal.data)
-
-        let vari="ar"
-
-        const arregloFiltroLetra = dataFinal.data.filter((e) =>
-            e.displayName.toLowerCase().includes(vari.toLowerCase())
-          );
-          console.log(arregloFiltroLetra);
-    })
-
-
-
 //  Llamamos a la Libreria Vue
 const { createApp } = Vue
 
@@ -28,7 +13,10 @@ const app = createApp({
     data() {
         return {
             datosSprays: [],
+            datosSpraysBK: [],
             textoBuscar: '',
+            categorias:[],
+            categoriasSeleccionada:[],
         }
     },
     created() {
@@ -40,17 +28,36 @@ const app = createApp({
                 .then((response) => response.json())
                 .then((info) => {
                     this.datosSprays = info.data
-                    console.log(this.datosSprays)
+                    this.datosSpraysBK = this.datosSprays
+
                 })
         },
     },
     computed: {
         superFiltro() {
-            let primerFiltro = this.datosSprays.filter((e) =>
+            let primerFiltro = this.datosSpraysBK.filter((e) =>
                 e.displayName.toLowerCase().includes(this.textoBuscar.toLowerCase())
             )
-            console.log(primerFiltro);
-            this.datosSprays = primerFiltro
+
+            this.datosSpraysBK = primerFiltro
+
+            console.log(this.categoriasSeleccionada);
+
+            if (this.categoriasSeleccionada > 0) {
+                this.datosSpraysBK = datosSpraysBK.slice().sort((a, b) => {
+                    if (this.categoriasSeleccionada === 'ascendente') {
+                        return a.displayName.localeCompare(b.displayName);
+                    } else {
+                        return b.displayName.localeCompare(a.displayName);
+                    }
+                    console.log(this.datosSpraysBK)
+                })
+            }else{
+                this.datosSpraysBK = primerFiltro
+            }
+
+            
+
         },
     },
 }).mount('#app')
