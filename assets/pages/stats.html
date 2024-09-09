@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sprays</title>
+        <title>Stats</title>
         <link rel="shortcut icon" href="../image/favicon.png" type="image/x-icon" />
         <!------ Librerias de Estilos ------>
         <!-- Estilos Propios -->
@@ -68,7 +68,7 @@
                                     >
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link active fs-4" href="../pages/sprays.html"
+                                    <a class="nav-link fs-4" href="../pages/sprays.html"
                                         >Sprays</a
                                     >
                                 </li>
@@ -78,7 +78,7 @@
                                     >
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../pages/stats.html"
+                                    <a class="nav-link active fs-4" href="../pages/stats.html"
                                         >Stats</a
                                     >
                                 </li>
@@ -91,77 +91,42 @@
             <main id="app">
                 <div class="container text-center">
                     <div class="row align-items-center">
-                        <div class="col py-2">
-                            <h1>Sprays</h1>
+                        <div class="col-12 py-2">
+                            <table class="table table-bordered table-responsive">
+                                <tbody>
+                                    <tr>
+                                        <th class="table-dark" scope="col" colspan="4">
+                                            <h3>Events Statistics</h3>
+                                        </th>
+                                    </tr>
+        
+                                    <tr>
+                                        <td class="td-stats-general">
+                                            <h5>Display Name</h5>
+                                        </td>
+                                        <td class="td-stats-general">
+                                            <h5>Short Display Name</h5>
+                                        </td>
+                                        <td class="td-stats-general">
+                                            <h5>Start Time</h5>
+                                        </td>
+                                        <td class="td-stats-general">
+                                            <h5>End Time</h5>
+                                        </td>
+                                    </tr>
+                                    <tr v-for="info in datosStats" class="tarjeta">
+                                        <td>{{info.displayName}}</td>
+                                        <td>{{info.shortDisplayName}}</td>
+                                        <td>{{info.startTime}}</td>
+                                        <td>{{info.endTime}}</td>
+                                    </tr>
+        
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <div class="div-filtro-buscar container-fluid text-center">
-                    <div class="row align-items-center barra-buscar">
-                        <div class="col-sm-12 col-md-6 col-xl-4 p-2" id="category" >
-                            <div id="check" >
-                                <div class="form-check-inline py-2">
-                                    <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        id="ascendente"
-                                        value="ascendente"
-                                        name="flexRadioDefault"
-                                        v-model="categoriasSeleccionada"
-                                    />
-                                    <label class="form-check-label" for="flexCheckDefault1">
-                                         Ordenar (A-Z)
-                                    </label>
-                                </div>
-                                <div class="form-check-inline py-2">
-                                    <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        id="descendente"
-                                        value="descendente"
-                                        name="flexRadioDefault"
-                                        v-model="categoriasSeleccionada"
-                                    />
-                                    <label class="form-check-label" for="flexCheckDefault1">
-                                        Ordenar (Z-A)
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-xl-4 align-items-center p-2">
-                            {{superFiltro}}
-                            <form class="d-flex" role="search" id="search">
-                                <input
-                                    v-model="textoBuscar"
-                                    class="form-control me-2"
-                                    type="search"
-                                    aria-label="Search"
-                                    placeholder="Buscador"
-                                />
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid text-center">
-                    <div class="row align-items-center">
-                        <div class="contenedor">
-                            <div v-if="datosSprays.length == 0">
-                                <h1 class="text-success text-center">No results found.</h1>
-                                <p class="text-success-emphasis text-center">Please try a new search.</p>
-                            </div>
-                            <div v-for="info in datosSprays" class="tarjeta">
-                                <div class="card row">
-                                    <img :src="info.displayIcon" class="card-img-top p-2" alt="" />
-                                    <div
-                                        class="card-body justify-content-center align-items-center"
-                                    >
-                                        <h5 class="card-title">{{info.displayName}}</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </main>
             <!------------------------------- Footer ------------------------------->
             <footer>
@@ -179,7 +144,7 @@
         </div>
         <!------ Librerias JavaScrit ------>
         <!-- JavaScrit Propios -->
-        <script src="../scripts/sprays.js" type="module"></script>
+        <script src="../scripts/stats.js" type="module"></script>
         <!-- JavaScrit Bootstrap -->
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

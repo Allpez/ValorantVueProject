@@ -22,60 +22,31 @@
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary p-2">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="../../index.html"
-                        ><img
-                            src="../../assets/image/valorant-logo.png"
-                            width="200"
-                            alt="amazing_brand"
-                    /></a>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav"
-                        aria-controls="navbarNav"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
+                    <a class="navbar-brand" href="../../index.html"><img src="../../assets/image/valorant-logo.png"
+                            width="200" alt="amazing_brand" /></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div
-                        class="collapse navbar-collapse justify-content-end text-center"
-                        id="navbarNav"
-                    >
+                    <div class="collapse navbar-collapse justify-content-end text-center" id="navbarNav">
                         <ul class="navbar-nav p-2">
                             <li class="nav-item p-2">
-                                <a
-                                    class="nav-link fs-4"
-                                    aria-current="page"
-                                    href="../../index.html"
-                                    >Home</a
-                                >
+                                <a class="nav-link fs-4" aria-current="page" href="../../index.html">Home</a>
                             </li>
                             <li class="nav-item p-2">
-                                <a class="nav-link fs-4" href="../pages/agents.html"
-                                    >Agents</a
-                                >
+                                <a class="nav-link fs-4" href="../pages/agents.html">Agents</a>
                             </li>
                             <li class="nav-item p-2">
-                                <a class="nav-link active fs-4" href="../pages/maps.html"
-                                    >Maps</a
-                                >
+                                <a class="nav-link active fs-4" href="../pages/maps.html">Maps</a>
                             </li>
                             <li class="nav-item p-2">
-                                <a class="nav-link fs-4" href="../pages/player.html"
-                                    >Player</a
-                                >
+                                <a class="nav-link fs-4" href="../pages/player.html">Player</a>
                             </li>
                             <li class="nav-item p-2">
-                                <a class="nav-link fs-4" href="../pages/sprays.html"
-                                    >Sprays</a
-                                >
+                                <a class="nav-link fs-4" href="../pages/sprays.html">Sprays</a>
                             </li>
                             <li class="nav-item p-2">
-                                <a class="nav-link fs-4" href="../pages/Weapons.html"
-                                    >Weapons</a
-                                >
+                                <a class="nav-link fs-4" href="../pages/Weapons.html">Weapons</a>
                             </li>
                         </ul>
                     </div>
@@ -83,7 +54,7 @@
             </nav>
         </header>
         <!------------------------------- Main --------------------------------->
-        <main id="app" class="p-3 flex-grow-1">
+        <main id="app" class="main p-3 flex-grow-1">
             <div class="container">
                 <div class="d-flex flex-row justify-content-center align-items-center mb-3">
                     <div class="accordion accordion-flush col-2" id="accordionFlushExample">
@@ -138,7 +109,6 @@
                                                     class="btn align-self-center text-danger">
                                                     Remove favorites
                                                 </button>
-                                                <button @click="openModal(map)" class="btn">More info</button>
                                             </div>
                                         </div>
                                     </div>
@@ -167,69 +137,7 @@
                                         <button @click="agregarFavorito(map)" class="btn btn-danger">
                                             Add favoritos
                                         </button>
-                                        <button @click="openModal(map)" class="btn">More info</button>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="container-modal" v-if="modalDetails">
-                            <div class="modal-details">
-                                <button class="close px-2" @click="modalDetails=false">x</button>
-                                <div class="modal-carousel">
-                                    <div id="carouselExampleIndicators" class="carousel slide">
-                                        <div class="carousel-indicators">
-                                            <button type="button" data-bs-target="#carouselExampleIndicators"
-                                                data-bs-slide-to="0" class="active" aria-current="true"
-                                                aria-label="Slide 1"></button>
-                                            <button type="button" data-bs-target="#carouselExampleIndicators"
-                                                data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                            <button type="button" data-bs-target="#carouselExampleIndicators"
-                                                data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                            <button type="button" data-bs-target="#carouselExampleIndicators"
-                                                data-bs-slide-to="3" aria-label="Slide 4"></button>
-                                            <button type="button" data-bs-target="#carouselExampleIndicators"
-                                                data-bs-slide-to="4" aria-label="Slide 5"></button>
-                                            <button type="button" data-bs-target="#carouselExampleIndicators"
-                                                data-bs-slide-to="5" aria-label="Slide 6"></button>
-                                        </div>
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img :src="maps.displayIcon" class="d-block w-100" alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img :src="maps.listViewIcon" class="d-block w-100" alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img :src="maps.listViewIconTall" class="d-block w-100" alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img :src="maps.splash" class="d-block w-100" alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img :src="maps.stylizedBackgroundImage" class="d-block w-100"
-                                                    alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img :src="maps.premierBackgroundImage" class="d-block w-100" alt="...">
-                                            </div>
-                                        </div>
-                                        <button class="carousel-control-prev" type="button"
-                                            data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Previous</span>
-                                        </button>
-                                        <button class="carousel-control-next" type="button"
-                                            data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">Next</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="modal-content">
-                                    <p class="text-light">coordinates</p>
-                                    <p class="text-light">callOuts</p>
                                 </div>
                             </div>
                         </div>
