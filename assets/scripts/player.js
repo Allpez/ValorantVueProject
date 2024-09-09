@@ -1,15 +1,16 @@
-let urlPlayerCards = "https://valorant-api.com/v1/playercards";
+const urlPlayerCards = "https://valorant-api.com/v1/playercards";
 
 const { createApp } = Vue;
 
 const app = createApp({
     data() {
         return {
-            playerCards: [], 
-            playerCardsBK: [],
-            favorites: [], 
-            searchText: "",
-            order: 'asc',  
+            playerCards: [], // Tarjetas de jugador obtenidas de la API
+            playerCardsBK: [], // Copia de las tarjetas de jugador para manipulación
+            favorites: [], // Tarjetas de jugador favoritas
+            searchText: "", // Texto para búsqueda
+            order: 'asc', // Orden de visualización
+            selectedCard: null // Tarjeta seleccionada para el modal
         };
     },
     created() {
@@ -24,9 +25,8 @@ const app = createApp({
             fetch(url)
                 .then(response => response.json())
                 .then(info => {
-                    this.playerCards = info.data; 
-                    this.playerCardsBK = [...info.data]; 
-                    console.log(this.playerCardsBK); 
+                    this.playerCards = info.data;
+                    this.playerCardsBK = [...info.data]; // Mantener una copia para manipulación
                 })
                 .catch(error => {
                     console.error("Error fetching data:", error);
@@ -47,16 +47,20 @@ const app = createApp({
         },
         changeOrder(newOrder) {
             this.order = newOrder;
+        },
+        showDetails(card) {
+            this.selectedCard = card; // Configura la tarjeta seleccionada
+            const detailsModal = new bootstrap.Modal(document.getElementById('cardDetailsModal'));
+            detailsModal.show(); // Muestra el modal
         }
     },
     computed: {
         superFilter() {
-            let firstFilter = this.playerCardsBK.filter(card => 
+            let filteredCards = this.playerCardsBK.filter(card =>
                 card.displayName.toLowerCase().includes(this.searchText.toLowerCase())
             );
-            console.log(firstFilter);
-            
-            return firstFilter.slice().sort((a, b) => {
+
+            return filteredCards.slice().sort((a, b) => {
                 if (this.order === 'asc') {
                     return a.displayName.localeCompare(b.displayName);
                 } else {
