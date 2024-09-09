@@ -15,8 +15,8 @@ const app = createApp({
             datosSprays: [],
             datosSpraysBK: [],
             textoBuscar: '',
-            categorias:[],
-            categoriasSeleccionada:[],
+            categorias: [],
+            categoriasSeleccionada: [],
         }
     },
     created() {
@@ -29,7 +29,6 @@ const app = createApp({
                 .then((info) => {
                     this.datosSprays = info.data
                     this.datosSpraysBK = this.datosSprays
-
                 })
         },
     },
@@ -40,24 +39,6 @@ const app = createApp({
             )
 
             this.datosSpraysBK = primerFiltro
-
-            console.log(this.categoriasSeleccionada);
-
-            if (this.categoriasSeleccionada > 0) {
-                this.datosSpraysBK = datosSpraysBK.slice().sort((a, b) => {
-                    if (this.categoriasSeleccionada === 'ascendente') {
-                        return a.displayName.localeCompare(b.displayName);
-                    } else {
-                        return b.displayName.localeCompare(a.displayName);
-                    }
-                    console.log(this.datosSpraysBK)
-                })
-            }else{
-                this.datosSpraysBK = primerFiltro
-            }
-
-            
-
         },
     },
 }).mount('#app')
