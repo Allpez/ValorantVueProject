@@ -1,235 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Valorant" />
-        <meta name="keywords" content="HTML, CSS, JAVASCRIPT, BOOTSTRAP, VUE" />
-        <link rel="shortcut icon" href="../image/favicon.png" type="image/x-icon" />
-        <link rel="stylesheet" href="../styles/player.css" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-            crossorigin="anonymous"
-        />
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-        <title>Player Cards - Valorant</title>
-    </head>
 
-    <body>
-        <div class="layout">
-            <header>
-                <nav class="navbar navbar-expand-lg bg-body-tertiary p-2">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="../../index.html"
-                            ><img
-                                src="../../assets/image/valorant-logo.png"
-                                width="200"
-                                alt="amazing_brand"
-                        /></a>
-                        <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav"
-                            aria-controls="navbarNav"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                        >
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div
-                            class="collapse navbar-collapse justify-content-end text-center"
-                            id="navbarNav"
-                        >
-                            <ul class="navbar-nav p-2">
-                                <li class="nav-item p-2">
-                                    <a
-                                        class="nav-link fs-4"
-                                        aria-current="page"
-                                        href="../../index.html"
-                                        >Home</a
-                                    >
-                                </li>
-                                <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../pages/agents.html">Agents</a>
-                                </li>
-                                <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../pages/maps.html">Maps</a>
-                                </li>
-                                <li class="nav-item p-2">
-                                    <a class="nav-link active fs-4" href="../pages/player.html"
-                                        >Player</a
-                                    >
-                                </li>
-                                <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../pages/sprays.html">Sprays</a>
-                                </li>
-                                <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../pages/Weapons.html"
-                                        >Weapons</a
-                                    >
-                                </li>
-                                <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../pages/stats.html">Stats</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </header>
-            <main id="app" class="p-3">
-                <div class="container text-center">
-                    <div class="row align-items-center">
-                        <div class="col py-2">
-                            <h1>Player</h1>
-                        </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Valorant" />
+    <meta name="keywords" content="HTML, CSS, JAVASCRIPT, BOOTSTRAP, VUE" />
+    <link rel="shortcut icon" href="../image/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../styles/player.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Player Cards - Valorant</title>
+</head>
+
+<body>
+    <div class="layout">
+        <header>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary p-2">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="../../index.html"><img src="../../assets/image/valorant-logo.png"
+                            width="200" alt="amazing_brand" /></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end text-center" id="navbarNav">
+                        <ul class="navbar-nav p-2">
+                            <li class="nav-item p-2">
+                                <a class="nav-link fs-4" aria-current="page" href="../../index.html">Home</a>
+                            </li>
+                            <li class="nav-item p-2">
+                                <a class="nav-link fs-4" href="../pages/agents.html">Agents</a>
+                            </li>
+                            <li class="nav-item p-2">
+                                <a class="nav-link fs-4" href="../pages/maps.html">Maps</a>
+                            </li>
+                            <li class="nav-item p-2">
+                                <a class="nav-link active fs-4" href="../pages/player.html">Player</a>
+                            </li>
+                            <li class="nav-item p-2">
+                                <a class="nav-link fs-4" href="../pages/sprays.html">Sprays</a>
+                            </li>
+                            <li class="nav-item p-2">
+                                <a class="nav-link fs-4" href="../pages/Weapons.html">Weapons</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="d-flex flex-row justify-content-center align-items-center mb-3">
-                        <div class="accordion accordion-flush col-2" id="accordionFlushExample">
-                            <div class="form-check m-2">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="exampleRadios"
-                                    id="exampleRadios1"
-                                    value="option1"
-                                    @click="cambiarOrden('asc')"
-                                    checked
-                                />
-                                <label class="form-check-label text-light" for="exampleRadios1">
-                                    Order A to Z
-                                </label>
+            </nav>
+        </header>
+        <main id="app" class="p-3">
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div class="col py-2">
+                        <h1>Player</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="d-flex flex-row justify-content-center align-items-center mb-3">
+                    <div class="accordion accordion-flush col-2" id="accordionFlushExample">
+                        <div class="form-check m-2">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1" @click="cambiarOrden('asc')" checked />
+                            <label class="form-check-label text-light" for="exampleRadios1">
+                                Order A to Z
+                            </label>
+                        </div>
+                        <div class="form-check m-2">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                value="option2" @click="cambiarOrden('desc')" />
+                            <label class="form-check-label text-light" for="exampleRadios2">
+                                Order Z to A
+                            </label>
+                        </div>
+                    </div>
+                    <form class="d-flex p-2 mb-3 col-4" role="search">
+                        <input v-model="searchText" class="form-control me-2 search_text" type="search"
+                            aria-label="search" id="search" placeholder="Search cards..." />
+                    </form>
+                    <div class="col-2 d-flex align-items-center">
+                        <button type="button" class="btn-favorites" data-bs-toggle="modal"
+                            data-bs-target="#favoritesModal">
+                            Favorites
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal for Favorites -->
+            <div class="modal fade" id="favoritesModal" tabindex="-1" aria-labelledby="favoritesModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="favoritesModalLabel">Favorites</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="d-flex flex-wrap border-2 bg-light p-2">
+                                <div v-for="card in favorites" :key="card.uuid" class="card d-flex m-2"
+                                    style="width: 18rem">
+                                    <img :src="card.largeArt" class="card-img-top p-1 align-self-center"
+                                        alt="card_image" />
+                                    <div class="card-body d-flex flex-column justify-content-around">
+                                        <h4 class="card-title">{{ card.displayName }}</h4>
+                                        <button @click="removeFavorite(card)" class="btn align-self-center text-danger">
+                                            Remove from favorites
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-check m-2">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="exampleRadios"
-                                    id="exampleRadios2"
-                                    value="option2"
-                                    @click="cambiarOrden('desc')"
-                                />
-                                <label class="form-check-label text-light" for="exampleRadios2">
-                                    Order Z to A
-                                </label>
+                            <div v-if="favorites.length === 0" class="text-center">
+                                <h1 class="text-success">No favorites added yet.</h1>
                             </div>
                         </div>
-                        <form class="d-flex p-2 mb-3 col-4" role="search">
-                            <input
-                                v-model="searchText"
-                                class="form-control me-2 search_text"
-                                type="search"
-                                aria-label="search"
-                                id="search"
-                                placeholder="Search cards..."
-                            />
-                        </form>
-                        <div class="col-2 d-flex align-items-center">
-                            <button
-                                type="button"
-                                class="btn-favorites"
-                                data-bs-toggle="modal"
-                                data-bs-target="#favoritesModal"
-                            >
-                                Favorites
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                Close
                             </button>
                         </div>
                     </div>
                 </div>
-                <!-- Modal for Favorites -->
-                <div
-                    class="modal fade"
-                    id="favoritesModal"
-                    tabindex="-1"
-                    aria-labelledby="favoritesModalLabel"
-                    aria-hidden="true"
-                >
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="favoritesModalLabel">Favorites</h5>
-                                <button
-                                    type="button"
-                                    class="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
-                                ></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="d-flex flex-wrap border-2 bg-light p-2">
-                                    <div
-                                        v-for="card in favorites"
-                                        :key="card.uuid"
-                                        class="card d-flex m-2"
-                                        style="width: 18rem"
-                                    >
-                                        <img
-                                            :src="card.largeArt"
-                                            class="card-img-top p-1 align-self-center"
-                                            alt="card_image"
-                                        />
-                                        <div
-                                            class="card-body d-flex flex-column justify-content-around"
-                                        >
-                                            <h4 class="card-title">{{ card.displayName }}</h4>
-                                            <button
-                                                @click="removeFavorite(card)"
-                                                class="btn align-self-center text-danger"
-                                            >
-                                                Remove from favorites
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div v-if="favorites.length === 0" class="text-center">
-                                    <h1 class="text-success">No favorites added yet.</h1>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button
-                                    type="button"
-                                    class="btn btn-secondary"
-                                    data-bs-dismiss="modal"
-                                >
-                                    Close
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
 
-                <div v-if="superFilter.length === 0">
-                    <h1 class="text-success text-center">No results found.</h1>
-                    <p class="text-success-emphasis">Please try a new search.</p>
-                </div>
-                <div class="container-fluid text-center">
-                    <div class="row align-items-center">
-                        <div class="contenedor">
+            <div v-if="superFilter.length === 0">
+                <h1 class="text-success text-center">No results found.</h1>
+                <p class="text-success-emphasis">Please try a new search.</p>
+            </div>
+            <div class="container-fluid text-center">
+                <div class="row align-items-center">
+                    <div class="contenedor">
                         <div v-for="card in superFilter" :key="card.uuid" class="tarjeta">
                             <div class="card player-card">
                                 <img :src="card.largeArt" class="card-img-top" alt="card_image" />
                                 <div class="card-body">
                                     <h6 class="card-title ">{{ card.displayName }}</h6>
                                     <div class="d-flex justify-content-center">
-                                        <button
-                                            @click="toggleFavorito(card)"
-                                            class="btn btn_details d-flex justify-content-end p-0"
-                                        >
-                                            <svg
-                                                v-if="isFavorito(card)"
-                                                width="32"
-                                                height="32"
-                                                fill="currentColor"
-                                                class="bi bi-fire"
-                                                viewBox="0 0 16 16"
-                                            >
+                                        <button @click="toggleFavorito(card)"
+                                            class="btn btn_details d-flex justify-content-end p-0">
+                                            <svg v-if="isFavorito(card)" width="32" height="32" fill="currentColor"
+                                                class="bi bi-fire" viewBox="0 0 16 16">
                                                 <path
-                                                    d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"
-                                                />
+                                                    d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15" />
                                             </svg>
                                             <span v-if="!isFavorito(card)" class="text-favorito">
                                                 Add favorites
@@ -242,33 +155,28 @@
                     </div>
                 </div>
             </div>
-            </main>
+        </main>
 
-            <footer>
-                <div class="container text-center">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            <div class="d-flex justify-content-center">
-                                <img
-                                    src="../image/valorant-logo.png"
-                                    width="200"
-                                    alt="valorant_logo"
-                                />
-                            </div>
-                            <p class="text-center">
-                                © 2024 Valorant API Demo - All rights reserved.
-                            </p>
+        <footer>
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="d-flex justify-content-center">
+                            <img src="../image/valorant-logo.png" width="200" alt="valorant_logo" />
                         </div>
+                        <p class="text-center">
+                            © 2024 Valorant API Demo - All rights reserved.
+                        </p>
                     </div>
                 </div>
-            </footer>
-        </div>
+            </div>
+        </footer>
+    </div>
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"
-        ></script>
-        <script src="../scripts/player.js"></script>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="../scripts/player.js"></script>
+</body>
+
 </html>
