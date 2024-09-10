@@ -71,6 +71,9 @@
                                         >Weapons</a
                                     >
                                 </li>
+                                <li class="nav-item p-2">
+                                    <a class="nav-link fs-4" href="../pages/stats.html">Stats</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -210,7 +213,7 @@
                             <div class="card player-card">
                                 <img :src="card.largeArt" class="card-img-top" alt="card_image" />
                                 <div class="card-body">
-                                    <h6 class="card-title">{{ card.displayName }}</h6>
+                                    <h6 class="card-title ">{{ card.displayName }}</h6>
                                     <div class="d-flex justify-content-center">
                                         <button
                                             @click="toggleFavorito(card)"
