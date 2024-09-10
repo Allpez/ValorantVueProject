@@ -7,7 +7,7 @@ const app = createApp({
         return {
             playerCards: [], 
             playerCardsBK: [], 
-            favorites: [], 
+            favorites: [],
             searchText: "", 
             order: 'asc', 
             selectedCard: null 
@@ -45,13 +45,28 @@ const app = createApp({
                 localStorage.setItem('favoritePlayerCards', JSON.stringify(this.favorites));
             }
         },
-        changeOrder(newOrder) {
+        toggleFavorito(card, event) {
+            if (this.isFavorito(card)) {
+                this.removeFavorite(card);
+            } else {
+                this.addFavorite(card);
+            }
+            this.animateCard(event.target);
+        },
+        isFavorito(card) {
+            return this.favorites.some(fav => fav.uuid === card.uuid);
+        },
+        cambiarOrden(newOrder) {
             this.order = newOrder;
         },
-        showDetails(card) {
-            this.selectedCard = card; 
-            const detailsModal = new bootstrap.Modal(document.getElementById('cardDetailsModal'));
-            detailsModal.show(); 
+        animateCard(cardElement) {
+            // Añadir la clase de animación
+            cardElement.classList.add('clicked');
+
+            // Eliminar la clase después de que termine la animación
+            setTimeout(() => {
+                cardElement.classList.remove('clicked');
+            }, 500); // Coincide con la duración de la animación
         }
     },
     computed: {
