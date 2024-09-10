@@ -86,7 +86,8 @@
                         <div class="col-4 p-2" id="category">
                             <div class="d-flex flex-row justify-content-center align-items-center">
                                 <div v-for="category in categories" :key="category">
-                                    <input class="form-check-input"
+                                    <input
+                                        class="form-check-input"
                                         type="checkbox"
                                         :id="category"
                                         :value="category"
@@ -99,7 +100,7 @@
                         <form class="p-2 col-6" role="search">
                             <input
                                 v-model="searchQuery"
-                                class="form-control me-2"
+                                class="search_text form-control me-2"
                                 type="search"
                                 aria-label="Search"
                                 placeholder="Search"
@@ -118,53 +119,93 @@
                     </div>
                 </div>
 
-                <div class="container-fluid text-center">
-                    <div class="row align-items-center">
-                        <div class="contenedor">
-                            <div>
-                                <h2>Favoritos</h2>
-                                <div v-for="agent in favoritos" :key="agent.uuid" class="tarjeta">
-                                    <div class="card row">
-                                        <img
-                                            :src="agent.fullPortrait"
-                                            class="card-img-top"
-                                            :alt="agent.displayName"
-                                        />
-                                        <div class="card-body">
-                                            <h5 class="card-title text-primary">
-                                                {{ agent.displayName }}
-                                            </h5>
-                                            <p class="card-text" v-if="agent.role">
-                                                ROLE: {{ agent.role.displayName }}
-                                            </p>
-                                            <p class="card-text" v-if="agent.role">
-                                                DESCRIPTION: {{ agent.role.description }}
-                                            </p>
-                                            <div class="p-2 ms-auto">
-                                                <a
-                                                    href="./details.html?id='+{{agent.uuid}}"
-                                                    class="btn btn-primary"
-                                                    >Details</a
-                                                >
-                                                <button @click="quitarFavoritos(agent)" class="btn">
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width="16"
-                                                        height="16"
-                                                        fill="currentColor"
-                                                        class="bi bi-heart"
-                                                        viewBox="0 0 16 16"
+                <div
+                    class="modal fade"
+                    id="favoritosModal"
+                    tabindex="-1"
+                    aria-labelledby="favoritosModalLabel"
+                    aria-hidden="true"
+                >
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header justify-content-center">
+                                <h2 class="modal-title text-center" id="favoritosModalLabel">
+                                    Favorites
+                                </h2>
+                            </div>
+                            <div class="modal-body container">
+                                <div class="contenedor">
+                                    <div v-if="agents.length == 0">
+                                        <h1 class="text-success text-center">No results found.</h1>
+                                        <p class="text-success-emphasis text-center">
+                                            Please try a new search.
+                                        </p>
+                                    </div>
+                                    <div
+                                        v-for="agent in favoritos"
+                                        :key="agent.uuid"
+                                        class="tarjeta"
+                                    >
+                                        <div class="card row">
+                                            <img
+                                                :src="agent.fullPortrait"
+                                                class="card-img-top"
+                                                :alt="agent.displayName"
+                                            />
+                                            <div class="card-body">
+                                                <h5 class="card-title text-primary">
+                                                    {{ agent.displayName }}
+                                                </h5>
+                                                <p class="card-text" v-if="agent.role">
+                                                    ROLE: {{ agent.role.displayName }}
+                                                </p>
+                                                <p class="card-text" v-if="agent.role">
+                                                    DESCRIPTION: {{ agent.role.description }}
+                                                </p>
+                                                <div class="p-2 ms-auto">
+                                                    <a
+                                                        href="./details.html?id='+{{agent.uuid}}"
+                                                        class="btn btn-primary"
+                                                        >Details</a
                                                     >
-                                                        <path
-                                                            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
-                                                        />
-                                                    </svg>
-                                                </button>
+                                                    <button
+                                                        @click="quitarFavoritos(agent)"
+                                                        class="btn"
+                                                    >
+                                                        <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="16"
+                                                            height="16"
+                                                            fill="currentColor"
+                                                            class="bi bi-heart"
+                                                            viewBox="0 0 16 16"
+                                                        >
+                                                            <path
+                                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+                                                            />
+                                                        </svg>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div v-if="favoritos.length === 0" class="text-center">
+                                    <h1 class="text-success">No favorites added yet.</h1>
+                                </div>
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn_close" data-bs-dismiss="modal">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid text-center">
+                    <div class="row align-items-center">
+                        <div class="contenedor">
                             <div v-if="agents.length == 0">
                                 <h1 class="text-success text-center">No results found.</h1>
                                 <p class="text-success-emphasis text-center">
@@ -172,7 +213,7 @@
                                 </p>
                             </div>
                             <div v-for="agent in agents" :key="agent.uuid" class="tarjeta">
-                                <div class="card row">
+                                <div class="card row card_a">
                                     <article>
                                         <img
                                             :src="agent.killfeedPortrait"
@@ -186,37 +227,40 @@
                                         />
                                     </article>
                                     <div class="card-body">
-                                        <h5 class="card-title text-primary">
-                                            {{ agent.displayName }}
-                                        </h5>
-                                        <p class="card-text" v-if="agent.role">
+                                        <h4 class="card-title">{{ agent.displayName }}</h4>
+                                        <p class="" v-if="agent.role">
                                             ROLE: {{ agent.role.displayName }}
                                         </p>
                                         <p class="card-text" v-if="agent.role">
                                             {{ agent.description }}
                                         </p>
 
-                                        <div class="p-2 ms-auto">
-                                            <a
+                                        <!-- <a
                                                 href="./details.html?id='+{{agent.uuid}}"
                                                 class="btn btn-primary"
                                                 >Details</a
+                                            > -->
+                                        <div class="d-flex justify-content-center"></div>
+                                        <button
+                                            @click="toggleFavorito(agent)"
+                                            class="btn btn_details d-flex justify-content-end p-0"
+                                        >
+                                            <svg
+                                                v-if="isFavorito(agent)"
+                                                width="32"
+                                                height="32"
+                                                fill="currentColor"
+                                                class="bi bi-fire"
+                                                viewBox="0 0 16 16"
                                             >
-                                            <button @click="agregarFavorito(agent)" class="btn">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="16"
-                                                    height="16"
-                                                    fill="currentColor"
-                                                    class="bi bi-heart"
-                                                    viewBox="0 0 16 16"
-                                                >
-                                                    <path
-                                                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
-                                                    />
-                                                </svg>
-                                            </button>
-                                        </div>
+                                                <path
+                                                    d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"
+                                                />
+                                            </svg>
+                                            <span v-if="!isFavorito(agent)" class="text-favorito">
+                                                Add favorites
+                                            </span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
