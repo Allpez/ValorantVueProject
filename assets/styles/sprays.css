@@ -127,13 +127,9 @@ h1 {
     width: 180px;
     height: auto;
     margin: 20px;
+    
 }
-.tarjeta:hover {
-    transform: scale(1.3);
-    transition-duration: 0.8s;
-    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.3); 
-    z-index: 10;
-}
+
 .form-check-input:hover {
     color: white;
     box-shadow: 0 0 4px 4px rgba(158, 42, 42, 0.7);
@@ -145,17 +141,19 @@ h1 {
     background-color: rgb(252, 1, 1) !important;
     border: 0;
  }
-.card {
-    -webkit-box-shadow: 5px 5px 5px 0px rgba(110, 110, 110, 0.75);
-    -moz-box-shadow: 5px 5px 5px 0px rgba(110, 110, 110, 0.75);
-    box-shadow: 5px 5px 5px 0px rgba(110, 110, 110, 0.75);
-    border-radius: 0 !important;
+.card:hover {
+    box-shadow: 0 0 4px 4px rgba(255, 0, 0, 0.7);
+    transform: scale(1.2);
+    transition-duration: 0.8s;
+    z-index: 1;
+    border: 2px solid red;
+
 }
 .btn{
     border-radius: 0 !important;
     border: 0 !important;
     font-family: Tungsten-Bold !important;
-    font-size: 24px !important;
+    font-size: 20px !important;
     margin: 0 !important;
 }
 
