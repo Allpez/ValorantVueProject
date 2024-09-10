@@ -59,7 +59,7 @@
             </nav>
         </header>
         <!------------------------------- Main --------------------------------->
-            <main id="app">
+            <main id="app" class="flex-grow-1 main">
 
 
                 <div class="container text-center">
@@ -135,7 +135,10 @@
                             </div>
                             <div v-for="agent in agents" :key="agent.uuid" class="tarjeta">
                                 <div class="card row">
-                                    <img :src="agent.fullPortrait" class="card-img-top" :alt="agent.displayName">
+                                    <article>
+                                        <img :src="agent.killfeedPortrait" class="card-img-top" :alt="agent.background">
+                                        <img :src="agent.fullPortrait" class="card-img-top" :alt="agent.background">
+                                    </article>
                                     <div class="card-body">
                                         <h5 class="card-title text-primary">{{ agent.displayName }}</h5>
                                         <p class="card-text" v-if="agent.role">ROLE: {{ agent.role.displayName }}</p>

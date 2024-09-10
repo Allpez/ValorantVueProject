@@ -31,7 +31,7 @@
 article {
     position: relative;
     width: 250px;
-    transition: all .03s ease; 
+    transition: all .5s ease; 
 }
 
 article img:first-child {
@@ -89,8 +89,8 @@ article:hover img:last-child {
 
 /*--------------------------------------- agents hover -----------------------------------------*/
 
-ain {
-    flex-grow: 1;
+main {
+    background-color: black;
 }
 h1 {
     font-family: Tungsten-Bold;
