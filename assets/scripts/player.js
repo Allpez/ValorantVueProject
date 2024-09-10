@@ -5,12 +5,12 @@ const { createApp } = Vue;
 const app = createApp({
     data() {
         return {
-            playerCards: [], // Tarjetas de jugador obtenidas de la API
-            playerCardsBK: [], // Copia de las tarjetas de jugador para manipulación
-            favorites: [], // Tarjetas de jugador favoritas
-            searchText: "", // Texto para búsqueda
-            order: 'asc', // Orden de visualización
-            selectedCard: null // Tarjeta seleccionada para el modal
+            playerCards: [], 
+            playerCardsBK: [], 
+            favorites: [], 
+            searchText: "", 
+            order: 'asc', 
+            selectedCard: null 
         };
     },
     created() {
@@ -26,7 +26,7 @@ const app = createApp({
                 .then(response => response.json())
                 .then(info => {
                     this.playerCards = info.data;
-                    this.playerCardsBK = [...info.data]; // Mantener una copia para manipulación
+                    this.playerCardsBK = [...info.data]; 
                 })
                 .catch(error => {
                     console.error("Error fetching data:", error);
@@ -49,9 +49,9 @@ const app = createApp({
             this.order = newOrder;
         },
         showDetails(card) {
-            this.selectedCard = card; // Configura la tarjeta seleccionada
+            this.selectedCard = card; 
             const detailsModal = new bootstrap.Modal(document.getElementById('cardDetailsModal'));
-            detailsModal.show(); // Muestra el modal
+            detailsModal.show(); 
         }
     },
     computed: {

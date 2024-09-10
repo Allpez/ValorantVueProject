@@ -15,8 +15,8 @@ const app = createApp({
             datosSprays: [],
             datosSpraysBK: [],
             textoBuscar: '',
-            categorias:[],
-            categoriasSeleccionada:[],
+            categorias: [],
+            categoriasSeleccionada: [],
         }
     },
     created() {
@@ -28,8 +28,7 @@ const app = createApp({
                 .then((response) => response.json())
                 .then((info) => {
                     this.datosSprays = info.data
-                    this.datosSpraysBK = this.datosSprays
-
+                    this.datosSpraysBK = info.data
                 })
         },
     },
@@ -39,25 +38,7 @@ const app = createApp({
                 e.displayName.toLowerCase().includes(this.textoBuscar.toLowerCase())
             )
 
-            this.datosSpraysBK = primerFiltro
-
-            console.log(this.categoriasSeleccionada);
-
-            if (this.categoriasSeleccionada > 0) {
-                this.datosSpraysBK = datosSpraysBK.slice().sort((a, b) => {
-                    if (this.categoriasSeleccionada === 'ascendente') {
-                        return a.displayName.localeCompare(b.displayName);
-                    } else {
-                        return b.displayName.localeCompare(a.displayName);
-                    }
-                    console.log(this.datosSpraysBK)
-                })
-            }else{
-                this.datosSpraysBK = primerFiltro
-            }
-
-            
-
+            this.datosSprays = primerFiltro
         },
     },
 }).mount('#app')

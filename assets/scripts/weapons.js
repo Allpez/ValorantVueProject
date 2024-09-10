@@ -41,30 +41,30 @@ const app = createApp({
         cleanCategoryName(category) {
             return category.replace('EEquippableCategory::', '');
         },
-        
+
         agregarFavorito(weapon) {
-            
+
             const index = this.favoritos.findIndex(fav => fav.uuid === weapon.uuid);
-    
-           
+
+
             if (index === -1) {
                 this.favoritos.push(weapon);
             } else {
                 this.favoritos.splice(index, 1);
             }
-            
-           
-            localStorage.setItem('favoritosWeapons', JSON.stringify(this.favoritos)); 
+
+
+            localStorage.setItem('favoritosWeapons', JSON.stringify(this.favoritos));
         },
         isFavorito(weapon) {
-        
+
             return this.favoritos.some(fav => fav.uuid === weapon.uuid);
         },
         quitarFavorito(weapon) {
-           
+
             const index = this.favoritos.findIndex(fav => fav.uuid === weapon.uuid);
-            
-           
+
+
             if (index !== -1) {
                 this.favoritos.splice(index, 1);
                 localStorage.setItem('favoritosWeapons', JSON.stringify(this.favoritos));
