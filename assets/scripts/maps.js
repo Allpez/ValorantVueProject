@@ -9,7 +9,7 @@ const app = createApp({
             mapsBK: [], // Backup Lista de mapas
             favoritos: [], // Lista de mapas favoritos
             textoBuscar: "", // Texto de búsqueda
-            orden: 'asc',  // Orden de los mapas, por defecto ascendente
+            activeSwitch: 'asc',  // Orden de los mapas, por defecto ascendente
         };
     },
     created() { //las cosas que se van a ejecutar la primera vez que se levante la pagina al inicio
@@ -55,7 +55,7 @@ const app = createApp({
             return this.favoritos.some(fav => fav.uuid === map.uuid);
         },
         cambiarOrden(nuevoOrden) {
-            this.orden = nuevoOrden;
+            this.activeSwitch = nuevoOrden;
         }
     },
     computed: { //interacciones de la pagina o dependencias de eventos que se ejecutan directamente
@@ -69,7 +69,7 @@ const app = createApp({
 
             // Ordenar mapas
             return primerFiltro.slice().sort((a, b) => {
-                if (this.orden === 'asc') {
+                if (this.activeSwitch === 'asc') {
                     return a.displayName.localeCompare(b.displayName);
                 } else {
                     return b.displayName.localeCompare(a.displayName);
