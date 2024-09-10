@@ -1,4 +1,3 @@
-
 let urlAgents = 'https://valorant-api.com/v1/agents?isPlayableCharacter=true'
 
 const { createApp } = Vue
