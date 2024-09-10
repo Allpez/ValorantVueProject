@@ -114,7 +114,9 @@ h2 {
 .cardWeapons {
     max-height: 9%;
 }
-
+.table{
+    font-size: 32px !important;
+}
 
 .container-car {
     display: flex;
