@@ -1,93 +1,102 @@
-﻿# ValorantVueProject
+﻿# Challenge of the MindHUb - "Valorant"
 
-En este repositorio se encuentra la pagina "Valorant"- 1st Challenge del curso MindHUb etapa: FRONT-ENT, creada con HTML, CSS, BOOTSTRAP, JAVASCRIPT y VUE.
+This is a solution to the [Mind Hub](https://mindhubweb.com/). In this repository you will find the page "Valorant" - 1st Challenge of the MindHUb course stage: FRONT-ENT, created with HTML, CSS, BOOTSTRAP, JAVASCRIPT and VUE.
 
-Requerimientos Desafio.
+## Table of contents
 
-Diseñar una pagina web basada en la información de la api asignada que contenga como mínimo los siguientes parámetros:
+-   [Overview](#overview)
+    -   [The challenge](#the-challenge)
+    -   [Api](#api)
+    -   [Screenshot](#screenshot)
+    -   [Links](#links)
+-   [Project](#project)
+    -   [Built with](#built-with)
+    -   [Requirements](#requirements)
+    -   [Deliverable](#deliverable)
+-   [Authors](#authors)
 
-1. Pagina home o principal donde se muestre la introducción al tema o el contenido principal, según la información asignada decidir y diseñar si mostrar todos los datos en la misma pagina o dividirlo en varias, la información de personajes, capítulos, mapas, comidas o lo que aplique debe de mostrarse en tarjetas y tener sus filtro pertinentes (Mínimo filtro de texto y checkbox).
 
-2. Pagina detalles, se deberá mostrar la información detallada de cada tarjeta que tenga la aplicación.
+## Overview
 
-3. Pagina estadísticas o informativa, en esta pagina se deberá mostrar una tabla con información importante de su tema.
+### The challenge
 
-4.
-La pagina principal deberá tener un modal de FAVORITOS, en este modal dependiendo del tema en el que se encuentre mostrar los elementos favoritos, esta información sebe ser persistente en local, así se actualice la pagina.
+Design a web page based on the assigned API information that contains at least the following parameters:
 
-Requerimientos Generales
-- Todas la paginas deben de tener una navbar, footer
-- Deben utilizar Vue
-- Se debe trabajar utilizando Git de manera colaborativa
-- Se debe usar Bootstrap en su mayoría pero pueden usar estilos propios
-- Tener la camara prendida en todo momento
-- La pagina tiene que ser Full Responsive
+-   Home or main page where the introduction to the topic or the main content is shown, depending on the assigned information, decide and design whether to show all the data on the same page or divide it into several; the information on characters, chapters, maps, meals or whatever applies must be shown in cards and have their relevant filters (Minimum text filter and checkbox).
 
+-   Details page, detailed information should be displayed for each card that the application has.
+
+-   Statistics or information page, this page should show a table with important information about your topic.
+
+-   The main page must have a FAVORITES modal, in this modal depending on the theme in which it is located, the favorite elements are displayed. This information must be persistent locally, even if the page is updated.
+
+### Api
 
 Api : https://valorant-api.com/
 
-Alexander Lopez Osorio
-Jesus Alberto Vera Pompa
-CRISTIAN RUIZ
-Samir Macias
-Jhonathan Serrano
+### Screenshot
 
-Entregable
-- Se espera un proyecto que contenga todo lo anterior y mas
-- Documentacion importante de su proyecto, mockups y diseño, herramientas usadas.
-- Repositorio con los avances y ayudas de todos en commits
-- Presentacion final sustentando su trabajo
-- Maximo plazo el dia miercoles 9 de Septiembre
-- Presentacion a mentores el 9 de Septiembre
-- Presentacion Final 10 de Septiembre
+![](./assets/image/screenshot-desktop.png)
 
+### Links
 
+-   Solution URL: [https://github.com/Allpez/ValorantVueProject](https://github.com/Allpez/ValorantVueProject)
+-   Live Site URL 1: [https://allpez.github.io/ValorantVueProject/](https://allpez.github.io/ValorantVueProject/)
+-   Live Site URL 2: [https://valorantvueapp.netlify.app/](https://valorantvueapp.netlify.app/)
 
+## Project
 
+### Built with
 
-Lista de pendientes: 
+-   Semantic HTML5 markup
+-   CSS custom properties
+-   Flexbox
+-   CSS Grid
+-   Introduction to JavaScript
+-   Functions
+-   Conditionals
+-   Arrays and objects
+-   Loops
+-   DOM
+-   Higher-order functions and array methods
+-   Events
+-   URL search parameters
+-   Asynchronicity (especially search)
+-   ECMA 6 (especially import and export)
+-   LocalStorage
 
-- todo en un solo idioma (falta clanes)
-- unificar CSS
-- verificar imagenes genericas para las cards que no tienen
+### Requirements
 
+-   All pages must have a navbar and footer
+-   They must use Vue
+-   They must work collaboratively using Git
+-   Bootstrap must be used for the most part but they can use their own styles
+-   Have the camera on at all times
+-   The page must be Full Responsive
 
+### Deliverable
 
+-   A project containing all of the above and more is expected
+-   Important documentation of your project, mockups and design, tools used.
+-   Repository with progress and help from everyone in commits
+-   Final presentation supporting your work
+-   Deadline Wednesday, September 9th
+-   Presentation to mentors on September 9th
+-   Final presentation September 10th
 
+### Useful Resources
 
+-   Discord
+-   Zoom
+-   Plataforma Mindhub
+-   GitHub, Git
+-   HTML, CSS, Bootstrap, JavaScript
+-   Visual Studio Code
 
+## Authors
 
-
-
-
-
-
-*personajes:
--imagen generica para cards que no tienen
--boton de favoritos 
--filtro por sexo y por 
-"natureType"
--paginado acomodar a color rojo
--modal de favoritos
--background en las cards dejarla igual a las de clanes 
-*clanes:
--revisar el titulo y centrarlo que el hover sea de color rojo y no azul subrayado colocarle un margin para separarlo del navbar y de las cards 
--imagenes en las cards 
--borrar boton de cerrar que no hace nada 
--traducir a ingles 
--modicar codigo de javascript de clanes para que retorne los 58 clanes 
-*stats:
-REVISAR Y ESCRIBIR  OPINIONES
-*detalles:
-toda la operatividad 
--aclarar el background de la tarjeta para que no se vea la marca de agua 
--colocar el mismo background que esta en las otras paginas 
--arreglar navbar, logo y enlaces
-
-archivo readmi con descripcion de la pagina
-
-FAVICON EN TODAS LAS PAGINAS 
-
-
--Las nubes de la navbar se cortan arriba 
-- carrousel revisar las imagenes que algunas se ven de baja calidad
+-   Alexander Lopez Osorio
+-   Jesus Alberto Vera Pompa
+-   Cristian Ruiz
+-   Samir Macias
+-   Jhonathan Serrano
