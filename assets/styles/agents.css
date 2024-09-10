@@ -194,6 +194,7 @@ h1 {
     border-bottom: 1px solid red;
     background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 0, 0, 0.7)),
         url(./imgs/streaming.jpg);
+        font-family: Tungsten-Bold;
 }
 .card_a:hover {
     box-shadow: 0 0 4px 4px rgba(255, 0, 0, 0.7);
