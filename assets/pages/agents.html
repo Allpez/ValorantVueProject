@@ -71,11 +71,12 @@
             </div>
 
             <div class="div-filtro-buscar container-fluid text-center">
+                {{superFiltro}}
                 <div class="row align-items-center barra-buscar">
                     <div class="col-sm-12 align-items-center p-2">
-                        {{superFiltro}}
+                       
                         <form class="d-flex" role="search" id="search">
-                            <input v-model="textoBuscar" class="form-control me-2" type="search" aria-label="Search"
+                            <input v-model="searchQuery" class="form-control me-2" type="search" aria-label="Search"
                                 placeholder="Search" />
                         </form>
                     </div>
@@ -107,7 +108,7 @@
                                     <h5 class="card-title text-primary">{{ agent.displayName }}</h5>
                                     <p class="card-text" v-if="agent.role">ROLE: {{ agent.role.displayName }}</p>
                                     <p class="card-text" v-if="agent.role">DESCRIPTION: {{ agent.role.description }}</p>
-
+                                    
                                 </div>
 
                             </div>

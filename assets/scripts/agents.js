@@ -9,10 +9,10 @@ const app = createApp({
             agents: [],
             agentsBk: [],
             categories: [],
-            favoritos: [],
-            cartegorySelected: [],
-            serchCategory: '',
+            // favoritos: [],
+            searchQuery: '',
             selectedRoles: [],
+            
         }
     },
     created() {
@@ -35,8 +35,15 @@ const app = createApp({
             console.log(this.categories);
             
         }
+
     },
     computed: {
-        
+        superFiltro() {
+            let primerFiltro = this.agentsBk.filter((e) =>
+                e.displayName.toLowerCase().includes(this.searchQuery.toLowerCase())
+            )
+
+            this.agents = primerFiltro
+        },
     },
 }).mount('#app')
