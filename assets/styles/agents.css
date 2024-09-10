@@ -27,7 +27,11 @@
 /*--------------------------------------- Main Styles -----------------------------------------*/
 
 /*--------------------------------------- agents hover -----------------------------------------*/
-
+h1 {
+    font-family: Tungsten-Bold;
+    font-size: 72px !important;
+    color: white !important;
+}
 article {
     position: relative;
     width: 250px;
@@ -96,9 +100,7 @@ h1 {
     font-family: Tungsten-Bold;
     font-size: 72px !important;
 }
-.barra-buscar {
-    background-color: #cecece;
-}
+
 #app {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -114,12 +116,67 @@ h1 {
     height: auto;
     margin: 20px;
 }
-/*.tarjeta:hover {
-     transform: scale(1.2);
-    transition-duration: 0.8s;
-    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.3); 
-    z-index: 10;
-} */
+.btn-favorites, .btn_close {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border-radius: 8px;
+    padding: 5px 10px;
+    text-align: center;
+    border: none;
+    font-size: larger;
+    font-weight: 700;
+}
+.bi-fire {
+    color: rgb(255, 0, 0);
+}
+
+.bi-fire:hover {
+    color: rgb(112, 110, 110);
+    transform: skew(-10deg);
+}
+
+.text-favorito {
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    padding: 5px 10px;
+    text-align: center;
+    border: none;
+}
+.text-favorito:hover {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border-radius: 40px;
+    text-align: center;
+    border: none;
+    padding: 2px;
+    margin: 2px;
+}
+.btn-favorites:hover, .btn_close:hover, .form-check-input:checked:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    box-shadow: 0 0 4px 4px rgba(158, 42, 42, 0.7);
+}
+
+.search_text{
+    box-shadow: 0 0 4px 4px rgba(255, 0, 0, 0.7);
+}
+.label{
+    color: white;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+.form-check-input:hover {
+    color: white;
+    box-shadow: 0 0 4px 4px rgba(158, 42, 42, 0.7);
+    background-color: rgb(204, 178, 178);
+   
+}
+
+.form-check-input:checked{
+    background-color: rgb(252, 1, 1) !important;
+    border: 0;
+ }
 .card {
     -webkit-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
