@@ -219,6 +219,16 @@ h2 {
 
 }
 
+.not-found {
+    background-image: linear-gradient(rgba(210, 210, 210, 0.70), rgba(210, 210, 210, 0.70)), url(../image/game-over.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: start;
+    align-items: center;
+    background-size: cover;
+
+}
+
 .favorite {
     text-decoration: none;
     background-color: rgb(255, 70, 85);
