@@ -33,6 +33,7 @@
 main {
     flex-grow: 1;
     background-color: rgb(15, 25, 35);
+    font-family: Tungsten-Bold;
 }
 
 .modal-body{

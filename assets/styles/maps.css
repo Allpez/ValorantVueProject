@@ -35,6 +35,7 @@ h1 {
 /*--------------------------------------- Fin Header Styles ---------------------------------------*/
 .main, .modal-body {
     background-color: rgb(15, 25, 35);
+    font-family: Tungsten-Bold;
 }
 
 .container-modal {
@@ -125,6 +126,7 @@ h1 {
 .card-title {
     border-bottom: 1px solid red ;
     background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 0, 0, 0.7)), url(./imgs/streaming.jpg);
+    font-family: Tungsten-Bold;
 }
 
 .form-check-label{

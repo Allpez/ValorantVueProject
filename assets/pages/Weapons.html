@@ -36,7 +36,7 @@
                                 <a class="nav-link fs-4" href="./maps.html">Maps</a>
                             </li>
                             <li class="nav-item p-2">
-                                <a class="nav-link fs-4" href="./playerCards.html.html">Player</a>
+                                <a class="nav-link fs-4" href="../pages/player.html">Player</a>
                             </li>
                             <li class="nav-item p-2">
                                 <a class="nav-link  fs-4" href="./sprays.html">Sprays</a>
@@ -96,8 +96,7 @@
                             <div class="row justify-content-evenly border-2">
                                 <div v-for="weapon in favoritos" :key="weapon.uuid"
                                     class="card card2 p-0 d-flex m-2 col-4">
-                                    <img :src="weapon.displayIcon" class="card-img-top "
-                                        alt="imagen_tarjeta">
+                                    <img :src="weapon.displayIcon" class="card-img-top " alt="imagen_tarjeta">
                                     <div class="card-body text-center d-flex flex-column align-items-center">
                                         <h6 class="card-title-modal ">{{ weapon.displayName }}</h6>
                                         <button @click="quitarFavorito(weapon)" class="text-favorito-modal">
@@ -110,13 +109,12 @@
                             <div v-if="favoritos.length === 0" class="text-center">
                                 <h1 class="text-success">No favorites added yet.</h1>
                             </div>
-                          
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn_close" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
-
                 </div>
             </div>
             <!-- cards -->
