@@ -179,10 +179,10 @@ h3{
 h5{
     font-size: 32px !important;
 }
-.tarjeta>td{
+.tarjeta-stats>td{
     font-size: 26px !important;
 }
-.tarjeta:hover{
+.tarjeta-stats:hover{
     transform: scale(1.5);
 }
 /*--------------------------------------- Footer Styles ---------------------------------------*/
