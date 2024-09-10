@@ -1,4 +1,3 @@
-
 let urlAgents = 'https://valorant-api.com/v1/agents?isPlayableCharacter=true'
 
 const { createApp } = Vue
@@ -12,14 +11,13 @@ const app = createApp({
             favoritos: [],
             searchQuery: '',
             selectedRoles: [],
-            
         }
     },
     created() {
         this.bringData(urlAgents)
-        let datosLocal = JSON.parse(localStorage.getItem('favoritosAgent'))
-        if (datosLocal) {
-            this.favoritos = datosLocal
+        let datosLocal = JSON.parse(localStorage.getItem('favoritosAgent'));
+        if (datosLocal && Array.isArray(datosLocal)) {
+            this.favoritos = datosLocal;
         }
     },
     methods: {
@@ -34,36 +32,48 @@ const app = createApp({
                 })
         },
         extractCategories() {
-            const roles = this.agents.map(agent => agent.role ? agent.role.displayName : 'No role available');
-            this.categories = [...new Set(roles)];
-            console.log(this.categories);
+            const roles = this.agents.map((agent) =>
+                agent.role ? agent.role.displayName : 'No role available'
+            )
+            this.categories = [...new Set(roles)]
+            console.log(this.categories)
         },
-        agregarFavorito(agent){
+        agregarFavorito(agent) {
             if (!this.favoritos.includes(agent)) {
                 this.favoritos.push(agent)
                 localStorage.setItem('favoritosAgent', JSON.stringify(this.favoritos))
             }
-             
-            
         },
-        quitarFavoritos(agent) {
-            const index = this.favoritos.findIndex(age => age.id === agent.id)
+        quitarFavorito(agent) {
+            const index = this.favoritos.findIndex((age) => age.id === agent.id)
             if (index !== -1) {
                 this.favoritos.splice(index, 1)
                 localStorage.setItem('favoritosAgent', JSON.stringify(this.favoritos))
             }
         },
+        toggleFavorito(agent) {
+            if (this.isFavorito(agent)) {
+                this.quitarFavorito(agent)
+            } else {
+                this.agregarFavorito(agent)
+            }
+        },
+        isFavorito(agent) {
+            return this.favoritos.some((fav) => fav.uuid === agent.uuid)
+        },
     },
     computed: {
         superFiltro() {
-            let primerFiltro = this.agentsBk.filter((e) => e.displayName.toLowerCase().includes(this.searchQuery.toLowerCase()))
+            let primerFiltro = this.agentsBk.filter((e) =>
+                e.displayName.toLowerCase().includes(this.searchQuery.toLowerCase())
+            )
             if (this.selectedRoles.length > 0) {
-                this.agents = primerFiltro.filter(e => this.selectedRoles.includes(e.role.displayName))
+                this.agents = primerFiltro.filter((e) =>
+                    this.selectedRoles.includes(e.role.displayName)
+                )
             } else {
-            this.agents = primerFiltro
-        }
+                this.agents = primerFiltro
+            }
+        },
     },
-    
-}
-
-}).mount('#app')    
+}).mount('#app')

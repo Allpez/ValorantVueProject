@@ -27,11 +27,15 @@
 /*--------------------------------------- Main Styles -----------------------------------------*/
 
 /*--------------------------------------- agents hover -----------------------------------------*/
-
+h1 {
+    font-family: Tungsten-Bold;
+    font-size: 72px !important;
+    color: white !important;
+}
 article {
     position: relative;
     width: 250px;
-    transition: all .03s ease; 
+    transition: all 0.5s ease;
 }
 
 article img:first-child {
@@ -49,16 +53,12 @@ article img:last-child {
     right: 0;
     margin: auto;
     transform: translateY(25%);
-    transition: .3s ease;
+    transition: 0.3s ease;
     opacity: 0;
 }
 
 article:hover {
-    transform:
-        perspective(250px)
-        rotate(10deg)
-        translateY(-5%)
-        translateZ(0);
+    transform: perspective(250px) rotate(10deg) translateY(-5%) translateZ(0);
 }
 
 article::before {
@@ -67,15 +67,14 @@ article::before {
     bottom: 0;
     height: 100%;
     width: 100%;
-    background-image:
-linear-gradient(
+    background-image: linear-gradient(
         to bottom,
         transparent 10%,
         rgba(0, 0, 0, 0.5) 50%,
         rgba(0, 0, 0) 95%
     );
     opacity: 0;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 }
 
 article:hover::before {
@@ -89,16 +88,14 @@ article:hover img:last-child {
 
 /*--------------------------------------- agents hover -----------------------------------------*/
 
-ain {
-    flex-grow: 1;
+main {
+    background-color: black;
 }
 h1 {
     font-family: Tungsten-Bold;
     font-size: 72px !important;
 }
-.barra-buscar {
-    background-color: #cecece;
-}
+
 #app {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -114,17 +111,96 @@ h1 {
     height: auto;
     margin: 20px;
 }
-/*.tarjeta:hover {
-     transform: scale(1.2);
+.btn-favorites,
+.btn_close {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border-radius: 8px;
+    padding: 5px 10px;
+    text-align: center;
+    border: none;
+    font-size: larger;
+    font-weight: 700;
+}
+.bi-fire {
+    color: rgb(255, 0, 0);
+}
+
+.bi-fire:hover {
+    color: rgb(112, 110, 110);
+    transform: skew(-10deg);
+}
+
+.text-favorito {
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    padding: 5px 10px;
+    text-align: center;
+    border: none;
+    font-family: Tungsten-Bold !important;
+    font-size: 20px !important;
+}
+
+.text-favorito:hover {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border-radius: 40px;
+    text-align: center;
+    border: none;
+    padding: 2px;
+    margin: 2px;
+}
+
+.btn-favorites,
+.btn_close {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border-radius: 8px;
+    padding: 5px 10px;
+    text-align: center;
+    border: none;
+    font-size: larger;
+    font-weight: 700;
+}
+
+.btn-favorites:hover,
+.btn_close:hover,
+.form-check-input:checked:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    box-shadow: 0 0 4px 4px rgba(158, 42, 42, 0.7);
+}
+.search_text {
+    box-shadow: 0 0 4px 4px rgba(255, 0, 0, 0.7);
+}
+.label {
+    color: white;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+.form-check-input:hover {
+    color: white;
+    box-shadow: 0 0 4px 4px rgba(158, 42, 42, 0.7);
+    background-color: rgb(204, 178, 178);
+}
+
+.form-check-input:checked {
+    background-color: rgb(252, 1, 1) !important;
+    border: 0;
+}
+
+.card-title {
+    border-bottom: 1px solid red;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 0, 0, 0.7)),
+        url(./imgs/streaming.jpg);
+}
+.card_a:hover {
+    box-shadow: 0 0 4px 4px rgba(255, 0, 0, 0.7);
+    transform: scale(1.15);
     transition-duration: 0.8s;
-    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.3); 
-    z-index: 10;
-} */
-.card {
-    -webkit-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
-    border-radius: 0 !important;
+    z-index: 1;
+    border: 2px solid red;
 }
 .card-text {
     height: 100px;
@@ -158,6 +234,10 @@ h1 {
 .card-text::-webkit-scrollbar-track {
     border-radius: 10px;
 }
+
+.modal-body {
+    background-color: rgb(15, 25, 35);
+}
 .favorite {
     text-decoration: none;
     background-color: rgb(255, 70, 85);
@@ -180,4 +260,3 @@ footer > .container > .row > .col > p {
     color: white;
     margin-bottom: 0 !important;
 }
-
