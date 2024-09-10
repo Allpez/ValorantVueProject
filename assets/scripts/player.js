@@ -66,7 +66,7 @@ const app = createApp({
             // Eliminar la clase después de que termine la animación
             setTimeout(() => {
                 cardElement.classList.remove('clicked');
-            }, 300); // Coincide con la duración de la animación
+            }, 500); // Coincide con la duración de la animación
         }
     },
     computed: {
