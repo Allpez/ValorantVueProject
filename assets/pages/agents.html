@@ -74,7 +74,7 @@
                 {{superFiltro}}
                 <div class="row align-items-center barra-buscar">
                     <div class="col-sm-12 align-items-center p-2">
-                       
+
                         <form class="d-flex" role="search" id="search">
                             <input v-model="searchQuery" class="form-control me-2" type="search" aria-label="Search"
                                 placeholder="Search" />
@@ -102,13 +102,16 @@
                             <p class="text-success-emphasis text-center">Please try a new search.</p>
                         </div>
                         <div v-for="agent in agents" :key="agent.uuid" class="tarjeta">
-                            <div class="card row">
-                                <img :src="agent.fullPortrait" class="card-img-top" :alt="agent.displayName">
+                            <div class=" row">
+                                <article>
+                                    <img :src="agent.killfeedPortrait" class="card-img-top" :alt="agent.background">
+                                    <img :src="agent.fullPortrait" class="card-img-top" :alt="agent.background">
+                                </article>
                                 <div class="card-body">
                                     <h5 class="card-title text-primary">{{ agent.displayName }}</h5>
                                     <p class="card-text" v-if="agent.role">ROLE: {{ agent.role.displayName }}</p>
                                     <p class="card-text" v-if="agent.role">DESCRIPTION: {{ agent.role.description }}</p>
-                                    
+
                                 </div>
 
                             </div>

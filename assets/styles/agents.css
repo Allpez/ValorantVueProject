@@ -25,7 +25,71 @@
     border-bottom: 5px solid rgb(255, 70, 85) !important;
 }
 /*--------------------------------------- Main Styles -----------------------------------------*/
-main {
+
+/*--------------------------------------- agents hover -----------------------------------------*/
+
+article {
+    position: relative;
+    width: 250px;
+    transition: all .03s ease; 
+}
+
+article img:first-child {
+    box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
+    border-radius: 4px;
+    object-fit: cover;
+    width: 100%;
+}
+
+article img:last-child {
+    position: absolute;
+    width: 200px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(25%);
+    transition: .3s ease;
+    opacity: 0;
+}
+
+article:hover {
+    transform:
+        perspective(250px)
+        rotate(10deg)
+        translateY(-5%)
+        translateZ(0);
+}
+
+article::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-image:
+linear-gradient(
+        to bottom,
+        transparent 10%,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0) 95%
+    );
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+article:hover::before {
+    opacity: 1;
+}
+
+article:hover img:last-child {
+    opacity: 1;
+    transform: translateY(10%);
+}
+
+/*--------------------------------------- agents hover -----------------------------------------*/
+
+ain {
     flex-grow: 1;
 }
 h1 {
@@ -50,12 +114,12 @@ h1 {
     height: auto;
     margin: 20px;
 }
-.tarjeta:hover {
-    transform: scale(1.2);
+/*.tarjeta:hover {
+     transform: scale(1.2);
     transition-duration: 0.8s;
     box-shadow: 0 25px 35px rgba(0, 0, 0, 0.3); 
     z-index: 10;
-}
+} */
 .card {
     -webkit-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 21px 0px rgba(0, 0, 0, 0.75);
