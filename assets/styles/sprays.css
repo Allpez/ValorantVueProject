@@ -98,6 +98,10 @@ h1 {
     flex-wrap: wrap !important;
     justify-content: center !important;
 }
+.card-title {
+    border-bottom: 1px solid red ;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 0, 0, 0.7)), url(./imgs/streaming.jpg);
+}
 .contenedor {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -147,7 +151,13 @@ h1 {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-
+.close {
+    position: fixed;
+    top: 3%;
+    right: 4%;
+    background-color: red;
+    color: white;
+}
 /*--------------------------------------- Footer Styles ---------------------------------------*/
 footer {
     background-color: rgb(1, 1, 1);    
