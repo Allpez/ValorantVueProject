@@ -45,12 +45,13 @@ const app = createApp({
                 localStorage.setItem('favoritePlayerCards', JSON.stringify(this.favorites));
             }
         },
-        toggleFavorito(card) {
+        toggleFavorito(card, event) {
             if (this.isFavorito(card)) {
                 this.removeFavorite(card);
             } else {
                 this.addFavorite(card);
             }
+            this.animateCard(event.target);
         },
         isFavorito(card) {
             return this.favorites.some(fav => fav.uuid === card.uuid);
@@ -58,6 +59,15 @@ const app = createApp({
         cambiarOrden(newOrder) {
             this.order = newOrder;
         },
+        animateCard(cardElement) {
+            // Añadir la clase de animación
+            cardElement.classList.add('clicked');
+
+            // Eliminar la clase después de que termine la animación
+            setTimeout(() => {
+                cardElement.classList.remove('clicked');
+            }, 300); // Coincide con la duración de la animación
+        }
     },
     computed: {
         superFilter() {
