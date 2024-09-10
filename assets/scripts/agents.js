@@ -39,11 +39,13 @@ const app = createApp({
     },
     computed: {
         superFiltro() {
-            let primerFiltro = this.agentsBk.filter((e) =>
-                e.displayName.toLowerCase().includes(this.searchQuery.toLowerCase())
-            )
-
+            let primerFiltro = this.agentsBk.filter((e) => e.displayName.toLowerCase().includes(this.searchQuery.toLowerCase()))
+            if (this.selectedRoles.length > 0) {
+                this.agents = primerFiltro.filter(e => this.selectedRoles.includes(e.role.displayName))
+            } else {
             this.agents = primerFiltro
-        },
-    },
-}).mount('#app')
+        }
+    }
+}
+
+}).mount('#app')    
