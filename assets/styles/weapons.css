@@ -59,6 +59,7 @@
 }
 .main {
     flex: 1; 
+    background-color: black;
 }
 
 footer {
@@ -76,7 +77,7 @@ footer > .container > .row > .col > p {
 }
 
 .nav-link:hover {
-    background-color: rgb(15, 25, 35);
+    background-color:white;
     color: rgb(236, 232, 225) !important;
 }
 
@@ -103,7 +104,7 @@ footer > .container > .row > .col > p {
 .box {
     width: 10vw; 
     height: 200px; 
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+   
     transition: transform 300ms, box-shadow 300ms; 
     overflow: hidden; 
     position: relative; 
@@ -135,7 +136,7 @@ footer > .container > .row > .col > p {
 /* Efectos de hover */
 .box:hover {
     transform: scale(1.35); 
-    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 20px 30px rgba(158, 15, 15, 0.781);
     z-index: 10;
 }
 
@@ -165,5 +166,4 @@ footer > .container > .row > .col > p {
         margin-left: 200px;
         margin-right: 200px;
     }
-    /*-------------------------- Footer Styles --------------------------*/
 }
