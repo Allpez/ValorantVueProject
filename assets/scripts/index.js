@@ -5,29 +5,6 @@ const urlPlayer = `${urlApi}v1/playercards`
 const urlSpray = `${urlApi}v1/sprays`
 const urlWeapon = `${urlApi}v1/weapons`
 
-/*
-fetch(urlAgent)
-    .then((response) => response.json())
-    .then((dataFinal) => {
-        console.log(dataFinal.data)
-
-        let aleatorio1 = dataFinal.data[Math.floor(Math.random() * dataFinal.data.length)]
-        console.log(aleatorio1)
-        let aleatorio2 = dataFinal.data[Math.floor(Math.random() * dataFinal.data.length)]
-        console.log(aleatorio2)
-        let aleatorio3 = dataFinal.data[Math.floor(Math.random() * dataFinal.data.length)]
-        console.log(aleatorio3)
-        let aleatorio4 = dataFinal.data[Math.floor(Math.random() * dataFinal.data.length)]
-        console.log(aleatorio4)
-        let aleatorio5 = dataFinal.data[Math.floor(Math.random() * dataFinal.data.length)]
-        console.log(aleatorio5)
-
-        let array = []
-
-        array = array.concat(aleatorio1, aleatorio2, aleatorio3, aleatorio4, aleatorio5)
-        console.log(array)
-    })*/
-
 const { createApp } = Vue //Estamos trayendo una función "createApp" que esta en el objeto VUE, variable global
 
 //crear una app

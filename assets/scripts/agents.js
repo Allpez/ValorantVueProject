@@ -15,9 +15,9 @@ const app = createApp({
     },
     created() {
         this.bringData(urlAgents)
-        let datosLocal = JSON.parse(localStorage.getItem('favoritosAgent'))
-        if (datosLocal) {
-            this.favoritos = datosLocal
+        let datosLocal = JSON.parse(localStorage.getItem('favoritosAgent'));
+        if (datosLocal && Array.isArray(datosLocal)) {
+            this.favoritos = datosLocal;
         }
     },
     methods: {
