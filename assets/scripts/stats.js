@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     data: {
                         labels: ['Initiator', 'Sentinel', 'Duelist', 'Controller'],
                         datasets: [{
-                            label: 'Conteo de Agentes',
+                            label: 'Agents Numbers',
                             data: [
                                 roleCounts['Initiator'] || 0,
                                 roleCounts['Sentinel'] || 0,
