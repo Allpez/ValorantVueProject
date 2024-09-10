@@ -53,19 +53,13 @@
                                     >
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../pages/agents.html"
-                                        >Agents</a
-                                    >
+                                    <a class="nav-link fs-4" href="../pages/agents.html">Agents</a>
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../pages/maps.html"
-                                        >Maps</a
-                                    >
+                                    <a class="nav-link fs-4" href="../pages/maps.html">Maps</a>
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../pages/player.html"
-                                        >Player</a
-                                    >
+                                    <a class="nav-link fs-4" href="../pages/player.html">Player</a>
                                 </li>
                                 <li class="nav-item p-2">
                                     <a class="nav-link active fs-4" href="../pages/sprays.html"
@@ -78,9 +72,7 @@
                                     >
                                 </li>
                                 <li class="nav-item p-2">
-                                    <a class="nav-link fs-4" href="../pages/stats.html"
-                                        >Stats</a
-                                    >
+                                    <a class="nav-link fs-4" href="../pages/stats.html">Stats</a>
                                 </li>
                             </ul>
                         </div>
@@ -96,49 +88,113 @@
                         </div>
                     </div>
                 </div>
-                <div class="div-filtro-buscar container-fluid text-center">
+                <div class="container row">
                     <div class="row align-items-center barra-buscar">
-                        <div class="col-sm-12 col-md-6 col-xl-4 p-2" id="category" >
-                            <div id="check" >
-                                <div class="form-check-inline py-2">
+                        {{superFiltro}}
+                        <div class="col-3 p-2" id="category">
+                            <div class="d-flex flex-row justify-content-center align-items-center">
+                                <div class="form-check m-2">
                                     <input
                                         class="form-check-input"
                                         type="radio"
-                                        id="ascendente"
-                                        value="ascendente"
-                                        name="flexRadioDefault"
-                                        v-model="categoriasSeleccionada"
+                                        name="exampleRadios"
+                                        id="exampleRadios1"
+                                        value="option1"
+                                        @click="cambiarOrden('asc')"
+                                        checked
                                     />
-                                    <label class="form-check-label" for="flexCheckDefault1">
-                                         Ordenar (A-Z)
+                                    <label class="form-check-label text-light" for="exampleRadios1">
+                                        Order A to Z
                                     </label>
                                 </div>
-                                <div class="form-check-inline py-2">
+                                <div class="form-check m-2">
                                     <input
                                         class="form-check-input"
                                         type="radio"
-                                        id="descendente"
-                                        value="descendente"
-                                        name="flexRadioDefault"
-                                        v-model="categoriasSeleccionada"
+                                        name="exampleRadios"
+                                        id="exampleRadios2"
+                                        value="option2"
+                                        @click="cambiarOrden('desc')"
                                     />
-                                    <label class="form-check-label" for="flexCheckDefault1">
-                                        Ordenar (Z-A)
+                                    <label class="form-check-label text-light" for="exampleRadios2">
+                                        Order Z to A
                                     </label>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-6 col-xl-4 align-items-center p-2">
-                            {{superFiltro}}
-                            <form class="d-flex" role="search" id="search">
-                                <input
-                                    v-model="textoBuscar"
-                                    class="form-control me-2"
-                                    type="search"
-                                    aria-label="Search"
-                                    placeholder="Buscador"
-                                />
-                            </form>
+                        <form class="p-2 col-6" role="search">
+                            <input
+                                v-model="textoBuscar"
+                                class="search_text form-control me-2"
+                                type="search"
+                                aria-label="search"
+                                id="buscador"
+                                placeholder="Search Sprays..."
+                            />
+                        </form>
+                        <div class="d-flex align-items-center col-3">
+                            <button
+                                type="button"
+                                class="btn-favorites"
+                                data-bs-toggle="modal"
+                                data-bs-target="#favoritosModal"
+                            >
+                                Favorites
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="modal fade"
+                    id="favoritosModal"
+                    tabindex="-1"
+                    aria-labelledby="favoritosModalLabel"
+                    aria-hidden="true"
+                >
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header justify-content-center">
+                                <h2 class="modal-title text-center" id="favoritosModalLabel">
+                                    Favorites
+                                </h2>
+                            </div>
+                            <div class="modal-body container">
+                                <div class="contenedor">
+                                    <div v-if="datosSprays.length == 0">
+                                        <h1 class="text-success text-center">No results found.</h1>
+                                        <p class="text-success-emphasis text-center">
+                                            Please try a new search.
+                                        </p>
+                                    </div>
+                                    <div v-for="info in favoritos" :key="info.uuid" class="tarjeta">
+                                        <div class="card row">
+                                            <img :src="info.displayIcon" class="card-img-top p-2" alt="" />
+                                            <div
+                                                class="card-body justify-content-center align-items-center"
+                                            >
+                                                <h5 class="card-title">{{info.displayName}}</h5>
+        
+                                                <div class="d-flex justify-content-center">
+                                                    <button
+                                                    @click="quitarFavorito(info)"
+                                                    class="text-favorito"
+                                                >
+                                                    Remove favorites
+                                                </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div v-if="favoritos.length === 0" class="text-center">
+                                    <h1 class="text-success">No favorites added yet.</h1>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn_close" data-bs-dismiss="modal">
+                                    Close
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -147,15 +203,43 @@
                         <div class="contenedor">
                             <div v-if="datosSprays.length == 0">
                                 <h1 class="text-success text-center">No results found.</h1>
-                                <p class="text-success-emphasis text-center">Please try a new search.</p>
+                                <p class="text-success-emphasis text-center">
+                                    Please try a new search.
+                                </p>
                             </div>
-                            <div v-for="info in datosSprays" class="tarjeta">
+                            <div v-for="info in datosSprays" :key="info.uuid" class="tarjeta">
                                 <div class="card row">
                                     <img :src="info.displayIcon" class="card-img-top p-2" alt="" />
                                     <div
                                         class="card-body justify-content-center align-items-center"
                                     >
                                         <h5 class="card-title">{{info.displayName}}</h5>
+
+                                        <div class="d-flex justify-content-center favorirrr">
+                                            <button
+                                                @click="toggleFavorito(info)"
+                                                class="btn btn_details d-flex justify-content-end p-0"
+                                            >
+                                                <svg
+                                                    v-if="isFavorito(info)"
+                                                    width="32"
+                                                    height="32"
+                                                    fill="currentColor"
+                                                    class="bi bi-fire"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <path
+                                                        d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"
+                                                    />
+                                                </svg>
+                                                <span
+                                                    v-if="!isFavorito(info)"
+                                                    class="text-favorito"
+                                                >
+                                                    Add favorites
+                                                </span>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

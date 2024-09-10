@@ -14,13 +14,17 @@ const app = createApp({
         return {
             datosSprays: [],
             datosSpraysBK: [],
+            favoritos: [],
             textoBuscar: '',
-            categorias: [],
-            categoriasSeleccionada: [],
+            activeSwitch: 'asc',
         }
     },
     created() {
-        this.traerData(urlApi)
+        this.traerData(urlApi);
+        let datosLocal = JSON.parse(localStorage.getItem('favoritosSprays'));
+        if (datosLocal && Array.isArray(datosLocal)) { //es importante porque si no encuentra info se va a romper porque no existe
+            this.favoritos = datosLocal;
+        }
     },
     methods: {
         traerData(url) {
@@ -31,6 +35,32 @@ const app = createApp({
                     this.datosSpraysBK = info.data
                 })
         },
+        agregarFavorito(info) {
+            if (!this.favoritos.some(fav => fav.uuid === info.uuid)) {
+                this.favoritos.push(info);
+                localStorage.setItem('favoritosSprays', JSON.stringify(this.favoritos));
+            }
+        },
+        quitarFavorito(info) {
+            const index = this.favoritos.findIndex(fav => fav.uuid === info.uuid);
+            if (index !== -1) {
+                this.favoritos.splice(index, 1);
+                localStorage.setItem('favoritosSprays', JSON.stringify(this.favoritos));
+            }
+        },
+        toggleFavorito(info) {
+            if (this.isFavorito(info)) {
+                this.quitarFavorito(info);
+            } else {
+                this.agregarFavorito(info);
+            }
+        },
+        isFavorito(info) {
+            return this.favoritos.some(fav => fav.uuid === info.uuid);
+        },
+        cambiarOrden(nuevoOrden) {
+            this.activeSwitch = nuevoOrden;
+        }
     },
     computed: {
         superFiltro() {
@@ -39,6 +69,16 @@ const app = createApp({
             )
 
             this.datosSprays = primerFiltro
+
+            let filtroCheck = primerFiltro.slice().sort((a, b) => {
+                if (this.activeSwitch === 'asc') {
+                    return a.displayName.localeCompare(b.displayName)
+                } else {
+                    return b.displayName.localeCompare(a.displayName)
+                }
+            })
+
+            this.datosSprays = filtroCheck
         },
     },
 }).mount('#app')
