@@ -42,7 +42,7 @@
                                 <a class="nav-link fs-4" href="./maps.html">Maps</a>
                             </li>
                             <li class="nav-item p-2">
-                                <a class="nav-link fs-4" href="./playerCards.html">Player</a>
+                                <a class="nav-link fs-4" href="./player.html">Player</a>
                             </li>
                             <li class="nav-item p-2">
                                 <a class="nav-link fs-4" href="./sprays.html">Sprays</a>
@@ -59,64 +59,105 @@
             </nav>
         </header>
         <!------------------------------- Main --------------------------------->
-        <main id="app">
+            <main id="app">
 
 
-            <div class="container text-center">
-                <div class="row align-items-center">
-                    <div class="col py-2">
-                        <h1>Agents</h1>
+                <div class="container text-center">
+                    <div class="row align-items-center">
+                        <div class="col py-2">
+                            <h1>Agents</h1>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="div-filtro-buscar container-fluid text-center">
-                {{superFiltro}}
-                <div class="row align-items-center barra-buscar">
-                    <div class="col-sm-12 align-items-center p-2">
-                       
-                        <form class="d-flex" role="search" id="search">
-                            <input v-model="searchQuery" class="form-control me-2" type="search" aria-label="Search"
-                                placeholder="Search" />
-                        </form>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3>Filter by Role</h3>
-                            <div v-for="category in categories" :key="category">
-                                <input type="checkbox" :id="category" :value="category" v-model="selectedRoles">
-                                <label :for="category">{{ category }}</label>
+                <div class="div-filtro-buscar container-fluid text-center">
+                    {{superFiltro}}
+                    <div class="row align-items-center barra-buscar">
+                        <div class="row">
+                            <div class="col-md-12 m-2 d-flex justify-content-center gap-2">
+                                
+                                <div v-for="category in categories" :key="category">
+                                    <input type="checkbox" :id="category" :value="category" v-model="selectedRoles">
+                                    <label :for="category">{{ category }}</label>
+                                </div>
                             </div>
                         </div>
+                        <div class="col-sm-12 align-items-center p-2">
+
+                            <form class="d-flex" role="search" id="search">
+                                <input v-model="searchQuery" class="form-control me-2" type="search" aria-label="Search"
+                                    placeholder="Search" />
+                            </form>
+                        </div>
+                        <div class="d-flex justify-content-center mt-2">
+                            <button type="button" class="favorite " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+                                </svg>
+                                Favorites
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="container-fluid text-center">
-                <div class="row align-items-center">
-                    <div class="contenedor">
-                        <div v-if="agents.length == 0">
-                            <h1 class="text-success text-center">No results found.</h1>
-                            <p class="text-success-emphasis text-center">Please try a new search.</p>
-                        </div>
-                        <div v-for="agent in agents" :key="agent.uuid" class="tarjeta">
-                            <div class="card row">
-                                <img :src="agent.fullPortrait" class="card-img-top" :alt="agent.displayName">
-                                <div class="card-body">
-                                    <h5 class="card-title text-primary">{{ agent.displayName }}</h5>
-                                    <p class="card-text" v-if="agent.role">ROLE: {{ agent.role.displayName }}</p>
-                                    <p class="card-text" v-if="agent.role">DESCRIPTION: {{ agent.role.description }}</p>
-                                    
+
+                <div class="container-fluid text-center">
+                    <div class="row align-items-center">
+                        <div class="contenedor">
+                            <div>
+                                <h2>Favoritos</h2>
+                                <div v-for="agent in favoritos" :key="agent.uuid" class="tarjeta">
+                                    <div class="card row">
+                                        <img :src="agent.fullPortrait" class="card-img-top" :alt="agent.displayName">
+                                        <div class="card-body">
+                                            <h5 class="card-title text-primary">{{ agent.displayName }}</h5>
+                                            <p class="card-text" v-if="agent.role">ROLE: {{ agent.role.displayName }}</p>
+                                            <p class="card-text" v-if="agent.role">DESCRIPTION: {{ agent.role.description }}</p>
+                                            <div class="p-2 ms-auto">
+                                                <a href="./details.html?id='+{{agent.uuid}}"class="btn btn-primary">Details</a>
+                                                <button @click="quitarFavoritos(agent)" class="btn"> 
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+        
+                                    </div>
                                 </div>
 
                             </div>
+                            <div v-if="agents.length == 0">
+                                <h1 class="text-success text-center">No results found.</h1>
+                                <p class="text-success-emphasis text-center">Please try a new search.</p>
+                            </div>
+                            <div v-for="agent in agents" :key="agent.uuid" class="tarjeta">
+                                <div class="card row">
+                                    <img :src="agent.fullPortrait" class="card-img-top" :alt="agent.displayName">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-primary">{{ agent.displayName }}</h5>
+                                        <p class="card-text" v-if="agent.role">ROLE: {{ agent.role.displayName }}</p>
+                                        <p class="card-text" v-if="agent.role">{{ agent.description }}</p>
+
+
+                                        <div class="p-2 ms-auto">
+                                            <a href="./details.html?id='+{{agent.uuid}}"class="btn btn-primary">Details</a>
+                                            <button @click="agregarFavorito(agent)" class="btn"> 
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </main>
+            </main>
         <!------------------------------- Footer ------------------------------->
         <footer>
             <div class="container text-center">
