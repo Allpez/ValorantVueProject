@@ -54,121 +54,120 @@
             </nav>
         </header>
         <!------------------------------- Main --------------------------------->
-        <main id="app" class="main p-3 flex-grow-1">
+        <main id="app" class="main container-fluid p-3 flex-grow-1 d-flex flex-column align-items-center">
             <div class="container text-center">
                 <div class="row align-items-center">
-                    <div class="col py-2">
-                        <h1>Sprays</h1>
+                    <div class="col py-2 d-flex justify-content-center">
+                        <h1>Maps</h1>
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="d-flex flex-row justify-content-center align-items-center mb-4">
-                    <div class="accordion accordion-flush col-2" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed mx-2" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                    aria-controls="flush-collapseOne">
-                                    Order
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body text-center">
-                                    <button class="btn" @click="cambiarOrden('asc')" role="button">A-Z</button>
-                                    <button class="btn" @click="cambiarOrden('desc')" role="button">Z-A</button>
-                                </div>
-                            </div>
+            <div class="container row">
+                <div class="d-flex flex-row justify-content-center align-items-center mb-4 col-3">
+                    <div class="">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1" @click="cambiarOrden('asc')" checked>
+                            <label class="form-check-label text-light" for="exampleRadios1">
+                                Order A to Z
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                value="option2" @click="cambiarOrden('desc')">
+                            <label class="form-check-label text-light" for="exampleRadios2">
+                                Order Z to A
+                            </label>
                         </div>
                     </div>
-                    <form class="p-2 col-6" role="search">
-                        <input v-model="textoBuscar" class="search_text form-control me-2" type="search" aria-label="search"
-                            id="buscador" placeholder="Search Map...">
-                    </form>
-                    <div class="d-flex align-items-center">
-                        <button type="button" class="btn-favorites" data-bs-toggle="modal"
-                            data-bs-target="#favoritosModal">
-                            Favorites
-                        </button>
-                    </div>
                 </div>
-                <div id="cards" class="container">
-                    <div class="modal fade" id="favoritosModal" tabindex="-1" aria-labelledby="favoritosModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header justify-content-center">
-                                    <h2 class="modal-title text-center" id="favoritosModalLabel">Favorites</h2>
-                                </div>
-                                <div class="modal-body container">
-                                    <div class="row justify-content-evenly border-2">
-                                        <div v-for="map in favoritos" :key="map.uuid" class="card card2 p-0 d-flex m-2 col-4">
-                                            <img :src="map.splash" class="card-img-top" alt="imagen_mapa">
-                                            <div class="card-body p-1 d-flex flex-column justify-content-around">
-                                                <h4 class="card-title text-center">{{ map.displayName }}</h4>
-                                                <button @click="quitarFavorito(map)" class="text-favorito">
-                                                    Remove favorites
-                                                </button>
-                                            </div>
+                <form class="p-2 col-6" role="search">
+                    <input v-model="textoBuscar" class="search_text form-control me-2" type="search" aria-label="search"
+                        id="buscador" placeholder="Search Map...">
+                </form>
+                <div class="d-flex align-items-center col-3">
+                    <button type="button" class="btn-favorites mb-4 ms-5" data-bs-toggle="modal" data-bs-target="#favoritosModal">
+                        Favorites
+                    </button>
+                </div>
+            </div>
+            <div id="cards" class="container">
+                <div class="modal fade" id="favoritosModal" tabindex="-1" aria-labelledby="favoritosModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header justify-content-center">
+                                <h2 class="modal-title text-center" id="favoritosModalLabel">Favorites</h2>
+                            </div>
+                            <div class="modal-body container">
+                                <div class="row justify-content-evenly border-2">
+                                    <div v-for="map in favoritos" :key="map.uuid"
+                                        class="card card2 p-0 d-flex m-2 col-4">
+                                        <img :src="map.splash" class="card-img-top" alt="imagen_mapa">
+                                        <div class="card-body p-1 d-flex flex-column justify-content-around">
+                                            <h4 class="card-title text-center">{{ map.displayName }}</h4>
+                                            <button @click="quitarFavorito(map)" class="text-favorito">
+                                                Remove favorites
+                                            </button>
                                         </div>
                                     </div>
-                                    <div v-if="favoritos.length === 0" class="text-center">
-                                        <h1 class="text-success">No favorites added yet.</h1>
-                                    </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn_close"
-                                        data-bs-dismiss="modal">Close</button>
+                                <div v-if="favoritos.length === 0" class="text-center">
+                                    <h1 class="text-success">No favorites added yet.</h1>
                                 </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn_close" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
-                    <div v-if="superFiltro.length === 0" class="m-5">
-                        <div class="not-found">
-                            <h1 class="text-not-found text-center justify-content-center d-flex">No results found.<br>Please try a new search.</h1>
-                        </div>
+                </div>
+                <div v-if="superFiltro.length === 0" class="m-5">
+                    <div class="not-found">
+                        <h1 class="text-not-found text-center justify-content-center d-flex">No results found.<br>Please
+                            try a new search.</h1>
                     </div>
-                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                        <div v-for="map in superFiltro" :key="map.uuid" class="col">
-                            <div class="card card_a">
-                                <img :src="map.splash" class="card-img-top" alt="imagen_mapa">
-                                <div class="card_body p-1">
-                                    <h4 class="card-title text-center">{{ map.displayName }}</h4>
-                                    <div class="d-flex justify-content-center">
-                                        <button @click="toggleFavorito(map)"
-                                            class="btn btn_details d-flex justify-content-end p-0">
-                                            <svg v-if="isFavorito(map)" width="32" height="32" fill="currentColor"
-                                                class="bi bi-fire" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15" />
-                                            </svg>
-                                            <span v-if="!isFavorito(map)" class="text-favorito">
-                                                Add favorites
-                                            </span>
-                                        </button>
-                                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                    <div v-for="map in superFiltro" :key="map.uuid" class="col">
+                        <div class="card card_a">
+                            <img :src="map.splash" class="card-img-top" alt="imagen_mapa">
+                            <div class="card_body p-1">
+                                <h4 class="card-title text-center">{{ map.displayName }}</h4>
+                                <div class="d-flex justify-content-center">
+                                    <button @click="toggleFavorito(map)"
+                                        class="btn btn_details d-flex justify-content-end p-0">
+                                        <svg v-if="isFavorito(map)" width="32" height="32" fill="currentColor"
+                                            class="bi bi-fire" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15" />
+                                        </svg>
+                                        <span v-if="!isFavorito(map)" class="text-favorito">
+                                            Add favorites
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+    </div>
+    </main>
 
-        <!------------------------------- Footer ------------------------------->
-        <footer>
-            <div class="container text-center">
-                <div class="row align-items-center">
-                    <div class="col align-self-center p-2">
-                        <p>
-                            © Copyright 2024 - Challenger Valorant - Mind Hub - All Rights
-                            Reserved.
-                        </p>
-                    </div>
+    <!------------------------------- Footer ------------------------------->
+    <footer>
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col align-self-center p-2">
+                    <p>
+                        © Copyright 2024 - Challenger Valorant - Mind Hub - All Rights
+                        Reserved.
+                    </p>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
     </div>
     <!-- Librerias JavaScript -->
     <!-- Bootstrap -->
