@@ -7,7 +7,7 @@ const app = createApp({
         return {
             playerCards: [], 
             playerCardsBK: [], 
-            favorites: [], 
+            favorites: [],
             searchText: "", 
             order: 'asc', 
             selectedCard: null 
@@ -45,14 +45,19 @@ const app = createApp({
                 localStorage.setItem('favoritePlayerCards', JSON.stringify(this.favorites));
             }
         },
-        changeOrder(newOrder) {
+        toggleFavorito(card) {
+            if (this.isFavorito(card)) {
+                this.removeFavorite(card);
+            } else {
+                this.addFavorite(card);
+            }
+        },
+        isFavorito(card) {
+            return this.favorites.some(fav => fav.uuid === card.uuid);
+        },
+        cambiarOrden(newOrder) {
             this.order = newOrder;
         },
-        showDetails(card) {
-            this.selectedCard = card; 
-            const detailsModal = new bootstrap.Modal(document.getElementById('cardDetailsModal'));
-            detailsModal.show(); 
-        }
     },
     computed: {
         superFilter() {
